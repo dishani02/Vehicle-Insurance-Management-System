@@ -24,3 +24,5 @@ VS Code installation guide - [Watch install Guide](https://www.youtube.com/watch
 2 - Start your Apache Server and MySQL using your XAMPP control Panel.
 
 <img src="https://raw.githubusercontent.com/dishani02/Vehicle-Insurance-Management-System/master/screenshot/xampp-server.PNG">
+
+3 - Open Your web browser and type `http://localhost/Vehicle-Insurance-Management-System`. then your can preview your project.
