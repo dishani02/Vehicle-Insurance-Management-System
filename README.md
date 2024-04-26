@@ -26,3 +26,10 @@ VS Code installation guide - [Watch install Guide](https://www.youtube.com/watch
 <img src="https://raw.githubusercontent.com/dishani02/Vehicle-Insurance-Management-System/master/screenshot/xampp-server.PNG">
 
 3 - Open Your web browser and type `http://localhost/Vehicle-Insurance-Management-System`. then your can preview your project.
+
+### Note 
+
+Before make any changes, you need to create seperate branch for your development. Here is the command to create and checkout the new branch.
+`git checkout -b "your-branch-name-here"`
+
+ex - git checkout -b "dishani"
