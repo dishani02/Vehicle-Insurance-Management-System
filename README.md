@@ -20,3 +20,7 @@ VS Code installation guide - [Watch install Guide](https://www.youtube.com/watch
 1 - Clone this repository into **htdocs** folder in your xampp installation folder. default path is ***C:\xampp\htdocs***
 
 `git clone https://github.com/dishani02/Vehicle-Insurance-Management-System.git`
+
+2 - Start your Apache Server and MySQL using your XAMPP control Panel.
+
+<img src="https://raw.githubusercontent.com/dishani02/Vehicle-Insurance-Management-System/master/screenshot/xampp-server.PNG">
