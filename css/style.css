@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.header {
+  background-color: #01aebc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo img {
+  width: 100px;
+}
+
+.header .navbar a {
+  color: #fff;
+  margin-right: 30px;
+}
+
+.header .search input {
+  padding: 5px;
+}
+
+.footer {
+  background-color: #eee;
+  padding: 10px;
+}
+
+.footer a {
+  color: #000;
+  margin-bottom: 3px;
+}
+
+.footer .flex {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.footer .social a {
+  margin-right: 10px;
+}
+
+.footer .fa-brands {
+  font-size: 20px;
+}
+
+.footer .footer-credit {
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.container {
+  padding: 10px;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider h2 {
+  margin-bottom: 5px;
+}
+
+.contact-us {
+  padding: 25px 0px 25px 0px;
+  justify-content: center;
+  gap: 50px;
+}
