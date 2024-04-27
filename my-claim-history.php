@@ -83,7 +83,37 @@
                     </tr>
                     
                 </table>
+                <h2>Claims History</h2>
+                <table>
+                    <tr>
+                        <th>Policy ID</th>
+                        <th>Vehicle ID</th>
+                        <th>Coverage Type</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Method</th>
+                        
+                    </tr>
 
+                    <tr>
+                        <td>213</td>
+                        <td>ty65</td>
+                        <td>full</td>
+                        <td>4500</td>
+                        <td>2002/08/9</td>
+                        <td>online</td>
+                    </tr> 
+                    
+                    <tr>
+                        <td>213</td>
+                        <td>ty65</td>
+                        <td>full</td>
+                        <td>4500</td>
+                        <td>2002/08/9</td>
+                        <td>online</td>
+                    </tr>
+                    
+                </table>
 
 
              
