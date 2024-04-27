@@ -78,6 +78,26 @@ select{
   color: #e92c2c;
 }
 
+table{
+  
+  width: 100%;
+  margin-bottom: 20px;
+
+} 
+
+table,tr,td,th{
+  border: 1px solid #000;
+ 
+}
+
+th{
+  width: 50%;
+}
+
+tr{
+  width: 200%;
+}
+
 .header {
   background-color: #01aebc;
   padding: 10px;

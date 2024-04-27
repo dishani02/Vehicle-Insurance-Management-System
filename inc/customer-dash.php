@@ -14,8 +14,14 @@
         <i class="fa-solid fa-chevron-right"></i>
     </a>
 
+    <a href="my-policies.php" class="menu-item">
+        <h3>Policies</h3>
+        <i class="fa-solid fa-chevron-right"></i>
+
     <a href="my-payments.php" class="menu-item">
         <h3>Payments</h3>
         <i class="fa-solid fa-chevron-right"></i>
+
+       
     </a>
 </nav>
