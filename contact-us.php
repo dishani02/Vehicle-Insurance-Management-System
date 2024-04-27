@@ -18,23 +18,23 @@
             <div class="contact-form">
                 <form action="" method="post">
                     <div class="flex flex-col">
-                        <label for="">Full Name <span>*</span></label>
+                        <label for="">Full Name <span class="required">*</span></label>
                         <input type="text" name="" placeholder="Your Full Name">
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">Contact <span>*</span></label>
+                        <label for="">Contact <span class="required">*</span></label>
                         <input type="number" name="" placeholder="Contact">
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">E-mail <span>*</span></label>
+                        <label for="">E-mail <span class="required">*</span></label>
                         <input type="email" name="" placeholder="E-mail">
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">Type Of Inquiry <span>*</span></label>
-                        <div class="flex">
+                        <label for="">Type Of Inquiry <span class="required">*</span></label>
+                        <div class="flex inquiry">
                             <input type="radio" name="Inquiry" value="New Product Inquiry">New Product Inquiry
                             <input type="radio" name="Inquiry" value="Information">Information
                             <input type="radio" name="Inquiry" value="Complaint">Complaint
@@ -43,19 +43,17 @@
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">Type your message</label>
+                        <label for="">Type your message <span class="required">*</span></label>
                         <textarea name="" cols="30" rows="5" placeholder="Please tell about your inquiry"></textarea>
                     </div>
 
-                    <div class="flex flex-col">
-                        <button type="submit">Submit</button>
+                    <div class="flex flex-col" style="margin-top: 10px">
+                        <button type="submit" class="btn-primary">Submit</button>
                     </div>
-
-
                 </form>
             </div>
 
-            <div class="map">
+            <div class="info">
                 <div class="flex flex-col">
                     <h3>Visit Us</h3>
                     <p>
