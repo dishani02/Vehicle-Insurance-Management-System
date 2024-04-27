@@ -28,18 +28,19 @@
 
     <?php require_once('inc/footer.php') ?>
 
-    <script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+
 
     <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = ["red", "green", "blue", "orange", "brown"];
+        var xValues = ["2020", "2021", "2022", "2023", "2024"];
+        var yValues = [35, 49, 44, 24, 55];
+        var barColors = ["pink", "purple", "blue", "orange", "red"];
+
+       
 
         const myChart = new Chart("myChart", {
-            type: "pie",
+            type: "bar",
             data: {
                 labels: xValues,
                 datasets: [{
