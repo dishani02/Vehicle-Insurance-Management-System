@@ -26,10 +26,17 @@ a {
   text-align: center;
 }
 
+.justify-content-between{
+  justify-content: space-between;
+  
+}
+
 input[type="text"], 
 input[type="password"], 
 input[type="email"], 
-input[type="number"] {
+input[type="number"],
+input[type="file"],
+input[type="date"] {
   width: 100%;
   padding: 10px 10px;
   margin: 8px 0;
@@ -43,6 +50,15 @@ input:focus {
 }
 
 textarea {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid #000;
+}
+
+select{
   width: 100%;
   padding: 10px 10px;
   margin: 8px 0;
