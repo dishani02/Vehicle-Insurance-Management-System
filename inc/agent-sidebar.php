@@ -10,7 +10,7 @@
     </a>
 
     <a href="agent-coverage.php" class="menu-item">
-        <h3>Covrage</h3>
+        <h3>Coverage</h3>
         <i class="fa-solid fa-chevron-right"></i>
     </a>
 

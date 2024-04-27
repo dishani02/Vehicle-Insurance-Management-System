@@ -20,7 +20,7 @@
             </div>
 
             <div class="content">
-                content here
+                
 
                 <form action="post">
                 <h2>New Customer Registration Form</h2>
