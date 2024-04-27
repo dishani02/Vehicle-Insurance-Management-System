@@ -1,4 +1,5 @@
-<nav class="sidebar">
+<div class="sidebar">
+<nav>
     <a href="my-account-dashboard.php" class="menu-item">
         <h3>Dashboard</h3>
         <i class="fa-solid fa-chevron-right"></i>    
@@ -25,3 +26,4 @@
        
     </a>
 </nav>
+</div>
