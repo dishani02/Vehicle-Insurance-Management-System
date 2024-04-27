@@ -15,11 +15,17 @@
 
     <div class="container">
         <div class="flex">
-            <div class="nav">
-                <?php require_once('inc/agent-sidebar.php') ?>
-            </div>
+            <?php require_once('inc/agent-sidebar.php') ?>
 
-            <div class="content">
+
+            <div class="flex flex-col content-wrapper">
+
+                <ul class="bredcrumb">
+                    <li>Dashboard</li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="agent-reports.php">Agent Reports</a></li>
+                </ul>
+
                 <form action="post">
                     <h2>Claim Intimation Form</h2>
 
@@ -63,6 +69,7 @@
                         <button type="reset" class="btn-primary">Reset</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

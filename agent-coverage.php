@@ -15,31 +15,40 @@
 
     <div class="container">
         <div class="flex">
-            <div class="nav">
-                <?php require_once('inc/agent-sidebar.php') ?>
-            </div>
+            <?php require_once('inc/agent-sidebar.php') ?>
 
-            <div class="content">
-                <div class="flex justify-content-between">
-                    <div class="flex flex-col text-center">
-                        <i class="fa-solid fa-users"></i>
-                        <p>Assign Customers</p>
+            <div class="flex flex-col content-wrapper">
+
+                <ul class="bredcrumb">
+                    <li>Dashboard</li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="agent-coverage.php">Coverage</a></li>
+                </ul>
+
+                <div class="flex flex-col content-wrapper">
+                    <div class="flex justify-content-between">
+                        <div class="flex flex-col text-center">
+                            <i class="fa-solid fa-users"></i>
+                            <p>Assign Customers</p>
+                        </div>
+                        <div class="flex flex-col text-center">
+                            <i class="fa-solid fa-eye"></i>
+                            <p>Total Accidents</p>
+                        </div>
+                        <div class="flex flex-col text-center">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>Expire</p>
+                        </div>
+                        <div class="flex flex-col text-center">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>Expire Soon</p>
+                        </div>
                     </div>
-                    <div class="flex flex-col text-center">
-                        <i class="fa-solid fa-eye"></i>
-                        <p>Total Accidents</p>
-                    </div>
-                    <div class="flex flex-col text-center">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <p>Expire</p>
-                    </div>
-                    <div class="flex flex-col text-center" >
-                        <i class="fa-solid fa-calendar-days" ></i>
-                        <p>Expire Soon</p>
-                    </div>
+    
                 </div>
-
             </div>
+
+            
         </div>
     </div>
 
