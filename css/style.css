@@ -71,6 +71,7 @@ select {
   border: 2px solid #01aebc;
   color: #fff;
   padding: 10px;
+  border-radius: 4px;
 }
 
 .required {
@@ -95,10 +96,8 @@ select {
 }
 
 table {
-
   width: 100%;
   margin-bottom: 20px;
-
 }
 
 table,
@@ -147,12 +146,13 @@ tr {
 }
 
 .footer {
-  background-color: #eee;
+  background-color: #252625;
   padding: 10px;
+  color: #fff;
 }
 
 .footer a {
-  color: #000;
+  color: #fff;
   margin-bottom: 3px;
 }
 
@@ -231,8 +231,11 @@ tr {
   height: 450px;
 }
 
-.sidebar .menu-item {
+.sidebar {
   background-color: #eee;
+}
+
+.sidebar .menu-item {
   padding: 40px;
   color: #000;
   font-weight: 400;
@@ -246,4 +249,15 @@ tr {
 
 .page-content {
   padding: 20px;
+}
+
+.agent-add-customer {
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 40px;
+  margin-top: 20px;
+}
+
+.agent-add-customer .form {
+  gap: 40px;
 }
