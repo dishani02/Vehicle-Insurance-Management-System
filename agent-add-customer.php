@@ -14,12 +14,18 @@
     <?php require_once('inc/header.php') ?>
 
     <div class="container">
-        <div class="flex">
-            <div class="nav">
+        <div class="flex" style="background-color: tomato;">
+            <div class="nav" style="background-color: blue;">
                 <?php require_once('inc/agent-sidebar.php') ?>
             </div>
 
-            <div class="content">
+            <!-- <div class="page-content" style="background-color: greenyellow;"> -->
+
+                <ul class="bredcrumb">
+                    <li>Dashboard</li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="agent-add-customer.php">Add Customer</a></li>
+                </ul>
                 
 
                 <form action="post">
@@ -122,7 +128,7 @@
                 </div>
 
                 <div class="flex" style="margin-top: 10px">
-                    <button type="submit" class="btn-primary">Submit</button>
+                    <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
                     <button type="reset" class="btn-primary">Reset</button>
                 </div>
 

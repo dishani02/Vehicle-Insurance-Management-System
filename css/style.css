@@ -26,14 +26,13 @@ a {
   text-align: center;
 }
 
-.justify-content-between{
+.justify-content-between {
   justify-content: space-between;
-  
 }
 
-input[type="text"], 
-input[type="password"], 
-input[type="email"], 
+input[type="text"],
+input[type="password"],
+input[type="email"],
 input[type="number"],
 input[type="file"],
 input[type="date"] {
@@ -58,7 +57,7 @@ textarea {
   border: 1px solid #000;
 }
 
-select{
+select {
   width: 100%;
   padding: 10px 10px;
   margin: 8px 0;
@@ -76,6 +75,23 @@ select{
 
 .required {
   color: #e92c2c;
+}
+
+.bredcrumb {
+  display: flex;
+  list-style: none;
+}
+
+.bredcrumb li {
+  margin: 0px 5px;
+}
+
+.bredcrumb a {
+  color: #000;
+}
+
+.bredcrumb .fa-chevron-right {
+  font-size: 14px;
 }
 
 .header {
@@ -144,10 +160,6 @@ select{
   margin-top: 3px;
 }
 
-.container {
-  padding: 10px;
-}
-
 .slider {
   display: flex;
   flex-direction: column;
@@ -165,7 +177,7 @@ select{
   gap: 50px;
 }
 
-.contact-us .info .flex{
+.contact-us .info .flex {
   margin-bottom: 20px;
 }
 
@@ -186,12 +198,12 @@ select{
   margin-bottom: 10px;
 }
 
-.contact-us .contact-form .inquiry input[type="radio"]{
+.contact-us .contact-form .inquiry input[type="radio"] {
   margin-right: 10px;
   margin-left: 15px;
 }
 
-.contact-us .map iframe{
+.contact-us .map iframe {
   width: 100%;
   height: 450px;
 }
@@ -207,4 +219,8 @@ select{
   font-size: 14px;
   margin-right: 10px;
   gap: 15px;
+}
+
+.page-content {
+  padding: 20px;
 }
