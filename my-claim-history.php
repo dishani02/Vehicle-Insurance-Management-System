@@ -16,7 +16,7 @@
     <div class="container">
         <div class="flex">
             <div class="nav">
-                <?php require_once('inc/sidebar.php') ?>
+                <?php require_once('inc/customer-dash.php') ?>
             </div>
 
             <div class="content">
