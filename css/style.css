@@ -247,17 +247,21 @@ tr {
   gap: 15px;
 }
 
+.sidebar .menu-item .active {
+  color: #01aebc;
+}
+
 .page-content {
   padding: 20px;
 }
 
-.agent-add-customer {
+.content-wrapper {
   justify-content: center;
   gap: 20px;
   padding: 10px 40px;
   margin-top: 20px;
 }
 
-.agent-add-customer .form {
+.content-wrapper .form {
   gap: 40px;
 }

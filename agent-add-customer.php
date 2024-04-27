@@ -18,7 +18,7 @@
 
             <?php require_once('inc/agent-sidebar.php') ?>
 
-            <div class="flex flex-col agent-add-customer">
+            <div class="flex flex-col content-wrapper">
 
                 <ul class="bredcrumb">
                     <li>Dashboard</li>
