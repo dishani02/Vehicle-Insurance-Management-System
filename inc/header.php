@@ -15,4 +15,9 @@
     <div class="search">
         <input type="text" name="" placeholder="Search">
     </div>
+
+    <div class="user-profile">
+        <i class="fa-regular fa-circle-user"></i>
+        <p>Hello Dishani !</p>
+    </div>
 </div>

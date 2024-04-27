@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="flex">
         <div class="col-1">
-            <h3>Hotline</h3>
+            <h3 class="title">Hotline</h3>
             <div class="flex flex-col">
                 <a href="">+94 77 185 4709</a>
                 <a href="">+94 77 185 4709</a>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-1">
-            <h3>Head Office</h3>
+            <h3 class="title">Head Office</h3>
             <div class="flex flex-col">
                 <p>
                     Rakshana Mandiraya <br>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="col-1">
-            <h3>Login</h3>
+            <h3 class="title">Login</h3>
             <div class="flex flex-col">
                 <a href="login.php">Login</a>
                 <a href="register.php">Register</a>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="col-1">
-            <h3>Get social with us</h3>
+            <h3 class="title">Get social with us</h3>
             <div class="flex flex-row social">
                 <a href="">
                     <i class="fa-brands fa-facebook"></i>
