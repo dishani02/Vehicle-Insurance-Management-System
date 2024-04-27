@@ -21,7 +21,7 @@
 
             <div class="content">
                 content here
-            </div>
+            </div> 
         </div>
     </div>
 

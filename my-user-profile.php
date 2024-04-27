@@ -56,11 +56,7 @@
                 <div class="flex flex-col">
                     <h2>Vehicle Details </h2>
     
-                    <div class="flex flex-col">
-                        <label for="">Registertion Number <span class="required">*</span></label>
-                        <input type="text" name="" placeholder="Your Vehicle Registertion Number">
-                    </div>
-    
+                
                     <div class="flex flex-col">
                         <label for="">Registertion Number <span class="required">*</span></label>
                         <input type="text" name="" placeholder="Your Vehicle Registertion Number">
