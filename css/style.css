@@ -97,7 +97,8 @@ select {
 
 table {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
 table,
@@ -275,4 +276,12 @@ tr {
 
 .content-wrapper .form .form-item {
   width: 100%
+}
+
+.flex-border{
+  border: 1px solid #555;
+  padding: 30px 20px ;
+  min-width: 200px;
+  border-radius: 10px;
+
 }
