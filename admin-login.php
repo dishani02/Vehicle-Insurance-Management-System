@@ -9,13 +9,11 @@
 </head>
 
 <body>
-    <?php require_once('inc/header.php') ?>
+<?php require_once('inc/header.php') ?>
 
-    <div class="container">
-        admin login ui here
-    </div>
-
-    <?php require_once('inc/footer.php') ?>
+<div class="container">
+    <div class="flex">
+        <?php require_once('inc/admin-sidebar.php') ?>
 </body>
 
 </html>
