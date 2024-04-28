@@ -1,4 +1,5 @@
-<nav class="sidebar">
+<div class="sidebar">
+<nav>
     <a href="my-account-dashboard.php" class="menu-item">
         <h3>Dashboard</h3>
         <i class="fa-solid fa-chevron-right"></i>    
@@ -10,7 +11,7 @@
     </a>
 
     <a href="my-claim-history.php" class="menu-item">
-        <h3>Claim History</h3>
+        <h3>Claims & Payments <br> History</h3>
         <i class="fa-solid fa-chevron-right"></i>
     </a>
 
@@ -25,3 +26,4 @@
        
     </a>
 </nav>
+</div>
