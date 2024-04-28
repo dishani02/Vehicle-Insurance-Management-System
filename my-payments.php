@@ -24,12 +24,10 @@
                     <ul class="bredcrumb">
                             <li><a href="my-account-dashboard.php">Dashboard</a></li>
                             <li><i class="fa-solid fa-chevron-right"></i></li>
-                            <li><a href="my-payments.php">Payments</a></li>
+                            <li><a href="my-policies.php">Policies</a></li>
                     </ul>
-                       
 
                     <div class="content">
-                        
                         <h2>Payment</h2>
 
                         
