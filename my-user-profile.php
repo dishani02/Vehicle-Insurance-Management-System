@@ -21,9 +21,9 @@
             <div class="flex flex-col content-wrapper">
 
                 <ul class="bredcrumb">
-                    <li>Dashboard</li>
+                    <li><a href="my-account-dashboard.php">Dashboard</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i></li>
-                    <li><a href="agent-add-customer.php">Add Customer</a></li>
+                    <li><a href="my-user-profile.php">User Profile</a></li>
                 </ul>
 
                
