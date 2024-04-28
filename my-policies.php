@@ -15,6 +15,7 @@
 
     <div class="container">
         <div class="flex">
+
             <div class="nav">
                 <?php require_once('inc/customer-dash.php') ?>
             </div>
@@ -58,90 +59,104 @@
                 </table>
 
 
-
-                <form action="post" >
-
-                <h2>Renew Policies</h2>
                 
+            <div class="flex flex-col content-wrapper">
+<!-- 
+<ul class="bredcrumb">
+    <li>Dashboard</li>
+    <li><i class="fa-solid fa-chevron-right"></i></li>
+    <li><a href="agent-add-customer.php">Add Customer</a></li>
+</ul> -->
 
-                <div class="flex flex-col">
-                    <label for="">Current  Vehicle ID <span class="required">*</span></label>
-                    <input type="text" name="" placeholder="current  Vehicle ID">
-                </div>
+<h4 class="text-center">Renew Policies Form</h4>
 
-                <div class="flex flex-col">
-                    <label for="">Current Policy ID<span class="required">*</span></label>
-                    <input type="number" name="" placeholder="Current Policy ID">
-                </div>
+<form action="" method="post">
+    <div class="flex flex-row form">
+        <div>
+            
+            <div class="flex flex-col">
+                <label for=""> Current  Vehicle ID <span class="required">*</span></label>
+                <input type="text" name="" placeholder="Current  Vehicle ID">
+            </div>
 
-    
-
-                <div class="flex flex-col">
-                    <label for="">Contact Number <span class="required">*</span></label>
-                    <input type="number" name="" placeholder="Contact number">
-                </div>
+            <div class="flex flex-col">
+                <label for="">Current Policy ID <span class="required">*</span></label>
+                <input type="text" name="" placeholder="Current Policy ID">
+            </div>
 
 
+            <div class="flex flex-col">
+                <label for="">Contact Number <span class="required">*</span></label>
+                <input type="number" name="" placeholder="contact number">
+            </div>
+        </div>
+            
+         <div>
+            <div class="flex flex-col">
+                <label for="">Motor Insurance category<span class="required">*</span></label>
+                <select>
+                    <option value="volvo">Select category</option>
+                    <option value="Car Insurance ">Car Insurance </option>
+                    <option value="Three-Wheeler ">Three-Wheeler Insurance</option>
+                    <option value="Motorcycle Insurance">Motorcycle Insurance</option>
+                    <option value="Commercial Vehicle Insurance">Commercial Vehicle Insurance</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="">Coverage Type<span class="required">*</span></label>
+                <select>
+                    <option value="Select Coverage Type">Select Coverage Type</option>
+                    <option value="Third Party">Third Party</option>
+                    <option value="Comprehensive">Comprehensive</option>
+                   
+                </select>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="">Duration<span class="required">*</span></label>
+                <select>
+                    <option value="Select Coverage Type">Select Duration</option>
+                    <option value="6 months">6 months</option>
+                    <option value="1 year">1 year</option>
+                    <option value="2 year">2 year</option>
+                </select>
+            </div>
+            </div>
+           
+            <div>
+            <div class="flex flex-col">
+                <label for="">installment Type<span class="required">*</span></label>
+                <select>
+                    <option value="Select Coverage Type">Select installment Type</option>
+                    <option value="Monthly Payment">Monthly Payment</option>
+                    <option value="Quarterly Payment">Quarterly Payment</option>
+                    <option value="Semi-Annual Payment">Semi-Annual Payment</option>
+                    <option value="Annual Payment">Annual Payment</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="">Vehicle Book <span class="required">*</span></label>
+                <input type="File" name="" placeholder="Add a file">
+            </div>
+
+            <div class="flex flex-col">
+                <label for="">Licence <span class="required">*</span></label>
+                <input type="File" name="" placeholder="Add a licience">
+            </div>
+            </div>
+       
         
-                <div class="flex flex-col">
-                    <label for="">Insurance category<span class="required">*</span></label>
-                    <select>
-                        <option value="category">Select category</option>
-                        <option value="Car Insurance">Car Insurance</option>
-                        <option value="Three-Wheeler Insurance">Three-Wheeler Insurance</option>
-                        <option value="Motorcycle Insurance">Motorcycle Insurance</option>
-                        <option value="Commercial Vehicle Insurance">Commercial Vehicle Insurance</option>
-                    </select>
-                </div>
+    </div>
 
-                <div class="flex flex-col">
-                    <label for="">Coverage Type<span class="required">*</span></label>
-                    <select>
-                        <option value="Coverage Type">Select Coverage Type</option>
-                        <option value="Third Party">Third Party</option>
-                        <option value="Comprehensive">Comprehensive</option>
-                    </select>
-                </div>
+    <div class="flex" style="margin-top: 10px">
+        <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
+        <button type="reset" class="btn-primary">Reset</button>
+    </div>
+</form>
 
-                <div class="flex flex-col">
-                    <label for="">Duration<span class="required">*</span></label>
-                    <select>
-                        <option value="Duration">Select Duration</option>
-                        <option value="6 Months">6 Months</option>
-                        <option value="1 year">1 year</option>
-                        <option value="2 year">2 year</option>
-                    </select>
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="">instalments Type<span class="required">*</span></label>
-                    <select>
-                        <option value="Coverage Type">Select instalments Type</option>
-                        <option value="Monthly Payment">Monthly Payment</option>
-                        <option value="Quarterly Payment">Quarterly Payment</option>
-                        <option value="Semi-Annual Payment">Semi-Annual Payment</option>
-                        <option value="Annual Payment">Annual Payment</option>
-                    </select>
-                </div>
-
-
-
-                <div class="flex flex-col">
-                    <label for="">Vehicle Book <span class="required">*</span></label>
-                    <input type="File" name="" placeholder="Add a file">
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="">Licence <span class="required">*</span></label>
-                    <input type="File" name="" placeholder="Add a licience">
-                </div>
-
-                <div class="flex" style="margin-top: 10px " >
-                    <button type="submit" class="btn-primary">Submit</button>
-                    <button type="reset" class="btn-primary">Reset</button>
-                </div>
-
-                </form>
+</div>
 
 
                 
