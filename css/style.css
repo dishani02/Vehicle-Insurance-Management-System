@@ -327,5 +327,9 @@ tr {
   padding: 30px 20px ;
   min-width: 200px;
   border-radius: 10px;
+}
 
+.about-us .box{
+  background-color: #eee;
+  padding: 10px;
 }
