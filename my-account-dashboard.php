@@ -29,7 +29,12 @@
                 </ul>
 
             <div class="content">
-                content here
+            <div class="owl-carousel">
+                <img src="img/motor-insurance.png" alt="" style="width: 100%">
+            </div>
+
+
+            
             </div>
 
             </div>
