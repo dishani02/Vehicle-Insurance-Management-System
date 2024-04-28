@@ -19,9 +19,26 @@
                 <?php require_once('inc/customer-dash.php') ?>
             </div>
 
-            <div class="content">
-                content here
-            </div> 
+                <div class="flex flex-col content-wrapper">
+
+                    <ul class="bredcrumb">
+                            <li><a href="my-account-dashboard.php">Dashboard</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i></li>
+                            <li><a href="my-payments.php">Payments</a></li>
+                    </ul>
+                       
+
+                    <div class="content">
+                        
+                        <h2>Payment</h2>
+
+                        
+
+
+
+                    </div> 
+
+                </div>
         </div>
     </div>
 
