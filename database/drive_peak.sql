@@ -168,8 +168,8 @@ CREATE TABLE Report(
 
 INSERT INTO Insurance_company VALUES ( 123,"Drive Peak", "Vehicle Insurance", "dishani@gmail.com", "123/4,colombo");
 
-INSERT  INTO Admin VALUES(1,123, "shamal","20093278949","shamal@gmail.com","532838");
+INSERT  INTO Admin VALUES(1,123, "shamal","20093278949","shamal@gmail.com","40bd001563085fc35165329ea1ff5c5ecbdbbeef");
 
-INSERT INTO Agent VALUES ( 123,1, 1,"Dishani", "200274903349", "dishani@gmail.com", "12340BD001563085FC35165329EA1FF5C5ECBDBBEEF");
+INSERT INTO Agent VALUES ( 123,1, 1,"Dishani", "200274903349", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef");
 
-INSERT INTO Customer VALUES ( 1,"kamal", "perera", 1,1, "200274903349 ", "dishani@gmail.com", "12340BD001563085FC35165329EA1FF5C5ECBDBBEEF","437/12","kottawa","pannipitiya");
+INSERT INTO Customer VALUES ( 1,"kamal", "perera", 1,1, "200274903349 ", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef","437/12","kottawa","pannipitiya");
