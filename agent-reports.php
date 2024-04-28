@@ -43,6 +43,11 @@
                             </div>
 
                             <div class="flex flex-col">
+                                <label for=""> Date of the accident<span class="required">*</span></label>
+                                <input type="date" name="" placeholder="Date of the accident">
+                            </div>
+
+                            <div class="flex flex-col">
                                 <label for=""> Insured's Name<span class="required">*</span></label>
                                 <input type="text" name="" placeholder="Insured's Name">
                             </div>
@@ -61,7 +66,12 @@
 
                             <div class="flex flex-col">
                                 <label for=""> Description of the accident<span class="required">*</span></label>
-                                <textarea name="address" rows="4" cols="50"></textarea>
+                                <textarea name="description" rows="4" cols="50"></textarea>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for=""> Add images<span class="required">*</span></label>
+                                <input type="File" name="" placeholder="Add a file">
                             </div>
 
                             <div class="flex" style="margin-top: 5px">
