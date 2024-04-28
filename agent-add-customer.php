@@ -29,90 +29,92 @@
                 <h4 class="text-center">New Customer Registration Form</h4>
 
                 <form action="" method="post">
-                    <div class="flex flex-row form">
-                        <div>
-                            <!-- <h5>Customer Personal Details </h5> -->
-                            <div class="flex flex-col">
+
+                    <div class="flex flex-col">
+                        <h4>Customer Persoanl Details</h4>
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for=""> First Name <span class="required">*</span></label>
                                 <input type="text" name="" placeholder="First name">
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for=""> Last Name <span class="required">*</span></label>
                                 <input type="text" name="" placeholder="Last name">
                             </div>
+                        </div>
 
-                            <div class="flex flex-col">
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for=""> NIC <span class="required">*</span></label>
                                 <input type="number" name="" placeholder="NIC">
                             </div>
-                        </div>
 
-                        <div>
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for="">Email <span class="required">*</span></label>
                                 <input type="email" name="" placeholder="email">
                             </div>
+                        </div>
 
-                            <div class="flex flex-col">
-                                <label for="">Contact Number <span class="required">*</span></label>
-                                <input type="number" name="" placeholder="contact number">
-                            </div>
-
-                            <div class="flex flex-col">
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for="">Contact Number <span class="required">*</span></label>
                                 <input type="number" name="" placeholder="contact number">
                             </div>
                         </div>
+
+                        <div class="flex flex-col">
+                            <label for=""> Address<span class="required">*</span></label>
+                            <textarea name="address" rows="4" cols="50"></textarea>
+                        </div>
                     </div>
 
-                            <div class="flex flex-col">
-                                <label for=""> Address<span class="required">*</span></label>
-                                <textarea name="address" rows="4" cols="50"></textarea>
-                            </div>
+                    <div class="flex flex-col">
+                        <h4>Customer Vehicle Details</h4>
 
 
-                            <div class="flex flex-row form">
-                        <div>
-                            <!-- <h5>Customer Personal Details </h5> -->
-                            <div class="flex flex-col">
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for=""> Model <span class="required">*</span></label>
                                 <input type="text" name="" placeholder="Model">
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for=""> Registration Number <span class="required">*</span></label>
                                 <input type="text" name="" placeholder="Registration Number ">
                             </div>
+                        </div>
 
-                            <div class="flex flex-col">
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for=""> Year <span class="required">*</span></label>
                                 <input type="number" name="" placeholder="Year">
                             </div>
-                        </div>
 
-                        <div>
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for="">Chassi number<span class="required">*</span></label>
                                 <input type="number" name="" placeholder="Chassi number">
                             </div>
+                        </div>
 
-                            <div class="flex flex-col">
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for="">Vehicle Book <span class="required">*</span></label>
                                 <input type="file" name="" placeholder="Vehicle Book">
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for="">Licence <span class="required">*</span></label>
                                 <input type="file" name="" placeholder="Licence">
                             </div>
                         </div>
                     </div>
 
-                            <div class="flex flex-row form">
-                        <div>
-                            <!-- <h5>Customer Personal Details </h5> -->
-                            <div class="flex flex-col">
+
+                    <div class="flex flex-col">
+                        <h4>Customer Policy Details</h4>
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for="">Insurance Category<span class="required">*</span></label>
                                 <select>
                                     <option value="Car insurance">Car insurance</option>
@@ -122,7 +124,7 @@
                                 </select>
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for="">Coverage<span class="required">*</span></label>
                                 <select>
                                     <option value="Third Party">Third Party</option>
@@ -130,9 +132,9 @@
                                 </select>
                             </div>
                         </div>
-                    <div>
-                        
-                            <div class="flex flex-col">
+
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for="">Duration<span class="required">*</span></label>
                                 <select>
                                     <option value="6 months">6 months</option>
@@ -141,7 +143,7 @@
                                 </select>
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for="">Instalment Type<span class="required">*</span></label>
                                 <select>
                                     <option value="Monthly Payment">Monthly Payment</option>
@@ -152,11 +154,11 @@
                             </div>
                         </div>
                     </div>
-                            <div class="flex" style="margin-top: 10px">
-                                <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
-                                <button type="reset" class="btn-primary">Reset</button>
-                            </div>
-                        </div>
+
+
+                    <div class="flex" style="margin-top: 10px">
+                        <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
+                        <button type="reset" class="btn-primary">Reset</button>
                     </div>
                 </form>
             </div>

@@ -262,8 +262,17 @@ tr {
   gap: 20px;
   padding: 10px 40px;
   margin-top: 20px;
+  width: 100%;
+  /* background-color: aqua; */
 }
 
 .content-wrapper .form {
   gap: 40px;
+  /* background-color: #e92c2c; */
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.content-wrapper .form .form-item {
+  width: 100%
 }
