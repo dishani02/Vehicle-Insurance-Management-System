@@ -147,7 +147,7 @@
                             <select>
                                 <option value="Monthly Payment">Monthly Payment</option>
                                 <option value="Quarterly Payment">Quarterly Payment</option>
-                                <option value="Semi-Annual Payment">Semi-Annual Payment</option>
+                                 <option value="Semi-Annual Payment">Semi-Annual Payment</option>
                                 <option value="Annual Payment">Annual Payment</option>
                             </select>
                         </div>
