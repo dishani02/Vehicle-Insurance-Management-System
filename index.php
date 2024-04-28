@@ -26,6 +26,17 @@
         </div>
     </div>
 
+    <div class="flex flex-col">
+            <h2>Drive peak</h2>
+            <p>DrivePeak is your trusted partner in vehicle insurance management. Our cutting-edge platform harnesses the
+                latest technology to deliver seamless efficient, and personalized solutions tailored to your needs
+                With DrivePeak,you can navigate insurance processes effortlessly, ensuring peace of mind and financial
+                security on the road ahead.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dolor optio totam iusto et, libero atque ipsa 
+               eum, repellendus modi sapiente nesciunt enim! Quis cumque maxime dolor omnis numquam sint!</p>
+        </div>
+
+
     <?php require_once('inc/footer.php') ?>
 
     <!--jquery-->
