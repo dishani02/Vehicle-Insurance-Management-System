@@ -31,7 +31,7 @@
                 <form action="" method="post">
                     <div class="flex flex-row form">
                         <div>
-                            <h5>Customer Personal Details </h5>
+                            <!-- <h5>Customer Personal Details </h5> -->
                             <div class="flex flex-col">
                                 <label for=""> First Name <span class="required">*</span></label>
                                 <input type="text" name="" placeholder="First name">
@@ -46,7 +46,10 @@
                                 <label for=""> NIC <span class="required">*</span></label>
                                 <input type="number" name="" placeholder="NIC">
                             </div>
+                        </div>
+                    <div>
 
+                        
                             <div class="flex flex-col">
                                 <label for="">Email <span class="required">*</span></label>
                                 <input type="email" name="" placeholder="email">
@@ -58,64 +61,133 @@
                             </div>
 
                             <div class="flex flex-col">
-                                <label for=""> Address<span class="required">*</span></label>
-                                <textarea name="address" rows="4" cols="50"></textarea>
+                                <label for="">Contact Number <span class="required">*</span></label>
+                                <input type="number" name="" placeholder="contact number">
                             </div>
+
+                            
                         </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for=""> Address<span class="required">*</span></label>
+                        <textarea name="address" rows="4" cols="50"></textarea>
+                    </div>
 
+
+                    <div class="flex flex-row form">
                         <div>
-                            <h5>Customer Vehicle Details </h5>
+                            <!-- <h5>Customer Personal Details </h5> -->
                             <div class="flex flex-col">
-                                <label for="">Name <span class="required">*</span></label>
-                                <input type="text" name="" placeholder="name">
-                            </div>
-
-                            <div class="flex flex-col">
-                                <label for="">Model <span class="required">*</span></label>
+                                <label for=""> Model <span class="required">*</span></label>
                                 <input type="text" name="" placeholder="Model">
                             </div>
 
                             <div class="flex flex-col">
-                                <label for="">Registration Number <span class="required">*</span></label>
-                                <input type="number" name="" placeholder="Registration Number">
+                                <label for=""> Registration Number  <span class="required">*</span></label>
+                                <input type="text" name="" placeholder="Registration Number ">
                             </div>
 
                             <div class="flex flex-col">
-                                <label for="">Year <span class="required">*</span></label>
-                                <input type="date" name="" placeholder="Year">
+                                <label for=""> Year <span class="required">*</span></label>
+                                <input type="number" name="" placeholder="Year">
                             </div>
+                        </div>
+                    <div>
 
+                        
                             <div class="flex flex-col">
                                 <label for="">Vehicle category<span class="required">*</span></label>
-                                <select>
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-
+                            <select>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
                             </div>
 
                             <div class="flex flex-col">
                                 <label for="">Vehicle Book <span class="required">*</span></label>
-                                <input type="File" name="" placeholder="Add a file">
+                                <input type="file" name="" placeholder="Vehicle Book">
                             </div>
 
                             <div class="flex flex-col">
                                 <label for="">Licence <span class="required">*</span></label>
-                                <input type="File" name="" placeholder="Add a licience">
+                                <input type="file" name="" placeholder="Licence">
                             </div>
+
+                            
                         </div>
                     </div>
 
-                    <div class="flex" style="margin-top: 10px">
-                        <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
-                        <button type="reset" class="btn-primary">Reset</button>
-                    </div>
-                </form>
 
+
+
+
+                    
+                    <div class="flex flex-row form">
+                        <div>
+                            <!-- <h5>Customer Personal Details </h5> -->
+                            <div class="flex flex-col">
+                                <label for="">Vehicle category<span class="required">*</span></label>
+                            <select>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="">Vehicle category<span class="required">*</span></label>
+                            <select>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            </div>
+
+                            
+                        </div>
+                    <div>
+
+                        
+                            <div class="flex flex-col">
+                                <label for="">Vehicle category<span class="required">*</span></label>
+                            <select>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            </div>
+                            
+                            <div class="flex flex-col">
+                                <label for="">Vehicle category<span class="required">*</span></label>
+                            <select>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                           
+
+            <div class="flex" style="margin-top: 10px">
+                <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
+                <button type="reset" class="btn-primary">Reset</button>
             </div>
         </div>
+    </div>
+            
+            </form>
+
+        </div>
+    </div>
     </div>
 
     <?php require_once('inc/footer.php') ?>
