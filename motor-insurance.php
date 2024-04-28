@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,6 +129,22 @@
 
                 </div>
             </div>
+
+            
+            <div class="flex ">
+
+                <div class="flex flex-col ">
+                    <h1>Insure Your Vehicle Now</h1>
+                    <hr>
+                    <p>Verify whether any risks or losses resulting from theft, accidents, or natural
+                        catastrophes are covered for your vehicle.</p>
+                </div>
+
+
+            </div>
+
+
+
         </div>
     </div>
     <?php require_once('inc/footer.php') ?>

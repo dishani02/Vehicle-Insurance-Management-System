@@ -150,6 +150,10 @@ tr {
   color: #fff;
 }
 
+.header .user-profile a {
+  color: #ffff;
+}
+
 .footer {
   background-color: #252625;
   padding: 10px;
@@ -309,7 +313,7 @@ tr {
 .motor-insurance .coverage {
   justify-content: center;
   gap: 20px;
-  margin: 10px 0px 20px;
+  margin: 10px 0px 20px ;
 }
 
 .motor-insurance .why-drive-peak {

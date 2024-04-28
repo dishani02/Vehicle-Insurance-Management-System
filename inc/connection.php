@@ -2,8 +2,8 @@
 	
 	$dbhost = "localhost";
 	$dbuser = "root";
-	$dbpass = "root";
-	$dbname = "drive_peak";
+	$dbpass = "";
+	$dbname = "drive_peak_web";
 
 	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -11,7 +11,7 @@
 		die('Database connection Failed' .mysqli_connect_error());
 	}
 	else{
-		//echo "Database connection Successful";
+		// echo "Database connection Successful";
 	}
 
  ?> 
