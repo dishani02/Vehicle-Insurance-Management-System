@@ -31,6 +31,7 @@
                             <i class="fa-solid fa-users"></i>
                             <p>Assign Customers</p>
                         </div>
+                        
                         <div class="flex flex-col text-center">
                             <i class="fa-solid fa-eye"></i>
                             <p>Total Accidents</p>

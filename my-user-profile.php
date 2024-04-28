@@ -98,9 +98,8 @@
                                 <input type="date" name="" placeholder="Expire Date">
                             </div>
 
-                            
 
-                            <div class="flex flex-col">
+                            <!-- <div class="flex flex-col">
                                 <label for="">Vehicle Book <span class="required">*</span></label>
                                 <input type="File" name="" placeholder="Add a file">
                             </div>
@@ -108,7 +107,7 @@
                             <div class="flex flex-col">
                                 <label for="">Licence <span class="required">*</span></label>
                                 <input type="File" name="" placeholder="Add a licience">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
