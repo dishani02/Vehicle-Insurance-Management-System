@@ -27,20 +27,25 @@
 
                 <div class="flex flex-col content-wrapper">
                     <div class="flex justify-content-between">
-                        <div class="flex flex-col text-center">
+                        <div class="form-item flex flex-col text-center flex-border">
                             <i class="fa-solid fa-users"></i>
                             <p>Assign Customers</p>
                         </div>
+<<<<<<< HEAD
                         
                         <div class="flex flex-col text-center">
+=======
+                        <div class="form-item flex flex-col text-center flex-border">
+>>>>>>> 0ac99e69217acd30af98cf479a2c75d045fae674
                             <i class="fa-solid fa-eye"></i>
+
                             <p>Total Accidents</p>
                         </div>
-                        <div class="flex flex-col text-center">
+                        <div class="form-item flex flex-col text-center flex-border">
                             <i class="fa-solid fa-calendar-days"></i>
                             <p>Expire</p>
                         </div>
-                        <div class="flex flex-col text-center">
+                        <div class="form-item flex flex-col text-center flex-border">
                             <i class="fa-solid fa-calendar-days"></i>
                             <p>Expire Soon</p>
                         </div>

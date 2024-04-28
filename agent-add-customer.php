@@ -109,53 +109,51 @@
                             </div>
                         </div>
                     </div>
-
-
+                    
                     <div class="flex flex-col">
                         <h4>Customer Policy Details</h4>
-                        <div class="flex flex-row form">
-                            <div class="form-item flex flex-col">
-                                <label for="">Insurance Category<span class="required">*</span></label>
-                                <select>
-                                    <option value="Car insurance">Car insurance</option>
-                                    <option value="Three-wheeler Insurance">Three-wheeler Insurance</option>
-                                    <option value="Mortorcycle Insurance">Mortorcycle Insurance</option>
-                                    <option value="Commercial Vehicle Insurance">Commercial Vehicle Insurance</option>
-                                </select>
-                            </div>
-
-                            <div class="form-item flex flex-col">
-                                <label for="">Coverage<span class="required">*</span></label>
-                                <select>
-                                    <option value="Third Party">Third Party</option>
-                                    <option value="Comprehensive">Comprehensive</option>
-                                </select>
-                            </div>
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for="">Insurance Category<span class="required">*</span></label>
+                            <select>
+                                <option value="Car insurance">Car insurance</option>
+                                <option value="Three-wheeler Insurance">Three-wheeler Insurance</option>
+                                <option value="Mortorcycle Insurance">Mortorcycle Insurance</option>
+                                <option value="Commercial Vehicle Insurance">Commercial Vehicle Insurance</option>
+                            </select>
                         </div>
 
-                        <div class="flex flex-row form">
-                            <div class="form-item flex flex-col">
-                                <label for="">Duration<span class="required">*</span></label>
-                                <select>
-                                    <option value="6 months">6 months</option>
-                                    <option value="1 year">1 year</option>
-                                    <option value="2 year">2 year</option>
-                                </select>
-                            </div>
-
-                            <div class="form-item flex flex-col">
-                                <label for="">Instalment Type<span class="required">*</span></label>
-                                <select>
-                                    <option value="Monthly Payment">Monthly Payment</option>
-                                    <option value="Quarterly Payment">Quarterly Payment</option>
-                                    <option value="Semi-Annual Payment">Semi-Annual Payment</option>
-                                    <option value="Annual Payment">Annual Payment</option>
-                                </select>
-                            </div>
+                        <div class="form-item flex flex-col">
+                            <label for="">Coverage<span class="required">*</span></label>
+                            <select>
+                                <option value="Third Party">Third Party</option>
+                                <option value="Comprehensive">Comprehensive</option>
+                            </select>
                         </div>
                     </div>
 
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for="">Duration<span class="required">*</span></label>
+                            <select>
+                                <option value="6 months">6 months</option>
+                                <option value="1 year">1 year</option>
+                                <option value="2 year">2 year</option>
+                            </select>
+                        </div>
 
+                        <div class="form-item flex flex-col">
+                            <label for="">Instalment Type<span class="required">*</span></label>
+                            <select>
+                                <option value="Monthly Payment">Monthly Payment</option>
+                                <option value="Quarterly Payment">Quarterly Payment</option>
+                                 <option value="Semi-Annual Payment">Semi-Annual Payment</option>
+                                <option value="Annual Payment">Annual Payment</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                    
                     <div class="flex" style="margin-top: 10px">
                         <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
                         <button type="reset" class="btn-primary">Reset</button>

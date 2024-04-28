@@ -26,6 +26,9 @@
         </div>
     </div>
 
+    <h1>Drive peak</h1>
+    <p>"DrivePeak is your trusted partner in vehicle insurance management.<br>Our cutting-edge platform harnesses the latest technology to deliver seamless,<br> efficient, and personalized solutions tailored to your needs With DrivePeak,<br> you can navigate insurance processes effortlessly, ensuring peace of mind and financial security on the road ahead."</p>
+
     <?php require_once('inc/footer.php') ?>
 
     <!--jquery-->
@@ -63,6 +66,8 @@
      
      
     </script>
+
+    
 
     <?php require_once('inc/footer.php') ?>
     
