@@ -135,9 +135,8 @@
 
                 <div class="flex flex-col ">
                     <h1>Insure Your Vehicle Now</h1>
-                    <hr>
-                    <p>Verify whether any risks or losses resulting from theft, accidents, or natural
-                        catastrophes are covered for your vehicle.</p>
+                    <h2>Register Now</h2>
+                    <img src="" alt="">
                 </div>
 
 
