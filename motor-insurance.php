@@ -135,6 +135,7 @@
 
                 <div class="flex flex-col ">
                     <h1>Insure Your Vehicle Now</h1>
+                    <h3>click hear to register</h3>
                     <h2>Register Now</h2>
                     <img src="" alt="">
                 </div>
