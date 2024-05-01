@@ -12,7 +12,7 @@
 
 <body>
     <?php require_once('inc/header.php') ?>
-    
+
 
     <div class="container">
         <div class="flex">
@@ -21,17 +21,39 @@
             </div>
 
             <div class="content">
-                content here
-                <!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                <div class="flex flex-col text-right">
+                    <div class="form-item flex flex-col agent-profile">
+                        <h4 class="text-center">Contact Info</h4>
+
+                        <label for=""> EMAIL</span></label>
+                        <input type="email" name="" placeholder=email>
+                        <div>
+                            <label for="">BRANCH</span></label>
+                            <input type="text" name="" placeholder="Branch Name">
+                        </div>
+                        <div>
+                            <label for="">MOBILE</label>
+                            <input type="text" name="" placeholder="Contact number">
+                        </div>
+                        <div>
+                            <label for=""> ADDRESS</label>
+                            <textarea name="address" rows="3" cols="50" placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div> -->
+        
+        <
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            </div>
+        </div>
+    </div> 
+        <?php require_once('inc/footer.php') ?>
 
-    <?php require_once('inc/footer.php') ?>
 
-    
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
 
 
@@ -64,7 +86,7 @@
                 }
             },
         });
-   </script> -->
+   </script>
 </body>
 
 </html>
