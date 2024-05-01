@@ -163,6 +163,8 @@ CREATE TABLE Report(
     PRIMARY KEY(report_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
 );
+git pull 
+
 
 -- insert data
 

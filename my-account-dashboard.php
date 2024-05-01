@@ -40,9 +40,11 @@
 
             <div class="content">
             <div class="owl-carousel">
-                <img src="img/motor-insurance.png" alt="" style="width: 100%">
             </div>
 
+            <div> 
+                <img src="img/accident.jpg" alt="">
+            </div>
 
             
             </div>
