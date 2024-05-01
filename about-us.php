@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col mb">
             <h2>Drive peak</h2>
             <p>DrivePeak is your trusted partner in vehicle insurance management. Our cutting-edge platform harnesses the
                 latest technology to deliver seamless efficient, and personalized solutions tailored to your needs
@@ -37,19 +37,19 @@
         </div>
 
 
-        <div class="flex">
+        <div class="flex justify-content-center mb">
             <div class="box">
-                <h1>Our Vision</h1>
+                <h3>Our Vision</h3>
                 <p>To envision a future where vehicle insurance management transcends mere protection, becoming a cornerstone of empowerment, trust, and seamless mobility for all.                </p>
             </div>
 
             <div class="box">
-                <h1>Our Mission</h1>
-                    <p>Our mission is to revolutionize vehicle insurance management by leveraging cutting-edge technology, personalized service, and a relentless pursuit of innovation. Through transparent practices, proactive risk mitigation, and unwavering dedication to our customers, we aim to redefine the insurance experience, fostering safer roads, stronger communities, and greater peace of mind for drivers everywhere</p>
+                <h3>Our Mission</h3>
+                <p>Our mission is to revolutionize vehicle insurance management by leveraging cutting-edge technology, personalized service, and a relentless pursuit of innovation. Through transparent practices, proactive risk mitigation, and unwavering dedication to our customers, we aim to redefine the insurance experience, fostering safer roads, stronger communities, and greater peace of mind for drivers everywhere</p>
             </div>
         </div>
 
-        <div class="flex">
+        <div class="flex mb">
             <div>
                 <h2>Our History</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, officia, est, similique corporis recusandae quo dolore ullam asperiores et nesciunt dicta quasi. Autem totam at odit aliquid omnis id culpa!</p>
