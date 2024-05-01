@@ -12,6 +12,7 @@
 
 <body>
     <?php require_once('inc/header.php') ?>
+    
 
     <div class="container">
         <div class="flex">
@@ -21,14 +22,16 @@
 
             <div class="content">
                 content here
-                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                <!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <?php require_once('inc/footer.php') ?>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
 
 
@@ -61,7 +64,7 @@
                 }
             },
         });
-   </script>
+   </script> -->
 </body>
 
 </html>
