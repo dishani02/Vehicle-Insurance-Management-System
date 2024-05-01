@@ -44,6 +44,7 @@
 
             <div> 
                 <img src="img/accident.jpg" alt="">
+                <h2>Whereever you go , our insurance goes the ectra mile</h2>
             </div>
 
             
