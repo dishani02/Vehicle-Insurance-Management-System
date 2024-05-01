@@ -38,7 +38,20 @@
                eum, repellendus modi sapiente nesciunt enim! Quis cumque maxime dolor omnis numquam sint!</p>
         </div>
 
+        <div class="flex flex-col">
+                
+                <div class="flex box">
+                    <div class="flex flex-col">
+                        <a href="">
+                            <img src="" alt="" class="img">
+                        </a>
+                        <div>
+                            <h3>Car Insurance</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet eaque dolorum tempore commodi officia quasi debitis repellendus obcaecati sunt quam ipsa iure, sequi, molestias corrupti similique ullam culpa. Tenetur, qui!</p>
+                        </div>
+                    </div>
 
+                    </div>
     <?php require_once('inc/footer.php') ?>
 
     <!--jquery-->

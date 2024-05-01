@@ -94,8 +94,7 @@
                             <h3>Commercial Vehicle Insurance</h3>
                             <p>Verify whether any risks or losses resulting from theft, accidents, or natural
                                 catastrophes are covered for your vehicle.</p>
-
-                        </div>
+                             </div>
                     </div>
                 </div>
             </div>
