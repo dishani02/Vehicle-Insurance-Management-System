@@ -22,7 +22,7 @@
                     <li><i class="fa-solid fa-chevron-right"></i></li>
                     <li><a href="agent-reports.php">User profile</a></li>
                 </ul>
-                conten
+                content
             </div>
         </div>
     </div>

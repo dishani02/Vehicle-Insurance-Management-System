@@ -341,3 +341,11 @@ tr {
 .about-us .mb {
   margin-bottom: 20px;
 }
+
+.agent-profile{
+  border: 1px solid #555;
+  padding: 30px 30px ;
+  min-width: 200px;
+  text-align: left;
+}
+
