@@ -13,8 +13,7 @@
 <body>
     <?php require_once('inc/header.php') ?>
 
-    <div class="container">
-        <div class="flex">
+    <div class="flex">
 
             <?php require_once('inc/agent-sidebar.php') ?>
 
@@ -161,7 +160,6 @@
                 </form>
             </div>
         </div>
-    </div>
 
     <?php require_once('inc/footer.php') ?>
 </body>
