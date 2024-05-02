@@ -129,7 +129,6 @@ CREATE TABLE Policy(
     policy_id CHAR(5) NOT NULL,
     start_date VARCHAR(10),
     end_date VARCHAR(25),
-    coverage VARCHAR(25),
     PRIMARY KEY(policy_id),
     FOREIGN KEY(company_id) REFERENCES Insurance_company(company_id)
 );
@@ -148,6 +147,7 @@ CREATE TABLE Vehicle(
     policy_id CHAR(5) NOT NULL,
     coverage_type VARCHAR(25) NOT NULL,
     model VARCHAR(25),
+    chassis_no VARCHAR(190),
     year DATE,
     PRIMARY KEY(vehicle_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
@@ -257,3 +257,38 @@ INSERT INTO Inquiry VALUES (customer_id,04,0004,"Can i access my insurance polic
 INSERT INTO Inquiry VALUES (customer_id,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
  got to insert the customer id 
  */
+
+/*Policy details*/
+
+INSERT INTO Policy VALUES (123,1,'2008-11-11','2009-11-11');
+INSERT INTO Policy VALUES (123,2,'2009-11-11','20010-11-11');
+INSERT INTO Policy VALUES (123,3,'2008-11-11','2009-11-11');
+INSERT INTO Policy VALUES (123,4,'2008-11-11','2009-11-11');
+INSERT INTO Policy VALUES (123,5,'2008-11-11','2009-11-11');
+INSERT INTO Policy VALUES (123,6,'2008-11-11','2009-11-11');
+
+
+/* coverage Table */
+
+INSERT INTO Coverage VALUES (1,"Comprehensive");
+INSERT INTO Coverage VALUES (2,"Third Party");
+
+
+
+/* policy_covarge Table */
+
+INSERT INTO Policy_Covarge VALUES (1,1);
+INSERT INTO Policy_Covarge VALUES (2,2);
+
+
+
+
+/* Vehicle Table */
+
+INSERT INTO Vehicle VALUES (1, 'GTF2435', 1, 1, 'Toyota Camry',"1HGCM82633A123456", '2020-01-01');
+INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
+
+
+
+
+
