@@ -154,8 +154,8 @@
     </div>
 
     <div class="flex" style="margin-top: 10px">
-        <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
-        <button type="reset" class="btn-primary">Reset</button>
+        <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
     </div>
 </form>
 
