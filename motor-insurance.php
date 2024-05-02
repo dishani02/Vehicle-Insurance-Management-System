@@ -137,6 +137,7 @@
                     <h3>click hear to register</h3>
                     <h2>Register Now</h2>
                     <h2>hellow</h2>
+                    <h2>This is motot incurance page </h2>
                     <img src="" alt="">
                 </div>
 
