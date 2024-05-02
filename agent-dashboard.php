@@ -1,3 +1,12 @@
+<?php session_start(); ?>
+
+<?php require_once('inc/connection.php') ?>
+
+<?php
+    if(!isset($_SESSION['first_name'])) {
+        header('Location: agent-login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -37,7 +37,7 @@
                     $user = mysqli_fetch_assoc($result);
 
                     $_SESSION['agent_id'] = $user['agent_id'];
-                    $_SESSION['first_name'] = $user['first_name'];
+                    $_SESSION['first_name'] = $user['name'];
                     
                     header('Location: agent-dashboard.php'); 
                 }
