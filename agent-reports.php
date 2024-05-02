@@ -68,8 +68,8 @@
                         </div>
                     </div>
                     <div class="flex" style="margin-top: 5px">
-                        <button type="submit" class="btn-primary" style="margin-right: 10px;">Submit</button>
-                        <button type="reset" class="btn-primary">Reset</button>
+                        <button type="submit" class="btn tn-primary" style="margin-right: 10px;">Submit</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
                     </div>
                 </div>
                 </form>

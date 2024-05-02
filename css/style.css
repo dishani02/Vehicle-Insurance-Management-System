@@ -66,12 +66,20 @@ select {
   border: 1px solid #000;
 }
 
-.btn-primary {
-  background-color: #01aebc;
-  border: 2px solid #01aebc;
+.btn  {
   color: #fff;
   padding: 10px;
   border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #01aebc;
+  border: 2px solid #01aebc;
+}
+
+.btn-danger {
+  background-color: #F52D2A;
+  border: 2px solid #F52D2A;
 }
 
 .required {
@@ -93,6 +101,21 @@ select {
 
 .bredcrumb .fa-chevron-right {
   font-size: 14px;
+}
+
+.flash-message {
+  display: flex;
+  background-color: #59F141;
+  padding: 10px;
+  border-radius: 4px;
+  align-items: center;
+  gap: 10px;
+}
+
+.flash-message .fa-solid {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 table {
