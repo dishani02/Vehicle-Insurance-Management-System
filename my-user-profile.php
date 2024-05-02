@@ -70,47 +70,64 @@
                     <li><a href="my-user-profile.php">User Profile</a></li>
                 </ul>
 
-               
+                <h4> Personal Details </h4>
 
                 <form action="my-user-profile.php" method="post">
-                    <div class="flex flex-row form">
-                        <div>
-                            <h5> Personal Details </h5>
-                            <div class="flex flex-col">
+                    <div class="flex flex-col">
+                        
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for=""> First Name <span class="required">*</span></label>
-                                <input type="text" name="first_name" placeholder="Full Name" value="<?php echo $customer['first_name'] ?>">
+                                <input type="text" name="first_name" placeholder="Full Name"
+                                    value="<?php echo $customer['first_name'] ?>">
                             </div>
-                            
-                            <div class="flex flex-col">
+
+                            <div class="form-item flex flex-col">
                                 <label for=""> Last Name <span class="required">*</span></label>
-                                <input type="text" name="last_name" placeholder="Full Name" value="<?php echo $customer['last_name'] ?>">
+                                <input type="text" name="last_name" placeholder="Full Name"
+                                    value="<?php echo $customer['last_name'] ?>">
                             </div>
+                        </div>
 
-
-                            <div class="flex flex-col">
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
                                 <label for=""> NIC <span class="required">*</span></label>
-                                <input type="text" name="nic" placeholder="NIC" value="<?php echo $customer['nic'] ?>" disabled>
+                                <input type="text" name="nic" placeholder="NIC" value="<?php echo $customer['nic'] ?>"
+                                    disabled>
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for="">Email <span class="required">*</span></label>
-                                <input type="email" name="email" placeholder="email" value="<?php echo $customer['email'] ?>">
+                                <input type="email" name="email" placeholder="email"
+                                    value="<?php echo $customer['email'] ?>">
                             </div>
-<!-- 
+                        </div>
+
+
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
+                                <label for=""> Address<span class="required">*</span></label>
+                                <input type="text" name="home_no" placeholder="contact number"
+                                    value="<?php echo $customer['home_no'] ?>">
+                                <input type="text" name="street" placeholder="contact number"
+                                    value="<?php echo $customer['street'] ?>">
+                                    <div class="flex flex-row form"></div>
+                                    <input type="text" name="city" placeholder="contact number"
+                                    value="<?php echo $customer['city'] ?>">
+                            </div>
+                        </div>
+
+                        
+
+
+                           
+                            <!-- 
                             <div class="flex flex-col">
                                 <label for="">Contact Number <span class="required">*</span></label>
                                 <input type="number" name="last_name" placeholder="contact number" value="<?php echo $customer['last_name'] ?>">
                             </div> -->
 
-                            <div class="flex flex-col">
-                                <label for=""> Address<span class="required">*</span></label>
-                                <input type="text" name="home_no" placeholder="contact number" value="<?php echo $customer['home_no'] ?>">
-                                <input type="text" name="street" placeholder="contact number" value="<?php echo $customer['street'] ?>">
-                                <input type="text" name="city" placeholder="contact number" value="<?php echo $customer['city'] ?>">
-                            </div>
-                        </div>
-
-                        <div>
+                        <!-- <div>
                             <h5>Policy Details </h5>
                             <div class="flex flex-col">
                                 <label for="">Policy ID <span class="required">*</span></label>
@@ -128,25 +145,25 @@
                                     <option value="Comprehensive">Comprehensive</option>
                                 </select>
                             </div>
-                        
+
                             <div class="flex flex-col">
                                 <label for="">Duration <span class="required">*</span></label>
                                 <input type="number" name="" placeholder="Your Policy Duration">
                             </div>
-                        
+
                             <div class="flex flex-col">
                                 <label for="">Registration Date <span class="required">*</span></label>
                                 <input type="date" name="" placeholder="Registration Date">
                             </div>
-                        
-                        
+
+
                             <div class="flex flex-col">
                                 <label for="">Expire Date <span class="required">*</span></label>
                                 <input type="date" name="" placeholder="Expire Date">
                             </div>
 
 
-                            <!-- <div class="flex flex-col">
+                            <div class="flex flex-col">
                                 <label for="">Vehicle Book <span class="required">*</span></label>
                                 <input type="File" name="" placeholder="Add a file">
                             </div>
@@ -154,13 +171,14 @@
                             <div class="flex flex-col">
                                 <label for="">Licence <span class="required">*</span></label>
                                 <input type="File" name="" placeholder="Add a licience">
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
                     </div>
 
                     <div class="flex" style="margin-top: 10px">
-                        <button type="submit" name="submit" class="btn-primary" style="margin-right: 10px;">Update</button>
-                        <button type="reset" class="btn-primary">Reset</button>
+                        <button type="submit" name="submit" class="btn-primary"
+                            style="margin-right: 10px;">Update Profile</button>
+                       
                     </div>
                 </form>
 
