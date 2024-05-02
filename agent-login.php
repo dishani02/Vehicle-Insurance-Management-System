@@ -26,7 +26,7 @@
             $password = mysqli_real_escape_string($connection, $_POST['password']);
             $hashed_password = sha1($password);
 
-            $query = "SELECT * FROM customer WHERE email = '{$email}' AND password = '{$hashed_password}'";
+            $query = "SELECT * FROM agent WHERE email = '{$email}' AND password = '{$hashed_password}'";
 
 
             $result = mysqli_query($connection, $query);
@@ -36,13 +36,10 @@
 
                     $user = mysqli_fetch_assoc($result);
 
-                    $_SESSION['customer_id'] = $user['customer_id'];
+                    $_SESSION['agent_id'] = $user['agent_id'];
                     $_SESSION['first_name'] = $user['first_name'];
-
-                    echo $user['first_name'];
-
                     
-                    header('Location: my-account-dashboard.php'); 
+                    header('Location: agent-dashboard.php'); 
                 }
                 else{
                     $errors['common'] = 'Invalid email / password';
@@ -60,7 +57,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Your Road to Safety and Savings</title>
+    <title>Agent Login | Your Road to Safety and Savings</title>
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -72,14 +69,16 @@
     <div class="container">
         <div class="login flex">
 
-            
-            <?php
-                if(isset($errors) && !empty($errors['common'])) {
-                echo '<div class="error required">'.$errors['common'].'</div>';
-                }
-            ?>
+            <form action="agent-login.php" method="post">
 
-            <form action="login.php" method="post">
+                <div class="flex flex-col">
+                    <?php
+                        if(isset($errors) && !empty($errors['common'])) {
+                        echo '<div class="error required">'.$errors['common'].'</div>';
+                        }
+                    ?>
+                </div>
+
                 <div class="flex flex-col welcome">
                     <h3>Hello, there,</h3>
                     <p>Please login to continue</p>
