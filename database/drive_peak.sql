@@ -55,11 +55,13 @@ CREATE TABLE Agent_contact_no(
     FOREIGN KEY(agent_id) REFERENCES Agent(agent_id)
 );
 /*TODO:*/
+
 /* Claim manager Table */
 /* Claim manager Countacr us Table */
 /* Cheef engineer Table */
 /* Cheef engineer  Countacr us Table */
 /* Manager_Cheef engineer Table */
+
 /* CRS Table */
 CREATE TABLE Csr(
     admin_id CHAR(5) NOT NULL,
@@ -184,9 +186,13 @@ CREATE TABLE Report(
 
 INSERT INTO Insurance_company VALUES ( 123,"Drive Peak", "Vehicle Insurance", "dishani@gmail.com", "123/4,colombo");
 
+
+
 INSERT  INTO Admin VALUES(1,123, "shamal","20093278949","shamal@gmail.com","40bd001563085fc35165329ea1ff5c5ecbdbbeef");
 
 INSERT INTO Agent VALUES ( 123,1, 1,"Dishani", "200274903349", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef");
+
+
 
 INSERT INTO Customer VALUES ( 1,"kamal", "perera", 1,1, "200274903349 ", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef","437/12","kottawa","pannipitiya");
 
@@ -205,6 +211,7 @@ INSERT INTO Csr_contact_no VALUES (04,0777871230);
 INSERT INTO Csr_contact_no VALUES (05,0757862543);
 
 /*inquiry 
+
 INSERT INTO Inquiry VALUES (customer_id,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
 INSERT INTO Inquiry VALUES (customer_id,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
 INSERT INTO Inquiry VALUES (customer_id,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");

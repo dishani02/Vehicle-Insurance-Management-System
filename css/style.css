@@ -349,3 +349,25 @@ tr {
   text-align: left;
 }
 
+.login {
+  padding: 60px;
+
+  justify-content: center;
+}
+
+.login form {
+  width: 30%;
+}
+
+.login form .welcome {
+  margin: 10px 0px 20px;
+}
+
+.login form .forget-password {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.login form button {
+  justify-content: center;
+}
