@@ -38,6 +38,14 @@ a {
   margin: 10px 0px;
 }
 
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -410,4 +418,12 @@ td {
 
 .login form button {
   justify-content: center;
+}
+
+.view-accident-report .details{
+  gap: 20px;
+}
+
+.view-accident-report .images {
+  gap: 10px;
 }

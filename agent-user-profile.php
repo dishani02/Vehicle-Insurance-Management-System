@@ -70,14 +70,16 @@
         email = '$email',
         home_no = '$home_no',
         street = '$street',
-        city = '$city'gi
+        city = '$city'
         WHERE agent_id = '$agentId'";
 
         $result = mysqli_query($connection, $query);
 
         if($result) {
             $_SESSION['first_name'] = $first_name;
-            $messages['common'] = "Profile successfully updated!";
+            $_SESSION['success_message'] = "Profile successfully updated!";
+            header("Location: agent-reports.php");
+            exit();
         }  
         else {
             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
@@ -116,11 +118,9 @@
             </ul>
 
             <?php
-                if(isset($messages) && !empty($messages['common'])) {
-                    echo '<div class="flash-message">
-                    <i class="fa-solid fa-check"></i>
-                    <p>'.$messages['common'].'</p>
-                    </div>';
+                if(isset($_SESSION['success_message'])) {
+                    echo '<div class="flash-message"><i class="fa-solid fa-check"></i><p>' . $_SESSION['success_message'] . '</p></div>';
+                    unset($_SESSION['success_message']);
                 }
             ?>
 
