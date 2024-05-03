@@ -26,7 +26,8 @@
 ?>
 
 <?php
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])) {
+
         $messages = array();
 
         if(!isset($_POST['informant_name']) || strlen(trim($_POST['informant_name'])) < 1) {
@@ -61,6 +62,25 @@
             $result = mysqli_query($connection,  $query);
 
             if($result) {
+
+                //upload accident images
+                $accident_id = mysqli_insert_id($connection);
+
+                $upload_path = "uploads/accidents/";
+
+                foreach($_FILES['images']['name'] as $key => $image) {
+
+                    $file_name = $_FILES['images']['name'][$key];            
+                    $file_type = $_FILES['images']['type'][$key];
+                    $temp_name = $_FILES['images']['tmp_name'][$key];
+                    $file_size = $_FILES['images']['size'][$key];
+
+                    move_uploaded_file($temp_name, $upload_path . $file_name);
+
+                    $file_query = "INSERT INTO Accident_image (accident_id, image) VALUES('$accident_id', '$file_name')";
+                    mysqli_query($connection, $file_query);
+                }
+
                 $messages['common'] = "Claim Intimation successfully added!";
             } else{
                 echo "Error: " .  $query . "<br>" . mysqli_error($connection);
@@ -107,7 +127,7 @@
 
                 <h4 class="text-center">Claim Intimation Form</h4>
 
-                <form action="agent-reports.php" method="post">
+                <form action="agent-reports.php" method="post" enctype="multipart/form-data">
 
 
                 <div class="flex flex-col">
@@ -172,10 +192,10 @@
                              ?>
                             </div>
 
-                            <!-- <div class="form-item flex flex-col">
+                            <div class="form-item flex flex-col">
                                 <label for=""> Add images<span class="required">*</span></label>
-                                <input type="file" name="" placeholder="Add images">
-                            </div> -->
+                                <input type="file" name="images[]" placeholder="Add images" multiple>
+                            </div>
                         </div>
                     </div>
                     <div class="flex" style="margin-top: 5px">
