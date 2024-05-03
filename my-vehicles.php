@@ -23,6 +23,8 @@
         $vehicle_list .= "<td>" . $row['policy_id'] . "</td>";
         $vehicle_list .= "</tr>";
     }
+
+    
 ?>
 
 <?php

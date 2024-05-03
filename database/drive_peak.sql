@@ -82,8 +82,8 @@ CREATE TABLE Csr_contact_no(
 );
 /* Customer Table */
 CREATE TABLE Customer(
-    customer_id CHAR(5) NOT NULL,
-    first_name VARCHAR(10) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR( 10) NOT NULL,
     last_name VARCHAR(10) NOT NULL,
     admin_id CHAR(5) NOT NULL,
     agent_id CHAR(5) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE Customer(
     email VARCHAR(25),
     password VARCHAR(190),
     home_no VARCHAR(10) NOT NULL,
-    street VARCHAR(20) NOT NULL,
+    home_no VARCHAR(20) NOT NULL,
     city VARCHAR(10) NOT NULL,
     PRIMARY KEY(customer_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id),
@@ -100,7 +100,7 @@ CREATE TABLE Customer(
 /* Customer Countacr us Table */
 CREATE TABLE Customer_Contact_no(
     contact_no VARCHAR(15) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL,
     PRIMARY KEY(contact_no, customer_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id)
 );
@@ -142,7 +142,7 @@ CREATE TABLE Policy_Covarge(
 );
 /* Vehicle Table */
 CREATE TABLE Vehicle(
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL,
     vehicle_id CHAR(5) NOT NULL,
     policy_id CHAR(5) NOT NULL,
     coverage_type VARCHAR(25) NOT NULL,
@@ -157,7 +157,7 @@ CREATE TABLE Vehicle(
 /* Payment Table */
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL,
     admin_id CHAR(5) NOT NULL,
     amount INT(10),
     payment_date VARCHAR(10),
@@ -208,12 +208,11 @@ INSERT INTO Agent VALUES ( 123,1, 6,"Dinesh", "200156789043", "dinesh@gmail.com"
 
 /*Agent contact details*/
 
-INSERT INTO Agent_contact_no VALUES (1,0705678902);
-INSERT INTO Agent_contact_no VALUES (2,0769008765);
-INSERT INTO Agent_contact_no VALUES (3,0773426755);
-INSERT INTO Agent_contact_no VALUES (4,0706763080);
-INSERT INTO Agent_contact_no VALUES (5,0752215577);
-INSERT INTO Agent_contact_no VALUES (6,0779044321);
+INSERT INTO agent_contact_no VALUES (2,0769008765);
+INSERT INTO agent_contact_no VALUES (3,0773426755);
+INSERT INTO agent_contact_no VALUES (4,0706763080);
+INSERT INTO agent_contact_no VALUES (5,0752215577);
+INSERT INTO agent_contact_no VALUES (6,0779044321);
 
 /*Customer Details*/
 
@@ -277,8 +276,8 @@ INSERT INTO Coverage VALUES (2,"Third Party");
 
 /* policy_covarge Table */
 
-INSERT INTO Policy_Covarge VALUES (1,1);
-INSERT INTO Policy_Covarge VALUES (2,2);
+INSERT INTO Policy_Coverage VALUES (1,1);
+INSERT INTO Policy_Coverage VALUES (2,2);
 
 
 
@@ -288,6 +287,11 @@ INSERT INTO Policy_Covarge VALUES (2,2);
 INSERT INTO Vehicle VALUES (1, 'GTF2435', 1, 1, 'Toyota Camry',"1HGCM82633A123456", '2020-01-01');
 INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
 
+
+/* Coverage Table */
+
+INSERT INTO Coverage VALUES (1,'Third party');
+INSERT INTO Coverage VALUES (2,'Comprehensive');
 
 
 
