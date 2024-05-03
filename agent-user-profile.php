@@ -7,6 +7,8 @@
         header('Location: agent-login.php');
     }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +29,7 @@
             <div class="nav">
                 <?php require_once('inc/agent-sidebar.php') ?>
             </div>
-
+<!-- 
             <div class="content">
                 <div class="flex flex-col text-right">
                     <div class="form-item flex flex-col agent-profile">
@@ -50,7 +52,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
             </div>

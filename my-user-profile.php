@@ -20,12 +20,15 @@
 
     $contact_no_list = '';
 
+
+
     while($row = mysqli_fetch_array($result_1)) {
         $contact_no_list .= "<tr>";
         $contact_no_list .= "<td>" . $row['contact_no'] . "</td>";
         $contact_no_list .= "<td class='text-center'><button class='btn btn-danger'><i class='fa-solid fa-trash'></i></button></td>";
         $contact_no_list .= "</tr>";
     }
+    
 ?>
 
 <?php
