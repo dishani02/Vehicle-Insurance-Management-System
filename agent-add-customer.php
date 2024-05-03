@@ -89,17 +89,30 @@
             $result = mysqli_query($connection,  $query);
       
             if ($result) {
-                $customerId = 1;//TODO: get customer id from database
 
-                $query_1 = "INSERT INTO Vehicle VALUES ('$customerId', '$vehicle_id',  1, '$coverage_type', '$model', '$chassis_no', '$year')";
-                $query_2 = "INSERT INTO Customer_Contact_no VALUES ('$contact_no','$customerId')";
+                $query_1 = "SELECT customer_id FROM Customer WHERE email = '$email'";
                 
-                mysqli_query($connection,  $query_2);
-                
-                if(mysqli_query($connection,  $query_1)) {
-                    $messages['common'] = "Customer successfully added!";
-                }else{
-                    echo "Error: " .  $query_1 . "<br>" . mysqli_error($connection);
+                $result_1 = mysqli_query($connection, $query_1);
+
+                if($result_1) {
+
+                    if(mysqli_num_rows($result_1) == 1) {
+
+                        $customer = mysqli_fetch_assoc($result_1);
+
+                        $customerId = $customer['customer_id'];
+
+                        $query_2 = "INSERT INTO Vehicle VALUES ('$customerId', '$vehicle_id',  1, '$coverage_type', '$model', '$chassis_no', '$year')";
+                        $query_3 = "INSERT INTO Customer_Contact_no VALUES ('$contact_no','$customerId')";
+                        
+                        mysqli_query($connection,  $query_2);
+                        
+                        if(mysqli_query($connection,  $query_3)) {
+                            $messages['common'] = "Customer successfully added!";
+                        }else{
+                            echo "Error: " .  $query_1 . "<br>" . mysqli_error($connection);
+                        }
+                    }
                 }
             } else {
                 echo "Error: " .  $query . "<br>" . mysqli_error($connection);
@@ -245,7 +258,6 @@
 
                     <div class="flex flex-col">
                         <h4 class="m-10">Customer Vehicle Details</h4>
-
 
                         <div class="flex flex-row form">
 
