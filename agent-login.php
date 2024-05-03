@@ -26,7 +26,7 @@
             $password = mysqli_real_escape_string($connection, $_POST['password']);
             $hashed_password = sha1($password);
 
-            $query = "SELECT * FROM admin WHERE email = '{$email}' AND password = '{$hashed_password}'";
+            $query = "SELECT * FROM agent WHERE email = '{$email}' AND password = '{$hashed_password}'";
 
 
             $result = mysqli_query($connection, $query);
@@ -36,10 +36,10 @@
 
                     $user = mysqli_fetch_assoc($result);
 
-                    $_SESSION['admin_id'] = $user['admin_id'];
+                    $_SESSION['agent_id'] = $user['agent_id'];
                     $_SESSION['first_name'] = $user['name'];
                     
-                    header('Location: admin-dashboard.php'); 
+                    header('Location: agent-dashboard.php'); 
                 }
                 else{
                     $errors['common'] = 'Invalid email / password';
@@ -69,7 +69,7 @@
     <div class="container">
         <div class="login flex">
 
-            <form action="admin-login.php" method="post">
+            <form action="agent-login.php" method="post">
 
                 <div class="flex flex-col">
                     <?php
@@ -86,7 +86,7 @@
                 
                 <div class="flex flex-col">
                     <label for="">E-mail <span class="required">*</span></label>
-                    <input type="email" name="email" placeholder="E-mail address" value="shamal@gmail.com">
+                    <input type="email" name="email" placeholder="E-mail address" value="dishani@gmail.com">
                     <?php
                     if(isset($errors) && !empty($errors['email'])) {
                         echo '<div class="error required">'.$errors['email'].'</div>';

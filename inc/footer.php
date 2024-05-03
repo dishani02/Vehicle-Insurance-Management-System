@@ -28,6 +28,7 @@
             <div class="flex flex-col">
                 <a href="login.php">Login</a>
                 <a href="register.php">Register</a>
+                <a href="agent-login.php">Agent Login</a>
             </div>
         </div>
 

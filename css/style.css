@@ -30,6 +30,10 @@ a {
   justify-content: space-between;
 }
 
+.m-10 {
+  margin: 10px 0px;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -70,6 +74,7 @@ select {
   color: #fff;
   padding: 10px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -129,15 +134,22 @@ tr,
 td,
 th {
   border: 1px solid #000;
-
+  text-align: center;
 }
 
 th {
-  width: 50%;
+  font-weight: 500;
+  background-color: #eee;
+  height: 50px;
 }
 
 tr {
   width: 200%;
+}
+
+td {
+  height: 50px;
+  text-align: center;
 }
 
 .container {

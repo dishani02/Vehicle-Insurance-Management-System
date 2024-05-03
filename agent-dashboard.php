@@ -1,3 +1,12 @@
+<?php session_start(); ?>
+
+<?php require_once('inc/connection.php') ?>
+
+<?php
+    if(!isset($_SESSION['first_name'])) {
+        header('Location: agent-login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +22,14 @@
 <body>
     <?php require_once('inc/header.php') ?>
 
-    <div class="container">
-        <div class="flex">
-            <div class="nav">
-                <?php require_once('inc/agent-sidebar.php') ?>
-            </div>
+    <div class="flex">
+        <div class="nav">
+            <?php require_once('inc/agent-sidebar.php') ?>
+        </div>
 
-            <div class="content">
-                content here
-                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-            </div>
+        <div class="content">
+            content here
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
         </div>
     </div>
 

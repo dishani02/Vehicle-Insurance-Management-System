@@ -1,3 +1,37 @@
+<?php session_start(); ?>
+
+<?php require_once('inc/connection.php') ?>
+
+<?php
+    if(!isset($_SESSION['first_name'])) {
+        header('Location: agent-login.php');
+    }
+?>
+
+<?php
+    $agentId = $_SESSION['agent_id'];
+
+    $query = "SELECT * FROM Customer WHERE agent_id = '$agentId' ";
+
+    $result = mysqli_query($connection, $query);
+
+    $customer_list = '';
+
+    while($row = mysqli_fetch_array($result)) {
+        $customer_list .= "<tr>";
+        $customer_list .= "<td>" . $row['customer_id'] . "</td>";
+        $customer_list .= "<td>" . $row['first_name'] . "</td>";
+        $customer_list .= "<td>" . $row['last_name'] . "</td>";
+        $customer_list .= "<td>" . $row['nic'] . "</td>";
+        $customer_list .= "<td>" . $row['email'] . "</td>";
+        $customer_list .= "</tr>";
+    }
+
+    $customer_count = 10;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,86 +47,58 @@
 <body>
     <?php require_once('inc/header.php') ?>
 
-    <div class="container">
-        <div class="flex">
-            <?php require_once('inc/agent-sidebar.php') ?>
+    <div class="flex">
+        <?php require_once('inc/agent-sidebar.php') ?>
 
-            <div class="flex flex-col content-wrapper">
+        <div class="flex flex-col content-wrapper">
 
-                <ul class="bredcrumb">
-                    <li>Dashboard</li>
-                    <li><i class="fa-solid fa-chevron-right"></i></li>
-                    <li><a href="agent-coverage.php">Coverage</a></li>
-                </ul>
+            <ul class="bredcrumb">
+                <li>Dashboard</li>
+                <li><i class="fa-solid fa-chevron-right"></i></li>
+                <li><a href="agent-coverage.php">Coverage</a></li>
+            </ul>
 
-                <div class="flex flex-col content-wrapper">
-                    <div class="flex justify-content-between">
+            <div class="flex flex-col">
+                <div class="flex justify-content-between">
 
-                        <div class="form-item flex flex-col text-center flex-border">
-                            <i class="fa-solid fa-users"></i>
-                            <p>Assign Customers</p>
-                        </div>
+                    <div class="form-item flex flex-col text-center flex-border">
+                        <h3><?php echo $customer_count; ?></h3>
+                        <i class="fa-solid fa-users"></i>
+                        <p>Assign Customers</p>
+                    </div>
 
-                        <div class="form-item flex flex-col text-center flex-border">
-                            <i class="fa-solid fa-eye"></i>
-                            <p>Total Accidents</p>
-                        </div>
+                    <div class="form-item flex flex-col text-center flex-border">
+                        <i class="fa-solid fa-eye"></i>
+                        <p>Total Accidents</p>
+                    </div>
 
+                    <div class="form-item flex flex-col text-center flex-border">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>Expire</p>
+                    </div>
+
+                    <div class="flex flex-col text-center">
                         <div class="form-item flex flex-col text-center flex-border">
                             <i class="fa-solid fa-calendar-days"></i>
-                            <p>Expire</p>
-                        </div>
-
-                        <div class="flex flex-col text-center">
-                            <div class="form-item flex flex-col text-center flex-border">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <p>Expire Soon</p>
-                            </div>
+                            <p>Expire Soon</p>
                         </div>
                     </div>
-                    <div class="content">
-                        <h2>Insurance Details</h2>
-                        <table>
-                            <tr>
-                                <th>Vender Name</th>
-                                <th>Vehicle ID</th>
-                                <th>Type</th>
-                                <th>start-date</th>
-                                <th>End-date</th>
-                                <th>Status</th>
+                </div>
+                <div class="content">
+                    <h2 class="m-10">Customer Details</h2>
+                    <table>
+                        <tr>
+                            <th>Customer Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>NIC</th>
+                            <th>Email</th>
+                        </tr>
 
-                            </tr>
-
-                            <tr>
-                                <td>K.H.Saman Soysa</td>
-                                <td>ty65</td>
-                                <td>full</td>
-                                <td>2012/08/29</td>
-                                <td>2013/08/29</td>
-                                <td>Active</td>
-                            </tr>
-
-                            <tr>
-                                <td>K.H.Saman Soysa</td>
-                                <td>ty65</td>
-                                <td>full</td>
-                                <td>2012/08/29</td>
-                                <td>2013/08/29</td>
-                                <td>Active</td>
-                            </tr>
-
-                            <tr>
-                                <td>K.H.Saman Soysa</td>
-                                <td>ty65</td>
-                                <td>full</td>
-                                <td>2012/08/29</td>
-                                <td>2013/08/29</td>
-                                <td>Active</td>
-                            </tr>
-
-
-                        </table>
-                    </div>
+                        <tbody>
+                            <?php echo $customer_list; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -102,3 +108,5 @@
 </body>
 
 </html>
+
+<?php mysqli_close($connection); ?>

@@ -39,9 +39,13 @@ CREATE TABLE Agent(
     company_id CHAR(5) NOT NULL,
     admin_id CHAR(5) NOT NULL,
     agent_id CHAR(5) NOT NULL,
-    name VARCHAR(25),
+    first_name VARCHAR(25),
+    last_name VARCHAR(25),
     nic VARCHAR(25),
     email VARCHAR(25),
+    home_no VARCHAR(10) NOT NULL,
+    street VARCHAR(20) NOT NULL,
+    city VARCHAR(10) NOT NULL,
     password VARCHAR(190),
     PRIMARY KEY(agent_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id),
@@ -82,8 +86,8 @@ CREATE TABLE Csr_contact_no(
 );
 /* Customer Table */
 CREATE TABLE Customer(
-    customer_id CHAR(5) NOT NULL,
-    first_name VARCHAR(10) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR( 10) NOT NULL,
     last_name VARCHAR(10) NOT NULL,
     admin_id CHAR(5) NOT NULL,
     agent_id CHAR(5) NOT NULL,
@@ -100,7 +104,7 @@ CREATE TABLE Customer(
 /* Customer Countacr us Table */
 CREATE TABLE Customer_Contact_no(
     contact_no VARCHAR(15) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL,
     PRIMARY KEY(contact_no, customer_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id)
 );
@@ -139,7 +143,7 @@ CREATE TABLE Policy(
 
 /* Vehicle Table */
 CREATE TABLE Vehicle(
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL,
     vehicle_id CHAR(5) NOT NULL,
     policy_id CHAR(5) NOT NULL,
     coverage_type VARCHAR(25) NOT NULL,
@@ -154,7 +158,7 @@ CREATE TABLE Vehicle(
 /* Payment Table */
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL,
     admin_id CHAR(5) NOT NULL,
     amount INT(10),
     payment_date VARCHAR(10),
@@ -203,22 +207,19 @@ INSERT  INTO Admin VALUES(1,123, "shamal","20093278949","shamal@gmail.com","40bd
 INSERT INTO Admin_contact_no VALUES (1,0775956803);
 
 
-/*Agent Details*/
-INSERT INTO Agent VALUES ( 123,1, 1,"pavan","200497783267", "pavan@gmail.com", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
-INSERT INTO Agent VALUES ( 123,1, 2,"Saman","200045893267", "saman@gmail.com", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
-INSERT INTO Agent VALUES ( 123,1, 3,"Vihan","200132125680", "vihan@gmail.com", "74b6fbfb697d59b0c52277645ce8044be9181780");
-INSERT INTO Agent VALUES ( 123,1, 4,"Amal","200245789356", "amal@gmail.com", " c9f4ae94e840e771aafe38c47f09f24d577b5943");
-INSERT INTO Agent VALUES ( 123,1, 5,"Praveen", "200066896732", "praveen@gmail.com", "c5c62e82f4f0c6fbcbb0542fd26d05084c6f8fa9");
-INSERT INTO Agent VALUES ( 123,1, 6,"Dinesh", "200156789043", "dinesh@gmail.com", "303b469f296cffecea6cddbcd5ee5b86dbb5ce1e");
+INSERT INTO Agent VALUES ( 123,1, 2,"Saman","Perera", "200045893267", "saman@gmail.com", "12/A", "kottawa","pannipitiya", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
+INSERT INTO Agent VALUES ( 123,1, 3,"Vihan","Perera", "200132125680", "vihan@gmail.com", "14/A", "kottawa","pannipitiya", "74b6fbfb697d59b0c52277645ce8044be9181780");
+INSERT INTO Agent VALUES ( 123,1, 4,"Amal", "Perera","200245789356", "amal@gmail.com", "11/A", "kottawa","pannipitiya", "c9f4ae94e840e771aafe38c47f09f24d577b5943");
+INSERT INTO Agent VALUES ( 123,1, 5,"Praveen", "Perera", "200066896732", "praveen@gmail.com", "124/A", "kottawa","pannipitiya", "c5c62e82f4f0c6fbcbb0542fd26d05084c6f8fa9");
+INSERT INTO Agent VALUES ( 123,1, 6,"Dinesh", "Perera", "200156789043", "dinesh@gmail.com", "125/A", "kottawa","pannipitiya", "303b469f296cffecea6cddbcd5ee5b86dbb5ce1e");
 
 /*Agent contact details*/
 
-INSERT INTO Agent_contact_no VALUES (1,0705678902);
-INSERT INTO Agent_contact_no VALUES (2,0769008765);
-INSERT INTO Agent_contact_no VALUES (3,0773426755);
-INSERT INTO Agent_contact_no VALUES (4,0706763080);
-INSERT INTO Agent_contact_no VALUES (5,0752215577);
-INSERT INTO Agent_contact_no VALUES (6,0779044321);
+INSERT INTO agent_contact_no VALUES (2,0769008765);
+INSERT INTO agent_contact_no VALUES (3,0773426755);
+INSERT INTO agent_contact_no VALUES (4,0706763080);
+INSERT INTO agent_contact_no VALUES (5,0752215577);
+INSERT INTO agent_contact_no VALUES (6,0779044321);
 
 /*Customer Details*/
 INSERT INTO Customer VALUES ( 1,"kamal", "perera", 1,1, "200274903349 ", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef","437/12","kottawa","pannipitiya");
@@ -282,8 +283,8 @@ INSERT INTO Coverage VALUES (2,"Third Party");
 
 /* policy_covarge Table */
 
-INSERT INTO Policy_Covarge VALUES (1,1);
-INSERT INTO Policy_Covarge VALUES (2,2);
+INSERT INTO Policy_Coverage VALUES (1,1);
+INSERT INTO Policy_Coverage VALUES (2,2);
 
 
 
@@ -297,6 +298,11 @@ INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A127846
 INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
 INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
 
+
+/* Coverage Table */
+
+INSERT INTO Coverage VALUES (1,'Third party');
+INSERT INTO Coverage VALUES (2,'Comprehensive');
 
 
 

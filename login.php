@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <button type="submit" name="submit" class="btn-primary">Login</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Login</button>
                 </div>
             </form>
         </div>
