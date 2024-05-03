@@ -26,6 +26,30 @@
 ?>
 
 <?php
+     $agentId = $_SESSION['agent_id'];
+
+     $query_1 = "SELECT * FROM Accident WHERE agent_id = '$agentId' ";
+
+     $result = mysqli_query($connection, $query_1);
+
+     $accident_list = '';
+
+     while($row = mysqli_fetch_array($result)) {
+        $accident_list .= "<tr>";
+        $accident_list .= "<td>" . $row['vehicle_id'] . "</td>";
+        $accident_list .= "<td>" . $row['informant_name'] . "</td>";
+        $accident_list .= "<td>" . $row['date'] . "</td>";
+        $accident_list .= "<td>" . $row['place'] . "</td>";
+        $accident_list .= "<td><a href=". $row['accident_id'] ." class='btn btn-primary'>View</a></td>";
+        $accident_list .= "</tr>";
+
+     }
+
+?>
+
+
+
+<?php
     if(isset($_POST['submit'])) {
 
         $messages = array();
@@ -213,6 +237,24 @@
                     </div>
                 </div>
             </form>
+
+            <table>
+            <tr>
+                 <th>Vehicle Id</th>
+                 <th>Informant</th>
+                 <th>Date</th>
+                 <th>Place</th>
+                 <th>Action(s)</th>
+
+            </tr>
+          
+                <tbody>
+                    <?php
+                        echo $accident_list;
+                    ?>
+                </tbody>
+             </table>
+            </div>
             </div>
         </div>
 
