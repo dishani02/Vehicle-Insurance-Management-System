@@ -98,8 +98,6 @@
                 
                 if(mysqli_query($connection,  $query_1)) {
                     $messages['common'] = "Customer successfully added!";
-                    header("Location: " . $_SERVER["REQUEST_URI"]);
-                    exit;
                 }else{
                     echo "Error: " .  $query_1 . "<br>" . mysqli_error($connection);
                 }
@@ -133,6 +131,8 @@
                 <ul class="bredcrumb">
                     <li>Dashboard</li>
                     <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="agent-coverage.php">Coverage</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
                     <li><a href="agent-add-customer.php">Add Customer</a></li>
                 </ul>
 
@@ -146,7 +146,7 @@
                 ?>
 
 
-                <h3 class="text-center">New Customer Registration Form</h3>
+                <h3 class="m-10">New Customer Registration Form</h3>
 
                 <form action="agent-add-customer.php" method="post">
 
@@ -208,26 +208,38 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col">
-                            <label for=""> Address<span class="required">*</span></label>
-                            <input type="text" name="home_no" placeholder="House Number">
-                            <?php
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
+                                <label for=""> Address<span class="required">*</span></label>
+                                <input type="text" name="home_no" placeholder="House Number">
+                                <?php
                                     if(isset($messages) && !empty($messages['home_no'])) {
                                         echo '<div class="error required">'.$messages['home_no'].'</div>';
-                                        }
-                                    ?>
-                            <input type="text" name="street" placeholder="Street">
-                            <?php
+                                    }
+                                 ?>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row form">
+                            <div class="form-item flex flex-col">
+                                <label for="">Street <span class="required">*</span></label>
+                                <input type="text" name="street" placeholder="Street">
+                                <?php
                                     if(isset($messages) && !empty($messages['street'])) {
                                         echo '<div class="error required">'.$messages['street'].'</div>';
-                                        }
-                                    ?>
-                            <input type="text" name="city" placeholder="City">
-                            <?php
+                                    }
+                                ?>
+                            </div>
+
+                            <div class="form-item flex flex-col">
+                                <label for="">City <span class="required">*</span></label>
+                                <input type="text" name="city" placeholder="City">
+                                <?php
                                     if(isset($messages) && !empty($messages['city'])) {
                                         echo '<div class="error required">'.$messages['city'].'</div>';
-                                        }
-                                    ?>
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
 
@@ -275,7 +287,7 @@
                         <div class="flex flex-row form">
                             <div class="form-item flex flex-col">
                                 <label for=""> Year <span class="required">*</span></label>
-                                <input type="number" name="year" placeholder="Year">
+                                <input type="number" min="1900" max="2099" step="1" value="2024" name="year" placeholder="Year">
                                 <?php
                                     if(isset($messages) && !empty($messages['year'])) {
                                         echo '<div class="error required">'.$messages['year'].'</div>';

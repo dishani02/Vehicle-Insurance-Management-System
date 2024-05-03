@@ -299,4 +299,28 @@ INSERT INTO Coverage VALUES (2,'Comprehensive');
 
 
 
+/* Claim Table */
+CREATE TABLE Claim(
+    manager_id  CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    customer_id CHAR(5) NOT NULL,
+    claim_id CHAR(5) NOT NULL,
+    status VARCHAR(25),
+    amount INT(10),
+    PRIMARY KEY(),
+    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
+);
+
+CREATE TABLE Accident(
+    accident_id INT NOT NULL AUTO_INCREMENT,
+    agent_id CHAR(5) NOT NULL,
+    informant_name  VARCHAR(20) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    date DATE,
+    place  VARCHAR(20) NOT NULL,
+    description VARCHAR(50) NOT NULL,
+    PRIMARY KEY(accident_id),
+    FOREIGN KEY(agent_id ) REFERENCES Agent(agent_id)
+)
+
 
