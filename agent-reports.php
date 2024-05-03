@@ -31,20 +31,24 @@
         $messages = array();
 
         if(!isset($_POST['informant_name']) || strlen(trim($_POST['informant_name'])) < 1) {
-            $messages['informant_name'] = "informant_name is required";
+            $messages['informant_name'] = "Informant name is required";
         }
         
         if(!isset($_POST['vehicle_id']) || strlen(trim($_POST['vehicle_id'])) < 1) {
-            $messages['vehicle_id'] = "vehicle_id is required";
+            $messages['vehicle_id'] = "Vehicle Id is required";
         }
 
         if(!isset($_POST['date']) || strlen(trim($_POST['date'])) < 1) {
-            $messages['date'] = "date is required";
+            $messages['date'] = "Date is required";
         }
 
         if(!isset($_POST['place']) || strlen(trim($_POST['place'])) < 1) {
-            $messages['place'] = "place is required";
+            $messages['place'] = "Place is required";
         } 
+
+        if(!isset($_FILES['images[]'])) {
+            $messages['images'] = "Accident images are required";
+        }
         
 
         if (empty($messages)) {
@@ -186,15 +190,20 @@
                                 <label for="">Description of the accident<span class="required">*</span></label>
                                 <textarea type="text" name="description" placeholder="Description of the accident" rows="5"></textarea>
                                 <?php
-                                if(isset($messages) && !empty($messages['description'])) {
-                                     echo '<div class="error required">'.$messages['description'].'</div>';
-                                 }
-                             ?>
+                                    if(isset($messages) && !empty($messages['description'])) {
+                                        echo '<div class="error required">'.$messages['description'].'</div>';
+                                    }
+                                ?>
                             </div>
 
                             <div class="form-item flex flex-col">
                                 <label for=""> Add images<span class="required">*</span></label>
                                 <input type="file" name="images[]" placeholder="Add images" multiple>
+                                <?php
+                                    if(isset($messages) && !empty($messages['images'])) {
+                                        echo '<div class="error required">'.$messages['images'].'</div>';
+                                    }
+                                ?>
                             </div>
                         </div>
                     </div>
