@@ -108,7 +108,9 @@
                         mysqli_query($connection,  $query_2);
                         
                         if(mysqli_query($connection,  $query_3)) {
-                            $messages['common'] = "Customer successfully added!";
+                            $_SESSION['success_message'] = "Customer successfully added!";
+                            header("Location: agent-add-customer.php");
+                            exit();
                         }else{
                             echo "Error: " .  $query_1 . "<br>" . mysqli_error($connection);
                         }
@@ -150,13 +152,11 @@
                 </ul>
 
                 <?php
-                if(isset($messages) && !empty($messages['common'])) {
-                    echo '<div class="flash-message">
-                            <i class="fa-solid fa-check"></i>
-                            <p>'.$messages['common'].'</p>
-                        </div>';
+                    if(isset($_SESSION['success_message'])) {
+                        echo '<div class="flash-message"><i class="fa-solid fa-check"></i><p>' . $_SESSION['success_message'] . '</p></div>';
+                        unset($_SESSION['success_message']);
                     }
-                ?>
+                 ?>
 
 
                 <h3 class="m-10">New Customer Registration Form</h3>

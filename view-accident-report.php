@@ -3,6 +3,10 @@
 <?php require_once('inc/connection.php') ?>
 
 <?php
+    if(!isset($_SESSION['first_name'])) {
+        header('Location: agent-login.php');
+    }
+
     $accidentId = $_GET['accident_id'];
 
     $query = "SELECT * FROM Accident WHERE accident_id = '$accidentId' ";

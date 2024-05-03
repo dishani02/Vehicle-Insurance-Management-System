@@ -40,7 +40,7 @@
         $accident_list .= "<td>" . $row['informant_name'] . "</td>";
         $accident_list .= "<td>" . $row['date'] . "</td>";
         $accident_list .= "<td>" . $row['place'] . "</td>";
-        $accident_list .= "<td><a href='view-accident-report.php?accident_id=". $row['accident_id']."' class='btn btn-primary'>View</a></td>";
+        $accident_list .= "<td class='text-center'><div class='action-buttons'><a href='view-accident-report.php?accident_id=". $row['accident_id']."' class='btn btn-primary mr-5'><i class='fa-solid fa-eye'></i> View</a><button class='btn btn-danger delete-button' data-id='" . $row['accident_id']. "'><i class='fa-solid fa-trash'></i> Delete</button></div></td>";
         $accident_list .= "</tr>";
      }
 
@@ -67,9 +67,9 @@
             $messages['place'] = "Place is required";
         } 
 
-        if(!isset($_FILES['images[]'])) {
-            $messages['images'] = "Accident images are required";
-        }
+        // if(!isset($_FILES['images[]'])) {
+        //     $messages['images'] = "Accident images are required";
+        // }
         
 
         if (empty($messages)) {
@@ -106,14 +106,37 @@
                     mysqli_query($connection, $file_query);
                 }
 
-                $messages['common'] = "Claim Intimation successfully added!";
+                $_SESSION['success_message'] = "Claim Intimation successfully added!";
+                header("Location: agent-reports.php");
+                exit();
             } else{
                 echo "Error: " .  $query . "<br>" . mysqli_error($connection);
             } 
         }
-}
-        
+    }     
 ?>
+
+<?php 
+
+    if(isset($_GET['action']) && $_GET['action'] == "delete") {
+        
+        $messages = array();
+
+        if(isset($_GET['id'])) {
+
+            $id = $_GET['id'];
+
+            $delete_query = "DELETE FROM Accident WHERE accident_id = $id";
+
+            if(mysqli_query($connection, $delete_query)) {
+                $_SESSION['success_message'] = "Claim Intimation successfully delete!";
+                header("Location: agent-reports.php");
+                exit();
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,6 +147,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
+    <!--sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -141,11 +166,9 @@
             </ul>
 
             <?php
-                if(isset($messages) && !empty($messages['common'])) {
-                    echo '<div class="flash-message">
-                            <i class="fa-solid fa-check"></i>
-                            <p>'.$messages['common'].'</p>
-                    </div>';
+                if(isset($_SESSION['success_message'])) {
+                    echo '<div class="flash-message"><i class="fa-solid fa-check"></i><p>' . $_SESSION['success_message'] . '</p></div>';
+                    unset($_SESSION['success_message']);
                 }
             ?>
 
@@ -256,6 +279,28 @@
 
     <?php require_once('inc/footer.php') ?>
 
+    <script>
+        var deleteButtons = document.querySelectorAll('.delete-button');
+
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var id = this.getAttribute('data-id');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = 'agent-reports.php?action=delete&id=' + id;
+                    }
+        });
+    });
+});
+    </script>
 </body>
 
 </html>
