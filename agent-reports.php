@@ -6,6 +6,23 @@
     if(!isset($_SESSION['first_name'])) {
         header('Location: agent-login.php');
     }
+
+    $agent_id = $_SESSION['agent_id'];
+
+    $query = "SELECT v.vehicle_id FROM Customer c JOIN Vehicle v ON c.customer_id = v.customer_id WHERE c.agent_id = '$agent_id'";
+
+    $result = mysqli_query($connection, $query);
+
+    if($result) {
+        
+        $vehicle_list = '';
+
+        while($row = mysqli_fetch_array($result)) {
+            $vehicle_list .= "<option value='" . $row['vehicle_id'] . "'>";
+            $vehicle_list .= $row['vehicle_id'];
+            $vehicle_list .= "</option>";
+        }
+    }
 ?>
 
 <?php
@@ -107,7 +124,10 @@
 
                         <div class="form-item flex flex-col">
                             <label for=""> Vehicle ID<span class="required">*</span></label>
-                            <input type="text" name="vehicle_id" placeholder="Vehicle ID">
+                            <select name="vehicle_id">
+                                 <option value="">Select Vehicle Id</option>
+                                 <?php echo $vehicle_list; ?>
+                            </select>
                             <?php
                                 if(isset($messages) && !empty($messages['vehicle_id'])) {
                                      echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
