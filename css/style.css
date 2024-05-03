@@ -30,8 +30,20 @@ a {
   justify-content: space-between;
 }
 
+.align-center {
+  align-items: center;
+}
+
 .m-10 {
   margin: 10px 0px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  text-align: center;
+  justify-content: center;
 }
 
 input[type="text"],
@@ -277,10 +289,11 @@ td {
 
 .sidebar {
   background-color: #eee;
+  min-width: 238px !important;
 }
 
 .sidebar .menu-item {
-  padding: 40px;
+  padding: 40px 35px;
   color: #000;
   font-weight: 400;
   display: flex;
@@ -405,4 +418,12 @@ td {
 
 .login form button {
   justify-content: center;
+}
+
+.view-accident-report .details{
+  gap: 20px;
+}
+
+.view-accident-report .images {
+  gap: 10px;
 }

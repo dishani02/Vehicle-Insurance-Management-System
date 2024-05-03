@@ -84,8 +84,16 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="content">
-                    <h2 class="m-10">Customer Details</h2>
+                    <div class="flex flex-row justify-content-between m-10">
+                        <h2 class="m-10">Customer Details</h2>
+                        <a href="agent-add-customer.php" class="btn btn-primary align-center flex">
+                            <i class="fa-solid fa-plus"> </i> Create Customer
+                        </a>
+                    </div>
+                    
                     <table>
                         <tr>
                             <th>Customer Id</th>

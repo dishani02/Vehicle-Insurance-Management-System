@@ -23,14 +23,21 @@
     <?php require_once('inc/header.php') ?>
 
     <div class="flex">
-        <div class="nav">
-            <?php require_once('inc/agent-sidebar.php') ?>
-        </div>
 
-        <div class="content">
-            content here
-            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-        </div>
+        <?php require_once('inc/agent-sidebar.php') ?>
+
+       <div class="flex flex-col content-wrapper">
+            <ul class="bredcrumb">
+                <li>Dashboard</li>
+                <li><i class="fa-solid fa-chevron-right"></i></li>
+                <li><a href="agent-add-customer.php">Agent Dashboard</a></li>
+            </ul>
+
+            <div class="content">
+                content here
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            </div>
+       </div>
     </div>
 
     <?php require_once('inc/footer.php') ?>

@@ -21,7 +21,7 @@
         }
 
         if(empty($errors)) {
-
+          
             $email = mysqli_real_escape_string($connection, $_POST['email']);
             $password = mysqli_real_escape_string($connection, $_POST['password']);
             $hashed_password = sha1($password);
@@ -37,7 +37,7 @@
                     $user = mysqli_fetch_assoc($result);
 
                     $_SESSION['agent_id'] = $user['agent_id'];
-                    $_SESSION['first_name'] = $user['name'];
+                    $_SESSION['first_name'] = $user['first_name'];
                     
                     header('Location: agent-dashboard.php'); 
                 }
@@ -120,3 +120,5 @@
 </body>
 
 </html>
+
+<?php mysqli_close($connection); ?>
