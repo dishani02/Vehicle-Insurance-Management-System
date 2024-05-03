@@ -1,29 +1,35 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drive Peak | Your Road to Safety and Savings</title>
+    <title>Dashboard | Your Road to Safety and Savings</title>
     <link rel="stylesheet" href="css/style.css">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
-    <!--owl-carousel-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
 </head>
 
 <body>
-  
-        
+    <?php require_once('inc/header.php') ?>
 
-                    <h1>yo yo bro </h1>
-  
+    <div class="container">
+        <div class="flex">
+            <?php require_once('inc/admin-sidebar.php') ?>
+            <div class="flex flex-col content-wrapper">
 
-   
+                <ul class="bredcrumb">
+                    <li>Dashboard</li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="agent-reports.php">Dashboard</a></li>
+                </ul>
 
-   
+               content here
+            </div>
+        </div>
+    </div>
+
+    <?php require_once('inc/footer.php') ?>
 </body>
 
 </html>
