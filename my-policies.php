@@ -1,3 +1,30 @@
+<?php session_start(); ?>
+
+<?php require_once('inc/connection.php') ?>
+
+<?php
+    //get customer id from session 
+    $vehicle_id = $_SESSION['vehicle_id'];
+
+
+    //get  customer's vehicle details
+    $query = "SELECT * FROM Vehicle WHERE customer_id = '$customerId' ";
+
+    $result  = mysqli_query($connection, $query) ;
+
+    $vehicle_list = '';
+
+    while($row = mysqli_fetch_array($result)) {
+        $vehicle_list .= "<tr>";
+        $vehicle_list .= "<td>" . $row['vehicle_id'] . "</td>";
+        $vehicle_list .= "<td>" . $row['chassis_no'] . "</td>";
+        $vehicle_list .= "<td>" . $row['year'] . "</td>";
+        $vehicle_list .= "<td>" . $row['model'] . "</td>";
+        $vehicle_list .= "<td>" . $row['policy_id'] . "</td>";
+        $vehicle_list .= "</tr>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

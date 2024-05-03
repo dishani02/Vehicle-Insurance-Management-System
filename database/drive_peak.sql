@@ -115,31 +115,28 @@ CREATE TABLE Customer_Contact_no(
     PRIMARY KEY(inquiry_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
     FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id_id)
-);*/
+);
+*/
 
 /* coverage Table */
-CREATE TABLE Coverage(
+CREATE TABLE Coverage_type(
+    company_id CHAR(5) NOT NULL,
+    policy_id CHAR(5) NOT NULL,
     coverage_type CHAR(5) NOT NULL,
     description VARCHAR(200),
     PRIMARY KEY(coverage_type)
 );
-/* Policy Table */
+/* Policy Table changed */
 CREATE TABLE Policy(
     company_id CHAR(5) NOT NULL,
     policy_id CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
     start_date VARCHAR(10),
     end_date VARCHAR(25),
     PRIMARY KEY(policy_id),
     FOREIGN KEY(company_id) REFERENCES Insurance_company(company_id)
 );
-/* policy_covarge Table */
-CREATE TABLE Policy_Covarge(
-    policy_id CHAR(5) NOT NULL,
-    coverage_type CHAR(5) NOT NULL,
-    PRIMARY KEY(policy_id, coverage_type),
-    FOREIGN KEY(policy_id) REFERENCES Policy(policy_id),
-    FOREIGN KEY(coverage_type) REFERENCES Coverage(coverage_type)
-);
+
 /* Vehicle Table */
 CREATE TABLE Vehicle(
     customer_id CHAR(5) NOT NULL,
@@ -168,16 +165,27 @@ CREATE TABLE Payment(
 );
 
 /*Claim Table need to create csr table*/
-
-
-
-
-/* Report Table */
 CREATE TABLE Report(
     admin_id CHAR(5) NOT NULL,
     report_id CHAR(5) NOT NULL,
     report_date VARCHAR(10),
     report_type VARCHAR(25),
+    PRIMARY KEY(report_id),
+    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
+);
+
+
+
+
+
+/* Claim Table */
+CREATE TABLE Claim(
+    manager_id  CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    customer_id CHAR(5) NOT NULL,
+    claim_id CHAR(5) NOT NULL,
+    status VARCHAR(25),
+    amount (),
     PRIMARY KEY(report_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
 );
@@ -191,15 +199,12 @@ INSERT INTO Insurance_company VALUES ( 123,"Drive Peak", "Vehicle Insurance", "d
 
 INSERT  INTO Admin VALUES(1,123, "shamal","20093278949","shamal@gmail.com","40bd001563085fc35165329ea1ff5c5ecbdbbeef");
 
-/*Agent contact details*/
-
-
-
-INSERT INTO Customer VALUES ( 1,"kamal", "perera", 1,1, "200274903349 ", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef","437/12","kottawa","pannipitiya");
+/*Admin contact details*/
 INSERT INTO Admin_contact_no VALUES (1,0775956803);
 
-/*Agent Details*/
 
+/*Agent Details*/
+INSERT INTO Agent VALUES ( 123,1, 1,"pavan","200497783267", "pavan@gmail.com", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
 INSERT INTO Agent VALUES ( 123,1, 2,"Saman","200045893267", "saman@gmail.com", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
 INSERT INTO Agent VALUES ( 123,1, 3,"Vihan","200132125680", "vihan@gmail.com", "74b6fbfb697d59b0c52277645ce8044be9181780");
 INSERT INTO Agent VALUES ( 123,1, 4,"Amal","200245789356", "amal@gmail.com", " c9f4ae94e840e771aafe38c47f09f24d577b5943");
@@ -216,7 +221,7 @@ INSERT INTO Agent_contact_no VALUES (5,0752215577);
 INSERT INTO Agent_contact_no VALUES (6,0779044321);
 
 /*Customer Details*/
-
+INSERT INTO Customer VALUES ( 1,"kamal", "perera", 1,1, "200274903349 ", "dishani@gmail.com", "40bd001563085fc35165329ea1ff5c5ecbdbbeef","437/12","kottawa","pannipitiya");
 INSERT INTO Customer VALUES ( 2,"Rusith", "Jayakody", 1,2, "200100895621 ", "rusith@gmail.com", "924e9d8da551f4e24d4a9eb98821f3200fae5956","502/B","Kottawa","Pannipitiya");
 INSERT INTO Customer VALUES ( 3,"Dinuka", "Perera", 1,1, "200290102030", "dinuka@gmail.com", "845d4ca9f8ae8344e6e22b32dcc36f96eeec4448","31/A","Malabe","Athurugiriya");
 INSERT INTO Customer VALUES ( 4,"Asanda", "Guruge", 1,3, "200080542190", "asanda@gmail.com", "9cc5192c1c8a87ad915487d362243692c716f5c2","45/2","Kirulapone","Colombo");
@@ -286,6 +291,10 @@ INSERT INTO Policy_Covarge VALUES (2,2);
 /* Vehicle Table */
 
 INSERT INTO Vehicle VALUES (1, 'GTF2435', 1, 1, 'Toyota Camry',"1HGCM82633A123456", '2020-01-01');
+INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
+INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
+INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
+INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
 INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
 
 
