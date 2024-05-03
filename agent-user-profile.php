@@ -3,6 +3,10 @@
 <?php require_once('inc/connection.php') ?>
 
 <?php
+    if(!isset($_SESSION['first_name']) && !isset($_SESSION['agent_id'])) {
+        header('Location: agent-login.php');
+    }
+
     //get agent id from session 
     $agentId = $_SESSION['agent_id'];
 
