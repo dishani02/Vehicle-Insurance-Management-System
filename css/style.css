@@ -411,3 +411,11 @@ td {
 .login form button {
   justify-content: center;
 }
+
+.view-accident-report .details{
+  gap: 20px;
+}
+
+.view-accident-report .images {
+  gap: 10px;
+}

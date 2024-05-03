@@ -40,14 +40,11 @@
         $accident_list .= "<td>" . $row['informant_name'] . "</td>";
         $accident_list .= "<td>" . $row['date'] . "</td>";
         $accident_list .= "<td>" . $row['place'] . "</td>";
-        $accident_list .= "<td><a href=". $row['accident_id'] ." class='btn btn-primary'>View</a></td>";
+        $accident_list .= "<td><a href='view-accident-report.php?accident_id=". $row['accident_id']."' class='btn btn-primary'>View</a></td>";
         $accident_list .= "</tr>";
-
      }
 
 ?>
-
-
 
 <?php
     if(isset($_POST['submit'])) {
@@ -133,130 +130,129 @@
     <?php require_once('inc/header.php') ?>
 
     <div class="flex">
-            <?php require_once('inc/agent-sidebar.php') ?>
-            
-            <div class="flex flex-col content-wrapper">
+        <?php require_once('inc/agent-sidebar.php') ?>
 
-                <ul class="bredcrumb">
-                    <li>Dashboard</li>
-                    <li><i class="fa-solid fa-chevron-right"></i></li>
-                    <li><a href="agent-reports.php">Reports</a></li>
-                </ul>
+        <div class="flex flex-col content-wrapper">
 
-                <?php
-                    if(isset($messages) && !empty($messages['common'])) {
+            <ul class="bredcrumb">
+                <li>Dashboard</li>
+                <li><i class="fa-solid fa-chevron-right"></i></li>
+                <li><a href="agent-reports.php">Reports</a></li>
+            </ul>
+
+            <?php
+                if(isset($messages) && !empty($messages['common'])) {
                     echo '<div class="flash-message">
                             <i class="fa-solid fa-check"></i>
                             <p>'.$messages['common'].'</p>
-                        </div>';
-                    }
-                ?>
+                    </div>';
+                }
+            ?>
 
+            <h4 class="m-10">Claim Intimation Form</h4>
 
-                <h4 class="text-center">Claim Intimation Form</h4>
-
-                <form action="agent-reports.php" method="post" enctype="multipart/form-data">
-
-
+            <form action="agent-reports.php" method="post" enctype="multipart/form-data">
                 <div class="flex flex-col">
                     <div class=" flex flex-row form">
                         <div class="form-item flex flex-col">
                             <label for=""> Name of the informant <span class="required">*</span></label>
                             <input type="text" name="informant_name" placeholder="Name of the informant">
                             <?php
-                                if(isset($messages) && !empty($messages['informant_name'])) {
-                                     echo '<div class="error required">'.$messages['informant_name'].'</div>';
-                                 }
-                             ?>
+                                    if(isset($messages) && !empty($messages['informant_name'])) {
+                                        echo '<div class="error required">'.$messages['informant_name'].'</div>';
+                                    }
+                                ?>
                         </div>
 
                         <div class="form-item flex flex-col">
                             <label for=""> Vehicle ID<span class="required">*</span></label>
                             <select name="vehicle_id">
-                                 <option value="">Select Vehicle Id</option>
-                                 <?php echo $vehicle_list; ?>
+                                <option value="">Select Vehicle Id</option>
+                                <?php echo $vehicle_list; ?>
                             </select>
                             <?php
-                                if(isset($messages) && !empty($messages['vehicle_id'])) {
-                                     echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
-                                 }
-                             ?>
+                                    if(isset($messages) && !empty($messages['vehicle_id'])) {
+                                        echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
+                                    }
+                                ?>
                         </div>
 
                     </div>
-                </div>
-                <div class="flex flex-col">
+
                     <div class="flex flex-row form">
                         <div class="form-item flex flex-col">
                             <label for=""> Date of the Accident<span class="required">*</span></label>
                             <input type="date" name="date" placeholder="Date of the Accident">
                             <?php
-                                if(isset($messages) && !empty($messages['date'])) {
-                                     echo '<div class="error required">'.$messages['date'].'</div>';
-                                 }
-                             ?>
+                                    if(isset($messages) && !empty($messages['date'])) {
+                                        echo '<div class="error required">'.$messages['date'].'</div>';
+                                    }
+                                ?>
                         </div>
 
                         <div class="form-item flex flex-col">
                             <label for=""> Place of the Accident<span class="required">*</span></label>
                             <input type="text" name="place" placeholder="Place of the Accident">
                             <?php
-                                if(isset($messages) && !empty($messages['place'])) {
-                                     echo '<div class="error required">'.$messages['place'].'</div>';
-                                 }
-                             ?>
+                                    if(isset($messages) && !empty($messages['place'])) {
+                                        echo '<div class="error required">'.$messages['place'].'</div>';
+                                    }
+                                ?>
                         </div>
                     </div>
-                    
-                    <div class="flex flex-col">
-                        <div class=" flex flex-row form">
-                            <div class="form-item flex flex-col">
-                                <label for="">Description of the accident<span class="required">*</span></label>
-                                <textarea type="text" name="description" placeholder="Description of the accident" rows="5"></textarea>
-                                <?php
+
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for="">Description of the accident<span class="required">*</span></label>
+                            <textarea type="text" name="description" placeholder="Description of the accident"
+                                rows="5"></textarea>
+                            <?php
                                     if(isset($messages) && !empty($messages['description'])) {
                                         echo '<div class="error required">'.$messages['description'].'</div>';
                                     }
                                 ?>
-                            </div>
+                        </div>
+                    </div>
 
-                            <div class="form-item flex flex-col">
-                                <label for=""> Add images<span class="required">*</span></label>
-                                <input type="file" name="images[]" placeholder="Add images" multiple>
-                                <?php
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for=""> Add images<span class="required">*</span></label>
+                            <input type="file" name="images[]" placeholder="Add images" multiple>
+                            <?php
                                     if(isset($messages) && !empty($messages['images'])) {
                                         echo '<div class="error required">'.$messages['images'].'</div>';
                                     }
                                 ?>
-                            </div>
                         </div>
                     </div>
+
                     <div class="flex" style="margin-top: 5px">
-                        <button type="submit" name="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
+                        <button type="submit" name="submit" class="btn btn-primary"
+                            style="margin-right: 10px;">Submit</button>
                         <button type="reset" class="btn btn-primary">Reset</button>
                     </div>
                 </div>
             </form>
 
-            <table>
-            <tr>
-                 <th>Vehicle Id</th>
-                 <th>Informant</th>
-                 <th>Date</th>
-                 <th>Place</th>
-                 <th>Action(s)</th>
+            <h4 class="m-10">Accident Reports</h4>
 
-            </tr>
-          
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vehicle Id</th>
+                        <th>Informant</th>
+                        <th>Date</th>
+                        <th>Place</th>
+                        <th>Action(s)</th>
+                    </tr>
+                </thead>
+
                 <tbody>
-                    <?php
-                        echo $accident_list;
-                    ?>
+                    <?php echo $accident_list; ?>
                 </tbody>
-             </table>
-            </div>
-            </div>
+            </table>
         </div>
+    </div>
 
     <?php require_once('inc/footer.php') ?>
 
