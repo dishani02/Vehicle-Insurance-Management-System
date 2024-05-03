@@ -20,11 +20,11 @@
         $vehicle_list .= "<td>" . $row['chassis_no'] . "</td>";
         $vehicle_list .= "<td>" . $row['year'] . "</td>";
         $vehicle_list .= "<td>" . $row['model'] . "</td>";
-        $vehicle_list .= "<td>" . $row['policy_id'] . "</td>";
+        $vehicle_list .= "<td>  <a href='my-policies.php?vehicle_id=".$row['vehicle_id']."' class='btn btn-primary m-10'>View Policy</a> </td>";
         $vehicle_list .= "</tr>";
     }
 
-    
+   
 ?>
 
 <?php
@@ -122,15 +122,14 @@
                     </div>
 
                     <div>
-                        <h2>My vehicles</h2>
+                        <h2 class="m-10">My vehicles</h2>
                         <table>
                             <tr>
                                 <th>Registration Number</th>
                                 <th>Chassis Number</th>
                                 <th>Manufactured year</th>
                                 <th>Model</th>
-                                <th>Policy ID</th>
-
+                                <th>Action</th>
                             </tr>
 
                             <tbody>

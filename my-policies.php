@@ -4,25 +4,27 @@
 
 <?php
     //get customer id from session 
-    $vehicle_id = $_SESSION['vehicle_id'];
+    $vehicle_id = $_GET['vehicle_id'];
+ 
 
 
     //get  customer's vehicle details
-    $query = "SELECT * FROM Vehicle WHERE customer_id = '$customerId' ";
+    $query = "SELECT * FROM Policy WHERE vehicle_id = '$vehicle_id' ";
 
     $result  = mysqli_query($connection, $query) ;
 
-    $vehicle_list = '';
+    $policy_list = '';
 
     while($row = mysqli_fetch_array($result)) {
-        $vehicle_list .= "<tr>";
-        $vehicle_list .= "<td>" . $row['vehicle_id'] . "</td>";
-        $vehicle_list .= "<td>" . $row['chassis_no'] . "</td>";
-        $vehicle_list .= "<td>" . $row['year'] . "</td>";
-        $vehicle_list .= "<td>" . $row['model'] . "</td>";
-        $vehicle_list .= "<td>" . $row['policy_id'] . "</td>";
-        $vehicle_list .= "</tr>";
+        $policy_list .= "<tr>";
+        $policy_list .= "<td>" . $row['policy_id'] . "</td>";
+        $policy_list .= "<td>" . $row['vehicle_id'] . "</td>";
+        $policy_list .= "<td>" . $row['coverage_type'] . "</td>";
+        $policy_list .= "<td>" . $row['start_date'] . "</td>";
+        $policy_list .= "<td>" . $row['end_date'] . "</td>";
+        $policy_list .= "</tr>";
     }
+   
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +54,8 @@
             <ul class="bredcrumb">
                     <li><a href="my-account-dashboard.php">Dashboard</a></li>
                     <li><i class="fa-solid fa-chevron-right"></i></li>
+                    <li><a href="my-vehicles.php">Vehicles</a></li>
+                    <li><i class="fa-solid fa-chevron-right"></i></li>
                     <li><a href="my-policies.php">Policies</a></li>
             </ul>
 
@@ -63,33 +67,13 @@
                         <th>Policy ID</th>
                         <th>Vehicle ID</th>
                         <th>Coverage Type</th>
-                        <th>Duration</th>
                         <th>Registration date</th>
                         <th>Expire Date</th>
-                        <th>status</th>
-                        
-                    </tr>
-
-                    <tr>
-                        <td>213</td>
-                        <td>ty65</td>
-                        <td>full</td>
-                        <td>1 year</td>
-                        <td>2002/08/9</td>
-                        <td>2003/08/9</td>
-                        <td>Active</td>
-                       
-                    </tr> 
+                    </tr>    
                     
-                    <tr>
-                    <td>213</td>
-                        <td>ty65</td>
-                        <td>full</td>
-                        <td>1 year</td>
-                        <td>2002/08/9</td>
-                        <td>2003/08/9</td>
-                        <td>Active</td>
-                    </tr>
+                    <tbody>
+                            <?php echo $policy_list; ?>
+                        </tbody>
                     
                 </table>
 
@@ -202,3 +186,4 @@
 </body>
 
 </html>
+<?php mysqli_close($connection); ?>
