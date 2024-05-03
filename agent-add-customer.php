@@ -80,7 +80,6 @@
             $coverage_type = mysqli_real_escape_string($connection, $_POST['coverage_type']);
             $vehicle_id = mysqli_real_escape_string($connection, $_POST['vehicle_id']);
             $chassis_no = mysqli_real_escape_string($connection, $_POST['chassis_no']);
-            // $coverage_type = mysqli_real_escape_string($connection, $_POST['coverage_type']);
             $year = mysqli_real_escape_string($connection, $_POST['year']);
             $model = mysqli_real_escape_string($connection, $_POST['model']);
 
@@ -147,7 +146,7 @@
 
                 <h3 class="text-center">New Customer Registration Form</h3>
 
-                <form action="" method="post">
+                <form action="agent-add-customer.php" method="post">
 
                     <div class="flex flex-col">
                         <h4>Customer Personal Details</h4>
