@@ -98,6 +98,8 @@
                 
                 if(mysqli_query($connection,  $query_1)) {
                     $messages['common'] = "Customer successfully added!";
+                    header("Location: " . $_SERVER["REQUEST_URI"]);
+                    exit;
                 }else{
                     echo "Error: " .  $query_1 . "<br>" . mysqli_error($connection);
                 }
@@ -149,7 +151,7 @@
                 <form action="agent-add-customer.php" method="post">
 
                     <div class="flex flex-col">
-                        <h4>Customer Personal Details</h4>
+                        <h4 class="m-10">Customer Personal Details</h4>
                         <div class="flex flex-row form">
                             <div class="form-item flex flex-col">
                                 <label for=""> First Name <span class="required">*</span></label>
@@ -230,7 +232,7 @@
                     </div>
 
                     <div class="flex flex-col">
-                        <h4>Customer Vehicle Details</h4>
+                        <h4 class="m-10">Customer Vehicle Details</h4>
 
 
                         <div class="flex flex-row form">

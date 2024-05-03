@@ -28,7 +28,6 @@
 
             $query = "SELECT * FROM customer WHERE email = '{$email}' AND password = '{$hashed_password}'";
 
-
             $result = mysqli_query($connection, $query);
 
             if($result) {
@@ -39,9 +38,6 @@
                     $_SESSION['customer_id'] = $user['customer_id'];
                     $_SESSION['first_name'] = $user['first_name'];
 
-                    echo $user['first_name'];
-
-                    
                     header('Location: my-account-dashboard.php'); 
                 }
                 else{
@@ -87,7 +83,7 @@
                 
                 <div class="flex flex-col">
                     <label for="">E-mail <span class="required">*</span></label>
-                    <input type="email" name="email" placeholder="E-mail address" value="dishani@gmail.com">
+                    <input type="email" name="email" placeholder="E-mail address" value="synadekyf@mailinator.com">
                     <?php
                     if(isset($errors) && !empty($errors['email'])) {
                         echo '<div class="error required">'.$errors['email'].'</div>';

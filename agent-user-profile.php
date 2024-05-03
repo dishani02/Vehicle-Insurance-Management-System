@@ -78,6 +78,8 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $messages['common'] = "Profile successfully updated!";
+            header("Location: " . $_SERVER["REQUEST_URI"]);
+            exit;
         }  
         else {
             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
@@ -127,7 +129,7 @@
             <form action="agent-user-profile.php" method="post">
 
                 <div class="flex flex-col">
-                    <h4> Personal Details </h4>
+                    <h4 class="m-10"> Personal Details </h4>
 
                     <div class="flex flex-row form">
                         <div class="form-item flex flex-col">
@@ -266,4 +268,5 @@
 </body>
 
 </html>
+
 <?php mysqli_close($connection); ?>
