@@ -324,3 +324,10 @@ CREATE TABLE Accident(
 )
 
 
+CREATE TABLE Accident_image(
+    id INT NOT NULL AUTO_INCREMENT,
+    accident_id INT NOT NULL,
+    image VARCHAR(190),
+    PRIMARY KEY(id),
+    FOREIGN KEY(accident_id) REFERENCES Accident(accident_id)
+)
