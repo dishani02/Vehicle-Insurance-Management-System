@@ -39,9 +39,13 @@ CREATE TABLE Agent(
     company_id CHAR(5) NOT NULL,
     admin_id CHAR(5) NOT NULL,
     agent_id CHAR(5) NOT NULL,
-    name VARCHAR(25),
+    first_name VARCHAR(25),
+    last_name VARCHAR(25),
     nic VARCHAR(25),
     email VARCHAR(25),
+    home_no VARCHAR(10) NOT NULL,
+    street VARCHAR(20) NOT NULL,
+    city VARCHAR(10) NOT NULL,
     password VARCHAR(190),
     PRIMARY KEY(agent_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id),
@@ -91,7 +95,7 @@ CREATE TABLE Customer(
     email VARCHAR(25),
     password VARCHAR(190),
     home_no VARCHAR(10) NOT NULL,
-    home_no VARCHAR(20) NOT NULL,
+    street VARCHAR(20) NOT NULL,
     city VARCHAR(10) NOT NULL,
     PRIMARY KEY(customer_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id),
@@ -200,11 +204,11 @@ INSERT INTO Admin_contact_no VALUES (1,0775956803);
 
 /*Agent Details*/
 
-INSERT INTO Agent VALUES ( 123,1, 2,"Saman","200045893267", "saman@gmail.com", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
-INSERT INTO Agent VALUES ( 123,1, 3,"Vihan","200132125680", "vihan@gmail.com", "74b6fbfb697d59b0c52277645ce8044be9181780");
-INSERT INTO Agent VALUES ( 123,1, 4,"Amal","200245789356", "amal@gmail.com", " c9f4ae94e840e771aafe38c47f09f24d577b5943");
-INSERT INTO Agent VALUES ( 123,1, 5,"Praveen", "200066896732", "praveen@gmail.com", "c5c62e82f4f0c6fbcbb0542fd26d05084c6f8fa9");
-INSERT INTO Agent VALUES ( 123,1, 6,"Dinesh", "200156789043", "dinesh@gmail.com", "303b469f296cffecea6cddbcd5ee5b86dbb5ce1e");
+INSERT INTO Agent VALUES ( 123,1, 2,"Saman","Perera", "200045893267", "saman@gmail.com", "12/A", "kottawa","pannipitiya", "6820b09045d624d5b91ea975e13d347a7fc79ac0");
+INSERT INTO Agent VALUES ( 123,1, 3,"Vihan","Perera", "200132125680", "vihan@gmail.com", "14/A", "kottawa","pannipitiya", "74b6fbfb697d59b0c52277645ce8044be9181780");
+INSERT INTO Agent VALUES ( 123,1, 4,"Amal", "Perera","200245789356", "amal@gmail.com", "11/A", "kottawa","pannipitiya", "c9f4ae94e840e771aafe38c47f09f24d577b5943");
+INSERT INTO Agent VALUES ( 123,1, 5,"Praveen", "Perera", "200066896732", "praveen@gmail.com", "124/A", "kottawa","pannipitiya", "c5c62e82f4f0c6fbcbb0542fd26d05084c6f8fa9");
+INSERT INTO Agent VALUES ( 123,1, 6,"Dinesh", "Perera", "200156789043", "dinesh@gmail.com", "125/A", "kottawa","pannipitiya", "303b469f296cffecea6cddbcd5ee5b86dbb5ce1e");
 
 /*Agent contact details*/
 
