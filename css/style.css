@@ -30,6 +30,10 @@ a {
   justify-content: space-between;
 }
 
+.align-center {
+  align-items: center;
+}
+
 .m-10 {
   margin: 10px 0px;
 }
@@ -277,10 +281,11 @@ td {
 
 .sidebar {
   background-color: #eee;
+  min-width: 238px !important;
 }
 
 .sidebar .menu-item {
-  padding: 40px;
+  padding: 40px 35px;
   color: #000;
   font-weight: 400;
   display: flex;

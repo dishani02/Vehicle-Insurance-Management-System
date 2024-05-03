@@ -15,11 +15,6 @@
             <i class="fa-solid fa-chevron-right"></i>
         </a>
 
-        <a href="agent-add-customer.php" class="menu-item">
-            <h3>Add Customer</h3>
-            <i class="fa-solid fa-chevron-right"></i>
-        </a>
-
         <a href="agent-reports.php" class="menu-item">
             <h3>Reports</h3>
             <i class="fa-solid fa-chevron-right"></i>

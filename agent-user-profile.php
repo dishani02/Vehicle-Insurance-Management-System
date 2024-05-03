@@ -78,8 +78,6 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $messages['common'] = "Profile successfully updated!";
-            header("Location: " . $_SERVER["REQUEST_URI"]);
-            exit;
         }  
         else {
             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
