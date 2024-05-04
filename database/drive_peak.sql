@@ -283,6 +283,6 @@ CREATE TABLE Renew_policy(
      coverage_type VARCHAR(25) NOT NULL,
      installment_type VARCHAR(25) NOT NULL,
      PRIMARY KEY(accident_id),
-    FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
+     FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
 
 )
