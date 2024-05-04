@@ -67,6 +67,7 @@
             $messages['place'] = "Place is required";
         } 
 
+        
         // if(!isset($_FILES['images[]'])) {
         //     $messages['images'] = "Accident images are required";
         // }
@@ -220,7 +221,7 @@
                                     if(isset($messages) && !empty($messages['place'])) {
                                         echo '<div class="error required">'.$messages['place'].'</div>';
                                     }
-                                ?>
+                            ?>
                         </div>
                     </div>
 
