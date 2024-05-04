@@ -156,18 +156,31 @@ CREATE TABLE Vehicle(
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
  
 );
-/* Payment Table */
+/* Payment Table add vehicle id and status  */
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
-    customer_id INT NOT NULL,
     admin_id CHAR(5) NOT NULL,
+    customer_id CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
     amount INT(10),
-    payment_date VARCHAR(10),
+    payment_date DATE,
     method VARCHAR(7),
+    status VARCHAR(10),
     PRIMARY KEY(payment_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
-    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
+    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
+
+
+-- INSERT INTO Payment VALUES (001,1,1,1GTF2,'25000',2020-09-45,'online',"successful");
+-- INSERT INTO Payment VALUES (002,1,3,1111,'40000',2020-03-45,'online',"successful");
+-- INSERT INTO Payment VALUES (003,1,1,342,'25000',2021-08-45,'online',"successful");
+-- INSERT INTO Payment VALUES (004,1,2,9999,'40000',2023-03-45,'online',"successful");
+-- INSERT INTO Payment VALUES (005,1,1,447,'25000',2025-05-45,'online',"successful");
+-- INSERT INTO Payment VALUES (006,1,1,ABD23'40000',2023-03-45,'online',"successful");
+
+
 
 /*Claim Table need to create csr table*/
 CREATE TABLE Report(
@@ -189,13 +202,19 @@ CREATE TABLE Claim(
     vehicle_id CHAR(5) NOT NULL,
     customer_id CHAR(5) NOT NULL,
     claim_id CHAR(5) NOT NULL,
+    amount FLOAT(),
+    issued_date DATE ,
     status VARCHAR(25),
-    amount (),
-    PRIMARY KEY(report_id),
-    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
+    PRIMARY KEY(claim_id),
+    FOREIGN KEY(manager_id) REFERENCES Admin(manager_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Admin(vehicle_id),
+    FOREIGN KEY(customer_id) REFERENCES Admin(customer_id)
 );
 
 
+INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
+INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
+INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
 
 
 
@@ -215,6 +234,9 @@ CREATE TABLE Claim(
 
 
 
+
+
+-- new tables
 
 
 
@@ -250,4 +272,17 @@ CREATE TABLE Accident_image(
     image VARCHAR(190),
     PRIMARY KEY(id),
     FOREIGN KEY(accident_id) REFERENCES Accident(accident_id)
+)
+
+CREATE TABLE Renew_policy(
+     renew_id INT NOT NULL AUTO_INCREMENT ,
+     vehicle_id CHAR(5) NOT NULL,
+     contact_no VARCHAR(25) NOT NULL,
+     duration  VARCHAR(25) NOT NULL,
+     insurance_category  VARCHAR(50) NOT NULL,
+     coverage_type VARCHAR(25) NOT NULL,
+     installment_type VARCHAR(25) NOT NULL,
+     PRIMARY KEY(accident_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
+
 )

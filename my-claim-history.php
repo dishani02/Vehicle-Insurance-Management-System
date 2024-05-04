@@ -1,3 +1,56 @@
+<?php session_start(); ?>
+
+<?php require_once('inc/connection.php') ?>
+
+<?php
+    //get customer id from session 
+   $customerId = $_SESSION['customer_id'];
+
+
+    //get  customer's vehicle details
+    $query = "SELECT * FROM Payment WHERE customer_id = '$customerId' ";
+    $query_1 = "SELECT * FROM Claim WHERE customer_id = '$customerId' ";
+
+    $result  = mysqli_query($connection, $query) ;
+    $result_1  = mysqli_query($connection, $query_1) ;
+
+
+    $Payment_list = '';
+
+    while($row = mysqli_fetch_array($result)) {
+        $Payment_list .= "<tr>";
+        $Payment_list .= "<td>" . $row['payment_id'] . "</td>";
+        $Payment_list .= "<td>" . $row['admin_id'] . "</td>";
+        $Payment_list .= "<td>" . $row['customer_id'] . "</td>";
+        $Payment_list .= "<td>" . $row['vehicle_id'] . "</td>";
+        $Payment_list .= "<td>" . $row['amount'] . "</td>";
+        $Payment_list .= "<td>" . $row['payment_date'] . "</td>";
+        $Payment_list .= "<td>" . $row['method'] . "</td>";
+        $Payment_list .= "<td>" . $row['status'] . "</td>";
+        $Payment_list .= "</tr>";
+    }
+
+      $Claim_list = '';
+
+    while($row = mysqli_fetch_array($result_1)) {
+        $Claim_list .= "<tr>";
+        $Claim_list .= "<td>" . $row['manager_id'] . "</td>";
+        $Claim_list .= "<td>" . $row['vehicle_id'] . "</td>";
+        $Claim_list .= "<td>" . $row['customer_id'] . "</td>";
+        $Claim_list .= "<td>" . $row['claim_id'] . "</td>";
+        $Claim_list .= "<td>" . $row['amount'] . "</td>";
+        $Claim_list .= "<td>" . $row['issued_date'] . "</td>";
+        $Claim_list .= "<td>" . $row['status'] . "</td>";
+        $Claim_list .= "</tr>";
+    }
+
+
+
+
+   
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,78 +80,57 @@
                     <li><a href="my-claim-history.php">Claims & Payments History</a></li>
                 </ul>
 
+                <?php
+                if(isset($messages) && !empty($messages['common'])) {
+                    echo '<div class="flash-message">
+                            <i class="fa-solid fa-check"></i>
+                            <p>'.$messages['common'].'</p>
+                        </div>';
+                    }
+                ?>
+
             <div class="content">
                 <h2>Payment History</h2>
                 <table>
                     <tr>
-                        <th>Policy ID</th>
+                        <th>Payment ID</th>
+                        <th>Admin ID</th>
+                        <th>Customer ID</th>
                         <th>Vehicle ID</th>
-                        <th>Coverage Type</th>
                         <th>Amount</th>
-                        <th>Date</th>
+                        <th>payment_date</th>
                         <th>Method</th>
+                        <th>Status</th>
                         
                     </tr>
 
-                    <tr>
-                        <td>213</td>
-                        <td>ty65</td>
-                        <td>full</td>
-                        <td>4500</td>
-                        <td>2002/08/9</td>
-                        <td>online</td>
-                    </tr> 
-                    
-                    <tr>
-                        <td>213</td>
-                        <td>ty65</td>
-                        <td>full</td>
-                        <td>4500</td>
-                        <td>2002/08/9</td>
-                        <td>online</td>
-                    </tr>
-                    
+                    <tbody>
+                    <?php echo $Payment_list; ?>
+                    </tbody>
+
+                   
                 </table>
 
                 <h2>Claims History</h2>
                 <table>
                     <tr>
-                        <th>Policy ID</th>
+                        <th>Manager ID</th>
                         <th>Vehicle ID</th>
-                        <th>Coverage Type</th>
+                        <th>Customer ID</th>
+                        <th>Claim ID</th>
                         <th>Amount</th>
-                        <th>Date</th>
-                        <th>Method</th>
+                        <th>Issued Date</th>
+                        <th>Status</th>
                         
                     </tr>
 
-                    <tr>
-                        <td>213</td>
-                        <td>ty65</td>
-                        <td>full</td>
-                        <td>4500</td>
-                        <td>2002/08/9</td>
-                        <td>online</td>
-                    </tr> 
-                    
-                    <tr>
-                        <td>213</td>
-                        <td>ty65</td>
-                        <td>full</td>
-                        <td>4500</td>
-                        <td>2002/08/9</td>
-                        <td>online</td>
-                    </tr>
+                    <tbody>
+                    <?php echo $Claim_list; ?>
+                    </tbody>
                     
                 </table>
 
               
-
-
-             
-
-
-
             </div>
             </div>
         </div>
@@ -108,3 +140,5 @@
 </body>
 
 </html>
+
+<?php mysqli_close($connection); ?>
