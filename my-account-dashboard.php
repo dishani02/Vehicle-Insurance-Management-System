@@ -61,25 +61,31 @@
 
                 <div class="flex">
                     <ul class="content-wrapper">
-                            <h3 class="content-wrapper m-10"> "Drive Peak Assurances for Your Peace of Mind"</h3>
-                            <li>Tailored coverage options to fit your needs perfectly.</li>
-                            <li>Competitive rates that won't break the bank.</li>
-                            <li>Quick and hassle-free claims process for your convenience.</li>
-                            <li>Dedicated customer support team ready to assist you at any time.</li>
-                            <li> Additional perks like roadside assistance and rental car coverage available.</li>
-                            <li >Peace of mind knowing your vehicle is protected by Drive Peak's reliable insurance.</li>
-                     </ul>
+                        <h3 class="content-wrapper m-10"> "Drive Peak Assurances for Your Peace of Mind"</h3>
+                        <li>Tailored coverage options to fit your needs perfectly.</li>
+                        <li>Competitive rates that won't break the bank.</li>
+                        <li>Quick and hassle-free claims process for your convenience.</li>
+                        <li>Dedicated customer support team ready to assist you at any time.</li>
+                        <li> Additional perks like roadside assistance and rental car coverage available.</li>
+                        <li>Peace of mind knowing your vehicle is protected by Drive Peak's reliable insurance.</li>
+                    </ul>
                 </div>
 
                 <div class="flex m-10">
                     <div class="dash_container m-10">
                         <div class="dash_box">
+                            <a href="">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </a>
                             <h3 class="m-10">Quick Inquiry</h3>
                             <a href="contact-us.php" class="btn btn-primary">Fill The Form</a>
                         </div>
 
                         <div class="dash_box">
-                            <div class="flex flex-col" >
+                            <div class="flex flex-col">
+                                <a href="">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
                                 <h3>Email</h3>
                                 <a href="">info@drivepeak.lk</a>
                             </div>
@@ -112,11 +118,17 @@
                         </div>
 
                         <div class="dash_box">
+                            <a href="">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </a>
                             <h3 class="m-10">Find Our Nearest Branch</h3>
                             <a href="contact-us.php" class="btn btn-primary">find Now </a>
                         </div>
 
                         <div class="dash_box">
+                            <a href="">
+                                <i class="fa-solid fa-download view"></i>
+                            </a>
                             <h3 class="m-10">Drive Peak Policy Book </h3>
                             <a href="contact-us.php" class="btn btn-primary">Download Now</a>
                         </div>
