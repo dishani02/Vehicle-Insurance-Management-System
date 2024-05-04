@@ -62,6 +62,10 @@
             $messages['model'] = "Model is required";
         } 
 
+        if(!isset($_POST['insured_category']) || strlen(trim($_POST['insured_category'])) < 1) {
+            $messages['insured_category'] = "insured_category is required";
+        } 
+
         if(empty($messages)) {
 
             $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
@@ -82,6 +86,9 @@
             $chassis_no = mysqli_real_escape_string($connection, $_POST['chassis_no']);
             $year = mysqli_real_escape_string($connection, $_POST['year']);
             $model = mysqli_real_escape_string($connection, $_POST['model']);
+            $insured_category = mysqli_real_escape_string($connection, $_POST['insured_category']);
+
+
 
             $query = "INSERT INTO Customer (first_name,last_name,admin_id,agent_id,nic,email,password,home_no,street,city) 
             VALUES ('$first_name', '$last_name',1,'$agent_id', ' $nic',  '$email', '$hash_password',' $home_no' ,'$street','$city')";
@@ -102,7 +109,7 @@
 
                         $customerId = $customer['customer_id'];
 
-                        $query_2 = "INSERT INTO Vehicle VALUES ('$customerId', '$vehicle_id',  1, '$coverage_type', '$model', '$chassis_no', '$year')";
+                        $query_2 = "INSERT INTO Vehicle VALUES ('$customerId', '$vehicle_id',  1, '$coverage_type', '$model', '$chassis_no', '$year','$insured_category')";
                         $query_3 = "INSERT INTO Customer_Contact_no VALUES ('$contact_no','$customerId')";
                         
                         mysqli_query($connection,  $query_2);
@@ -309,23 +316,32 @@
 
                             <div class="form-item flex flex-col">
                                 <label for="">Chassis number<span class="required">*</span></label>
-                                <input type="number" name="chassis_no" placeholder="Chassi number">
+                                <input type="number" name="chassis_no" placeholder="Chassis number">
                                 <?php
                                     if(isset($messages) && !empty($messages['chassis_no'])) {
                                         echo '<div class="error required">'.$messages['chassis_no'].'</div>';
                                         }
-                                    ?>
+                                ?>
                             </div>
                         </div>
 
                         <div class="flex flex-row form">
-                            <!-- <div class="form-item flex flex-col">
-                                <label for="">Vehicle Book <span class="required">*</span></label>
-                                <input type="file" name="" placeholder="Vehicle Book">
-                            </div> -->
-
+                        <div class="form-item flex flex-col">
+                            <label for="">Insurance Category<span class="required">*</span></label>
+                            <select>
+                                <option value="Car insurance">Car insurance</option>
+                                <option value="Three-wheeler Insurance">Three-wheeler Insurance</option>
+                                <option value="Mortor-cycle Insurance">Mortor-cycle Insurance</option>
+                                <option value="Commercial Vehicle Insurance">Commercial Vehicle Insurance</option>
+                            </select>
+                            <?php
+                                if(isset($messages) && !empty($messages['insured_category'])) {
+                                    echo '<div class="error required">'.$messages['insured_category'].'</div>';
+                                }
+                            ?>
                         </div>
                     </div>
+                </div>
                     
                     <!-- <div class="flex flex-col">
                         <h4>Customer Policy Details</h4>

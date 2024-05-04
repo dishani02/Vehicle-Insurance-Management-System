@@ -152,6 +152,7 @@ CREATE TABLE Vehicle(
     model VARCHAR(25),
     chassis_no VARCHAR(190),
     year DATE,
+    -- insured_category  VARCHAR(50) NOT NULL,
     PRIMARY KEY(vehicle_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
  
