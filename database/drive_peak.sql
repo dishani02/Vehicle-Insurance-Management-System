@@ -274,15 +274,3 @@ CREATE TABLE Accident_image(
     FOREIGN KEY(accident_id) REFERENCES Accident(accident_id)
 )
 
--- CREATE TABLE Renew_policy(
---      renew_id INT NOT NULL AUTO_INCREMENT ,
---      vehicle_id CHAR(5) NOT NULL,
---      contact_no VARCHAR(25) NOT NULL,
---      duration  VARCHAR(25) NOT NULL,
---      insurance_category  VARCHAR(50) NOT NULL,
---      coverage_type VARCHAR(25) NOT NULL,
---      installment_type VARCHAR(25) NOT NULL,
---      PRIMARY KEY(accident_id),
---      FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
-
--- )
