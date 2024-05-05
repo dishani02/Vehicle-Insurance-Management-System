@@ -428,3 +428,12 @@ td {
 .view-accident-report .images {
   gap: 10px;
 }
+.csr-sidebar {
+  position:fixed;
+  width: 250px;
+  height:100%;
+  background-color: #333;
+  color:white;
+  padding:20px;
+
+}

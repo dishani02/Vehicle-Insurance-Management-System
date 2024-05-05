@@ -1,3 +1,12 @@
+<?php session_start(); ?>
+
+<?php require_once('inc/connection.php') ?>
+
+<?php
+    if(!isset($_SESSION[name]) && !isset($_SESSION['csr_id'])) {
+        header('Location: csr-login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,29 +16,38 @@
     <title>Dashboard | Your Road to Safety and Savings</title>
     <link rel="stylesheet" href="css/style.css">
     <!--font awesome-->
-    <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
     <?php require_once('inc/header.php') ?>
 
-    <div class="container">
-        <div class="flex">
-            <?php require_once('inc/admin-sidebar.php') ?>
-            <div class="flex flex-col content-wrapper">
+    <div class="flex">
 
-                <ul class="bredcrumb">
-                    <li>Dashboard</li>
-                    <li><i class="fa-solid fa-chevron-right"></i></li>
-                    <li><a href="agent-reports.php">Dashboard</a></li>
-                </ul>
+        <?php require_once('inc/csr-sidebar.php') ?>
 
-               content here
+       <div class="flex flex-col content-wrapper">
+            <ul class="bredcrumb">
+                <li>Dashboard</li>
+                <li><i class="fa-solid fa-chevron-right"></i></li>
+                <li><a href="csr-tickets.php">Customer Service Representative Dashboard</a></li>
+            </ul>
+
+            <div class="content">
+                content here
+               
             </div>
-        </div>
+       </div>
     </div>
 
     <?php require_once('inc/footer.php') ?>
+
+    
+
+    
+                
+
+   
 </body>
 
 </html>

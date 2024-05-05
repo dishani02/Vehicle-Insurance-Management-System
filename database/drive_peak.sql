@@ -110,7 +110,7 @@ CREATE TABLE Customer_Contact_no(
 );
 /* inquiry Table */
 
-/*CREATE TABLE Inquiry(
+CREATE TABLE Inquiry(
     customer_id CHAR(5) NOT NULL,
     csr_id CHAR(5) NOT NULL,
     inquiry_id CHAR(5) NOT NULL,
@@ -118,8 +118,8 @@ CREATE TABLE Customer_Contact_no(
     date DATE NOT NULL,
     PRIMARY KEY(inquiry_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
-    FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id_id)
-);*/
+    FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id)
+);
 
 /* coverage Table */
 CREATE TABLE Coverage(
@@ -153,7 +153,6 @@ CREATE TABLE Vehicle(
     model VARCHAR(25),
     chassis_no VARCHAR(190),
     year DATE,
-    -- insured_category  VARCHAR(50) NOT NULL,
     PRIMARY KEY(vehicle_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
     FOREIGN KEY(policy_id) REFERENCES Policy(policy_id),
@@ -251,16 +250,16 @@ INSERT INTO Csr_contact_no VALUES (02,0777804621);
 INSERT INTO Csr_contact_no VALUES (03,0777412368);
 INSERT INTO Csr_contact_no VALUES (04,0777871230);
 INSERT INTO Csr_contact_no VALUES (05,0757862543);
+ 
+/*inquiry table */
 
-/*inquiry 
-
-INSERT INTO Inquiry VALUES (customer_id,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
-INSERT INTO Inquiry VALUES (customer_id,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
-INSERT INTO Inquiry VALUES (customer_id,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");
-INSERT INTO Inquiry VALUES (customer_id,04,0004,"Can i access my insurance policy documents online and how can i request copies if needed?","2019.12.23");
-INSERT INTO Inquiry VALUES (customer_id,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
- got to insert the customer id 
- */
+INSERT INTO Inquiry VALUES (2,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
+INSERT INTO Inquiry VALUES (3,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
+INSERT INTO Inquiry VALUES (4,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");
+INSERT INTO Inquiry VALUES (5,04,0004,"Can i access my insurance policy documents online and how can i request copies if needed?","2019.12.23");
+INSERT INTO Inquiry VALUES (6,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
+ 
+ 
 
 /*Policy details*/
 
@@ -300,36 +299,4 @@ INSERT INTO Coverage VALUES (2,'Comprehensive');
 
 
 
-/* Claim Table */
-CREATE TABLE Claim(
-    manager_id  CHAR(5) NOT NULL,
-    vehicle_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
-    claim_id CHAR(5) NOT NULL,
-    status VARCHAR(25),
-    amount INT(10),
-    PRIMARY KEY(),
-    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
-);
-
-CREATE TABLE Accident(
-    accident_id INT NOT NULL AUTO_INCREMENT,
-    agent_id CHAR(5) NOT NULL,
-    informant_name  VARCHAR(20) NOT NULL,
-    vehicle_id CHAR(5) NOT NULL,
-    date DATE,
-    place  VARCHAR(20) NOT NULL,
-    description VARCHAR(50) NOT NULL,
-    PRIMARY KEY(accident_id),
-    FOREIGN KEY(agent_id ) REFERENCES Agent(agent_id)
-)
-
-
-CREATE TABLE Accident_image(
-    id INT NOT NULL AUTO_INCREMENT,
-    accident_id INT NOT NULL,
-    image VARCHAR(190),
-    PRIMARY KEY(id),
-    FOREIGN KEY(accident_id) REFERENCES Accident(accident_id)
-)
 
