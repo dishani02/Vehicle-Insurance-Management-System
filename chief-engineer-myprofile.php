@@ -3,10 +3,62 @@
 <?php require_once('inc/connection.php') ?>
 
 <?php
-    if(!isset($_SESSION['first_name'])) {
+    if(!isset($_SESSION['name'])) {
         header('Location: chief-engineer-login.php');
     }
 ?>
+
+    <?php
+    if(isset($_POST['submit'])) {
+ 
+     $messages = array();
+ 
+     if(!isset($_POST['name']) || strlen(trim($_POST['name'])) < 1) {
+         $messages['name'] = " Name is required";
+     } 
+ 
+     
+     if(!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
+         $messages['email'] = "Email is required";
+     }  
+     
+     if(!isset($_POST['branch']) || strlen(trim($_POST['branch'])) < 1) {
+         $messages['branch'] = "Branch is required";
+     } 
+      
+     if(!isset($_POST['mobile']) || strlen(trim($_POST['mobile'])) < 1) {
+         $messages['mobile'] = "Mobile number is required";
+     } 
+ 
+     
+     if (empty($messages)) {
+         //update user profile
+         $name = mysqli_real_escape_string($connection, $_POST['name']);
+         $email = mysqli_real_escape_string($connection, $_POST['email']);
+         $branch = mysqli_real_escape_string($connection, $_POST['branch']);
+         $mobile = mysqli_real_escape_string($connection, $_POST['mobile']);
+         
+         $query = "UPDATE CHIEF ENGINEER SET 
+         name = '$name', 
+         email = '$email',
+         branch = '$branch',
+         mobile = '$mobile',
+         WHERE chief_engineer_id = '$chief_engineerId'";
+ 
+         $result = mysqli_query($connection, $query);
+ 
+         if($result) {
+             $_SESSION['name'] = $name;
+             $_SESSION['success_message'] = "Profile successfully updated!";
+             header("Location: Chief Engineer-profile.php");
+             exit();
+         }  
+         else {
+             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
+         }
+     }
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,13 +97,10 @@
                             <input type="text" name="" placeholder="Branch Name">
                         </div>
                         <div>
-                            <label for="">MOBILE</label>
-                            <input type="text" name="" placeholder="Contact number">
+                            <label for="">MOBILE NUMBER</label>
+                            <input type="number" name="" placeholder="Contact number">
                         </div>
-                        <div>
-                            <label for=""> ADDRESS</label>
-                            <textarea name="address" rows="3" cols="50" placeholder="Address"></textarea>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
