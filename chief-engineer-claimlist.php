@@ -6,7 +6,7 @@
 <?php
 
     //get customer id from session 
-   $engineerid = $_SESSION['engineer_id'];
+   $engineer_id = $_SESSION['engineer_id'];
 
 
     //get  customer's vehicle details
@@ -19,9 +19,8 @@
     $claim_list = '';
 
     while($row = mysqli_fetch_array($result)) {
+
         $claim_list .= "<tr>";
-        
-    
         $claim_list .= "<td>" . $row['claim_intimation_id'] . "</td>";
         $claim_list .= "<td>" . $row['insured_name'] . "</td>";
         $claim_list .= "<td>" . $row['vehicle_no'] . "</td>";
@@ -67,7 +66,7 @@
 
                 <ul class="bredcrumb">
                     <li><i class="fa-solid fa-chevron-right"></i></li>
-                    <li><a href="chief-engineer-claimlist.php">Claim List</a></li>
+                    <li><a href="chief-engineer-claim_list.php">Claim List</a></li>
                 </ul>
 
                 <?php
