@@ -1,54 +1,59 @@
 <?php session_start(); ?>
 
-<?php require_once('inc/connection.php') ?>
+<?php require_once('inc/connection.php'); ?>
 
 <?php
 
-    if(isset($_SESSION[name])) {
-        header('Location: index.php');
+if(isset($_SESSION['name'])) {
+    header('Location: index.php');
+    exit; // Add an exit after redirection to stop further execution
+}
+
+if(isset($_POST['submit'])) {
+
+    $errors = array();
+
+    if(!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
+        $errors['email'] = "E-mail is required";
     }
 
-    if(isset($_POST['submit'])) {
+    if(!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
+        $errors['password'] = "Password is required";
+    }
 
-        $errors = array();
+    if(empty($errors)) {
+      
+        $email = mysqli_real_escape_string($connection, $_POST['email']);
 
-        if(!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
-            $errors['email'] = "E-mail is required";
-        }
+        $query = "SELECT * FROM csr WHERE email = ?";
 
-        if(!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
-            $errors['password'] = "Password is required";
-        }
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        if(empty($errors)) {
-          
-            $email = mysqli_real_escape_string($connection, $_POST['email']);
-            $password = mysqli_real_escape_string($connection, $_POST['password']);
-            $hashed_password = password_hash($password,PASSWORD_DEFAULT);
+        if($result) {
+            if (mysqli_num_rows($result) == 1) {
 
-            $query = "SELECT * FROM csr WHERE email = '{$email}' AND password = '{$hashed_password}'";
+                $user = mysqli_fetch_assoc($result);
 
-
-            $result = mysqli_query($connection, $query);
-
-            if($result) {
-                if (mysqli_num_rows($result) == 1) {
-
-                    $user = mysqli_fetch_assoc($result);
-
+                if (password_verify($_POST['password'], $user['password'])) {
                     $_SESSION['csr_id'] = $user['csr_id'];
-                    $_SESSION[name] = $user[name];
+                    $_SESSION['name'] = $user['name'];
                     
-                    header('Location: csr-dashboard.php'); 
-                }
-                else{
+                    header('Location: csr-dashboard.php');
+                    exit; // Add an exit after redirection to stop further execution
+                } else {
                     $errors['common'] = 'Invalid email / password';
                 }
             } else {
-                $errors['common'] = "Database error!";
+                $errors['common'] = 'Invalid email / password';
             }
+        } else {
+            $errors['common'] = "Database error!";
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,63 +69,11 @@
 </head>
 
 <body>
-    <?php require_once('inc/header.php') ?>
+    <?php require_once('inc/header.php'); ?>
 
     <div class="container">
         <div class="login flex">
 
             <form action="csr-login.php" method="post">
 
-                <div class="flex flex-col">
-                    <?php
-                        if(isset($errors) && !empty($errors['common'])) {
-                        echo '<div class="error required">'.$errors['common'].'</div>';
-                        }
-                    ?>
-                </div>
-
-                <div class="flex flex-col welcome">
-                    <h3>Hello</h3>
-                    <p>Please login to continue</p>
-                </div>
-                
-                <div class="flex flex-col">
-                    <label for="">E-mail <span class="required">*</span></label>
-                    <input type="email" name="email" placeholder="E-mail address" value="hafsarifai01@gmail.com">
-                    <?php
-                    if(isset($errors) && !empty($errors['email'])) {
-                        echo '<div class="error required">'.$errors['email'].'</div>';
-                    }
-                ?>
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="">Password <span class="required">*</span></label>
-                    <input type="password" name="password" placeholder="Password" value="ot7">
-                    <?php
-                    if(isset($errors) && !empty($errors['password'])) {
-                        echo '<div class="error required">'.$errors['password'].'</div>';
-                    }
-                ?>
-                </div>
-
-                <div class="flex forget-password">
-                    <p>Forgot Password ?</p>
-                    <a href="#">Reset Here</a>
-                </div>
-
-                <div class="flex flex-col">
-                    <button type="submit" name="submit" class="btn btn-primary">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    
-
-    <?php require_once('inc/footer.php') ?>
-</body>
-
-</html>
-
-<?php mysqli_close($connection); ?>
+                <div class="flex

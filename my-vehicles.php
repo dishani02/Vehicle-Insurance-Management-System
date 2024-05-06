@@ -20,11 +20,11 @@
         $vehicle_list .= "<td>" . $row['chassis_no'] . "</td>";
         $vehicle_list .= "<td>" . $row['year'] . "</td>";
         $vehicle_list .= "<td>" . $row['model'] . "</td>";
-        $vehicle_list .= "<td>" . $row['policy_id'] . "</td>";
+        $vehicle_list .= "<td>  <a href='my-policies.php?vehicle_id=".$row['vehicle_id']."' class='btn btn-primary m-10'>View Policy</a> </td>";
         $vehicle_list .= "</tr>";
     }
 
-    
+   
 ?>
 
 <?php
@@ -118,92 +118,18 @@
                 <div class="content">
 
                     <div class="flex flex-col">
-                        <form action="my-vehicles.php" method="post">
 
-                        <h3>Add New Vehicle</h3>
-
-                            <div class="flex flex-row form">
-                                <div class="form-item flex flex-col">
-                                    <label for="">Registration Number<span class="required">*</span></label>
-                                    <input type="text" name="vehicle_id" placeholder="Registration Number" max="7" min="6">
-                                    <?php
-                                        if(isset($messages) && !empty($messages['vehicle_id'])) {
-                                            echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
-                                        }
-                                    ?>
-                                </div>
-                                
-                                <div class="form-item flex flex-col">
-                                    <label for="">Chassis Number<span class="required">*</span></label>
-                                    <input type="text" name="chassis_no" placeholder="Chassis Number">
-                                    <?php
-                                        if(isset($messages) && !empty($messages['chassis_no'])) {
-                                            echo '<div class="error required">'.$messages['chassis_no'].'</div>';
-                                        }
-                                    ?>
-                                </div>
-                            </div>
-                           
-                            <div class="flex flex-row form">
-                                <div class="form-item flex flex-col">
-                                    <label for="">Coverage Type<span class="required">*</span></label>
-                                    <select name="coverage_type" id="">
-                                        <option value="">Select Coverage Type</option>
-                                        <option value="1">Third Party</option>
-                                        <option value="2">Comprehensive</option>
-                                    </select>
-                                    <?php
-                                        if(isset($messages) && !empty($messages['coverage_type'])) {
-                                            echo '<div class="error required">'.$messages['coverage_type'].'</div>';
-                                        }
-                                    ?>
-                                </div>
-                                
-                                <div class="form-item flex flex-col">
-                                    <label for="">Manufactured year<span class="required">*</span></label>
-                                    <input type="number" min="1900" max="2099" step="1" value="2024" name="year" placeholder="Manufactured year" />
-                                    <?php
-                                        if(isset($messages) && !empty($messages['year'])) {
-                                            echo '<div class="error required">'.$messages['year'].'</div>';
-                                        }
-                                    ?>
-                                </div>
-                            </div>
-                            
-                            <div class="flex flex-row form">
-                                <div class="form-item flex flex-col">
-                                    <label for="">Model<span class="required">*</span></label>
-                                    <input type="text" name="model" placeholder="Model">
-                                    <?php
-                                        if(isset($messages) && !empty($messages['model'])) {
-                                            echo '<div class="error required">'.$messages['model'].'</div>';
-                                        }
-                                    ?>
-                                </div>
-                            </div>
-
-                            
-                            <div class="flex" style="margin-top: 10px">
-                                <button type="reset"  class="btn btn-primary"
-                                    style="margin-right: 10px;">Reset</button>
-                                <button type="submit" name="submit" class="btn btn-primary"
-                                    style="margin-right: 10px;">Save</button>
-                            </div>
-
-
-                        </form>
                     </div>
 
                     <div>
-                        <h2>My vehicles</h2>
+                        <h2 class="m-10">My vehicles</h2>
                         <table>
                             <tr>
                                 <th>Registration Number</th>
                                 <th>Chassis Number</th>
                                 <th>Manufactured year</th>
                                 <th>Model</th>
-                                <th>Policy ID</th>
-
+                                <th>Action</th>
                             </tr>
 
                             <tbody>
@@ -221,4 +147,3 @@
 
 </html>
 
-<?php mysqli_close($connection); ?>

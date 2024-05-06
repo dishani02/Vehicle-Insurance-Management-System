@@ -118,65 +118,76 @@ CREATE TABLE Inquiry(
     date DATE NOT NULL,
     PRIMARY KEY(inquiry_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
+<<<<<<< HEAD
     FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id)
 );
+=======
+    FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id_id)
+);
+*/
+>>>>>>> 19352e3053acebec7534e30b6fc84e9b42749703
 
-/* coverage Table */
-CREATE TABLE Coverage(
+/* coverage Table changed */
+CREATE TABLE Coverage_type(
+    company_id CHAR(5) NOT NULL,
+    policy_id CHAR(5) NOT NULL,
     coverage_type CHAR(5) NOT NULL,
     description VARCHAR(200),
     PRIMARY KEY(coverage_type)
 );
-/* Policy Table */
+/* Policy Table changed  */
 CREATE TABLE Policy(
     company_id CHAR(5) NOT NULL,
     policy_id CHAR(5) NOT NULL,
-    start_date VARCHAR(10),
-    end_date VARCHAR(25),
-    PRIMARY KEY(policy_id),
-    FOREIGN KEY(company_id) REFERENCES Insurance_company(company_id)
-);
-/* policy_covarge Table */
-CREATE TABLE Policy_Covarge(
-    policy_id CHAR(5) NOT NULL,
-    coverage_type CHAR(5) NOT NULL,
-    PRIMARY KEY(policy_id, coverage_type),
-    FOREIGN KEY(policy_id) REFERENCES Policy(policy_id),
-    FOREIGN KEY(coverage_type) REFERENCES Coverage(coverage_type)
-);
-/* Vehicle Table */
-CREATE TABLE Vehicle(
-    customer_id INT NOT NULL,
     vehicle_id CHAR(5) NOT NULL,
-    policy_id CHAR(5) NOT NULL,
     coverage_type VARCHAR(25) NOT NULL,
+    start_date VARCHAR(10),
+    end_date VARCHAR(25),  
+    PRIMARY KEY(policy_id),
+    FOREIGN KEY(company_id) REFERENCES Insurance_company(company_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
+);
+
+
+/* Vehicle Table */
+
+CREATE TABLE Vehicle(
+    customer_id CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
     model VARCHAR(25),
     chassis_no VARCHAR(190),
     year DATE,
     PRIMARY KEY(vehicle_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
-    FOREIGN KEY(policy_id) REFERENCES Policy(policy_id),
-    FOREIGN KEY(coverage_type) REFERENCES Coverage(coverage_type)
+ 
 );
-/* Payment Table */
+/* Payment Table add vehicle id and status  */
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
-    customer_id INT NOT NULL,
     admin_id CHAR(5) NOT NULL,
+    customer_id CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
     amount INT(10),
-    payment_date VARCHAR(10),
+    payment_date DATE,
     method VARCHAR(7),
+    status VARCHAR(10),
     PRIMARY KEY(payment_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
-    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
+    FOREIGN KEY(admin_id) REFERENCES Admin(admin_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
 
+
+-- INSERT INTO Payment VALUES (001,1,1,1GTF2,'25000',2020-09-45,'online',"successful");
+-- INSERT INTO Payment VALUES (002,1,3,1111,'40000',2020-03-45,'online',"successful");
+-- INSERT INTO Payment VALUES (003,1,1,342,'25000',2021-08-45,'online',"successful");
+-- INSERT INTO Payment VALUES (004,1,2,9999,'40000',2023-03-45,'online',"successful");
+-- INSERT INTO Payment VALUES (005,1,1,447,'25000',2025-05-45,'online',"successful");
+-- INSERT INTO Payment VALUES (006,1,1,ABD23'40000',2023-03-45,'online',"successful");
+
+
+
 /*Claim Table need to create csr table*/
-
-
-
-
-/* Report Table */
 CREATE TABLE Report(
     admin_id CHAR(5) NOT NULL,
     report_id CHAR(5) NOT NULL,
@@ -186,6 +197,7 @@ CREATE TABLE Report(
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
 );
 
+<<<<<<< HEAD
 -- insert data
 
 INSERT INTO Insurance_company VALUES ( 123,"Drive Peak", "Vehicle Insurance", "dishani@gmail.com", "123/4,colombo");
@@ -282,21 +294,68 @@ INSERT INTO Coverage VALUES (2,"Third Party");
 
 INSERT INTO Policy_Coverage VALUES (1,1);
 INSERT INTO Policy_Coverage VALUES (2,2);
+=======
+>>>>>>> 19352e3053acebec7534e30b6fc84e9b42749703
 
 
 
 
-/* Vehicle Table */
+/* Claim Table */
+CREATE TABLE Claim(
+    manager_id  CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    customer_id CHAR(5) NOT NULL,
+    claim_id CHAR(5) NOT NULL,
+    amount FLOAT(),
+    issued_date DATE ,
+    status VARCHAR(25),
+    PRIMARY KEY(claim_id),
+    FOREIGN KEY(manager_id) REFERENCES Admin(manager_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Admin(vehicle_id),
+    FOREIGN KEY(customer_id) REFERENCES Admin(customer_id)
+);
 
-INSERT INTO Vehicle VALUES (1, 'GTF2435', 1, 1, 'Toyota Camry',"1HGCM82633A123456", '2020-01-01');
-INSERT INTO Vehicle VALUES (1, "ABD2345", 1, 2, 'Honda Civic',"1HGCM82633A1278463", '2018-05-01');
 
-
-/* Coverage Table */
-
-INSERT INTO Coverage VALUES (1,'Third party');
-INSERT INTO Coverage VALUES (2,'Comprehensive');
+INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
+INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
+INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- new tables
+
+
+
+
+
+
+-- CREATE TABLE Renew_policy(
+--      renew_id INT NOT NULL AUTO_INCREMENT ,
+--      vehicle_id CHAR(5) NOT NULL,
+--      contact_no VARCHAR(25) NOT NULL,
+--      duration  VARCHAR(25) NOT NULL,
+--      insurance_category  VARCHAR(50) NOT NULL,
+--      coverage_type VARCHAR(25) NOT NULL,
+--      installment_type VARCHAR(25) NOT NULL,
+--      PRIMARY KEY(accident_id),
+--      FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
+
+-- )
