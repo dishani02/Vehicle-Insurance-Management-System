@@ -34,7 +34,9 @@
             </ul>
 
             <div class="content">
-                content here
+
+                Welcome! 
+                
                 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
             </div>
        </div>
