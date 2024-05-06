@@ -29,6 +29,7 @@
                 <a href="login.php">Login</a>
                 <a href="register.php">Register</a>
                 <a href="agent-login.php">Agent Login</a>
+                <a href="csr-login.php">CSR Login</a>
             </div>
         </div>
 

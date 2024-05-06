@@ -24,9 +24,9 @@
           
             $email = mysqli_real_escape_string($connection, $_POST['email']);
             $password = mysqli_real_escape_string($connection, $_POST['password']);
-            $hashed_password = sha1($password);
+           
 
-            $query = "SELECT * FROM agent WHERE email = '{$email}' AND password = '{$hashed_password}'";
+            $query = "SELECT * FROM csr WHERE email = '{$email}' AND password = '{$password}'";
 
 
             $result = mysqli_query($connection, $query);
@@ -36,10 +36,10 @@
 
                     $user = mysqli_fetch_assoc($result);
 
-                    $_SESSION['agent_id'] = $user['agent_id'];
-                    $_SESSION['first_name'] = $user['first_name'];
+                    $_SESSION['csr_id'] = $user['csr_id'];
+                    $_SESSION['first_name'] = $user['name'];
                     
-                    header('Location: agent-dashboard.php'); 
+                    header('Location: csr-dashboard.php'); 
                 }
                 else{
                     $errors['common'] = 'Invalid email / password';
@@ -57,7 +57,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Login | Your Road to Safety and Savings</title>
+    <title>CSR Login | Your Road to Safety and Savings</title>
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -69,7 +69,7 @@
     <div class="container">
         <div class="login flex">
 
-            <form action="agent-login.php" method="post">
+            <form action="csr-login.php" method="post">
 
                 <div class="flex flex-col">
                     <?php
@@ -80,13 +80,13 @@
                 </div>
 
                 <div class="flex flex-col welcome">
-                    <h3>Hello, there,</h3>
+                    <h3>Hello there !</h3>
                     <p>Please login to continue</p>
                 </div>
                 
                 <div class="flex flex-col">
                     <label for="">E-mail <span class="required">*</span></label>
-                    <input type="email" name="email" placeholder="E-mail address" value="dishani@gmail.com">
+                    <input type="email" name="email" placeholder="E-mail address" value="hafsarifai01@gmail.com">
                     <?php
                     if(isset($errors) && !empty($errors['email'])) {
                         echo '<div class="error required">'.$errors['email'].'</div>';
@@ -96,7 +96,7 @@
 
                 <div class="flex flex-col">
                     <label for="">Password <span class="required">*</span></label>
-                    <input type="password" name="password" placeholder="Password" value="123">
+                    <input type="password" name="password" placeholder="Password" value="ot7">
                     <?php
                     if(isset($errors) && !empty($errors['password'])) {
                         echo '<div class="error required">'.$errors['password'].'</div>';
