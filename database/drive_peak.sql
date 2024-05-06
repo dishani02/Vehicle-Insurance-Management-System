@@ -118,8 +118,8 @@ CREATE TABLE Inquiry(
     date DATE NOT NULL,
     PRIMARY KEY(inquiry_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
---     FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id)
--- );
+    FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id)
+ );
 --     FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id_id)
 -- );
 */

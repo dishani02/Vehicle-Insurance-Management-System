@@ -39,11 +39,11 @@
         $messages = array();
 
         if(!isset($_POST['vehicle_id']) || strlen(trim($_POST['vehicle_id'])) < 1) {
-            $messages['vehicle_id'] = "vehicle_id is required";
+            $messages['vehicle_id'] = "vehicle id is required";
         }
         
         if(!isset($_POST['contact_no']) || strlen(trim($_POST['contact_no'])) < 1) {
-            $messages['contact_no'] = "contact_no is required";
+            $messages['contact_no'] = "contact no is required";
         }
 
         if(!isset($_POST['duration']) || strlen(trim($_POST['duration'])) < 1) {
@@ -51,15 +51,15 @@
         }
 
         if(!isset($_POST['insurance_category']) || strlen(trim($_POST['insurance_category'])) < 1) {
-            $messages['insurance_category'] = "insurance_category is required";
+            $messages['insurance_category'] = "insurance category is required";
         } 
         
         if(!isset($_POST['coverage_type']) || strlen(trim($_POST['coverage_type'])) < 1) {
-            $messages['coverage_type'] = "coverage_type is required";
+            $messages['coverage_type'] = "coverage type is required";
         } 
         
         if(!isset($_POST['installment_type']) || strlen(trim($_POST['installment_type'])) < 1) {
-            $messages['installment_type'] = "installment_type is required";
+            $messages['installment_type'] = "installment type is required";
         } 
 
         if (empty($messages)) {
@@ -103,9 +103,7 @@
     <div class="container">
         <div class="flex">
 
-            <div class="nav">
                 <?php require_once('inc/customer-dash.php') ?>
-            </div>
 
             <div class="flex flex-col content-wrapper">
 
@@ -143,14 +141,9 @@
                 </table>
 
 
-
-
-
-
-
                 <h4 class="text-center">Renew Policies Form</h4>
 
-                <form action="my-policies.php" method="post">
+                <form action="my-policies.php?vehicle_id=<?php echo $_GET['vehicle_id'];  ?>" method="post">
                     <div class="flex flex-row form">
                             <div class="form-item flex flex-col">
                                 <label for=""> Current Vehicle ID <span class="required">*</span></label>
@@ -241,7 +234,7 @@
                     <div>
                         <div class="flex" style="margin-top: 10px">
                             <button type="submit" name="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
-                            <button type="reset" class="btn btn-primary">Reset</button>
+                            <button type="reset" class="btn btn-primary"><a href="my-policies.php">Reset</a></button>
                         </div>
                 </form>
 
