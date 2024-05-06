@@ -11,17 +11,17 @@ if(!isset($_SESSION['name']) && !isset($_SESSION['csr_id'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Your Road to Safety and Savings</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Add Font Awesome CSS link -->
+    Add Font Awesome CSS link
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <?php require_once('inc/header.php'); ?>
+    <?php require_once('inc/header.php'); ?> -->
 
     <div class="flex">
 

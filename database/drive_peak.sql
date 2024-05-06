@@ -118,14 +118,11 @@ CREATE TABLE Inquiry(
     date DATE NOT NULL,
     PRIMARY KEY(inquiry_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
-<<<<<<< HEAD
-    FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id)
-);
-=======
-    FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id_id)
-);
+--     FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id)
+-- );
+--     FOREIGN KEY(Csr_id) REFERENCES Csr(Csr_id_id)
+-- );
 */
->>>>>>> 19352e3053acebec7534e30b6fc84e9b42749703
 
 /* coverage Table changed */
 CREATE TABLE Coverage_type(
@@ -149,18 +146,18 @@ CREATE TABLE Policy(
 );
 
 
-/* Vehicle Table */
+-- /* Vehicle Table */
 
-CREATE TABLE Vehicle(
-    customer_id CHAR(5) NOT NULL,
-    vehicle_id CHAR(5) NOT NULL,
-    model VARCHAR(25),
-    chassis_no VARCHAR(190),
-    year DATE,
-    PRIMARY KEY(vehicle_id),
-    FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
+-- CREATE TABLE Vehicle(
+--     customer_id CHAR(5) NOT NULL,
+--     vehicle_id CHAR(5) NOT NULL,
+--     model VARCHAR(25),
+--     chassis_no VARCHAR(190),
+--     year DATE,
+--     PRIMARY KEY(vehicle_id),
+--     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
  
-);
+-- );
 /* Payment Table add vehicle id and status  */
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
@@ -197,7 +194,6 @@ CREATE TABLE Report(
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
 );
 
-<<<<<<< HEAD
 -- insert data
 
 INSERT INTO Insurance_company VALUES ( 123,"Drive Peak", "Vehicle Insurance", "dishani@gmail.com", "123/4,colombo");
@@ -263,13 +259,13 @@ INSERT INTO Csr_contact_no VALUES (03,0777412368);
 INSERT INTO Csr_contact_no VALUES (04,0777871230);
 INSERT INTO Csr_contact_no VALUES (05,0757862543);
  
-/*inquiry table */
+-- /*inquiry table */
 
-INSERT INTO Inquiry VALUES (2,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
-INSERT INTO Inquiry VALUES (3,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
-INSERT INTO Inquiry VALUES (4,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");
-INSERT INTO Inquiry VALUES (5,04,0004,"Can i access my insurance policy documents online and how can i request copies if needed?","2019.12.23");
-INSERT INTO Inquiry VALUES (6,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
+-- INSERT INTO Inquiry VALUES (2,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
+-- INSERT INTO Inquiry VALUES (3,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
+-- INSERT INTO Inquiry VALUES (4,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");
+-- INSERT INTO Inquiry VALUES (5,04,0004,"Can i access my insurance policy documents online and how can i request copies if needed?","2019.12.23");
+-- INSERT INTO Inquiry VALUES (6,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
  
  
 
@@ -294,31 +290,29 @@ INSERT INTO Coverage VALUES (2,"Third Party");
 
 INSERT INTO Policy_Coverage VALUES (1,1);
 INSERT INTO Policy_Coverage VALUES (2,2);
-=======
->>>>>>> 19352e3053acebec7534e30b6fc84e9b42749703
 
 
 
 
-/* Claim Table */
-CREATE TABLE Claim(
-    manager_id  CHAR(5) NOT NULL,
-    vehicle_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
-    claim_id CHAR(5) NOT NULL,
-    amount FLOAT(),
-    issued_date DATE ,
-    status VARCHAR(25),
-    PRIMARY KEY(claim_id),
-    FOREIGN KEY(manager_id) REFERENCES Admin(manager_id),
-    FOREIGN KEY(vehicle_id) REFERENCES Admin(vehicle_id),
-    FOREIGN KEY(customer_id) REFERENCES Admin(customer_id)
-);
+-- /* Claim Table */
+-- CREATE TABLE Claim(
+--     manager_id  CHAR(5) NOT NULL,
+--     vehicle_id CHAR(5) NOT NULL,
+--     customer_id CHAR(5) NOT NULL,
+--     claim_id CHAR(5) NOT NULL,
+--     amount FLOAT(),
+--     issued_date DATE ,
+--     status VARCHAR(25),
+--     PRIMARY KEY(claim_id),
+--     FOREIGN KEY(manager_id) REFERENCES Admin(manager_id),
+--     FOREIGN KEY(vehicle_id) REFERENCES Admin(vehicle_id),
+--     FOREIGN KEY(customer_id) REFERENCES Admin(customer_id)
+-- );
 
 
-INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
-INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
-INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
+-- INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
+-- INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
+-- INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
 
 
 

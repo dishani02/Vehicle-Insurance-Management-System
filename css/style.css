@@ -429,8 +429,7 @@ td {
 .view-accident-report .images {
   gap: 10px;
 }
-<<<<<<< HEAD
-.csr-sidebar {
+/* .csr-sidebar {
   position:fixed;
   width: 250px;
   height:100%;
@@ -439,7 +438,6 @@ td {
   padding:20px;
 
 }
-=======
 
 
 
@@ -462,6 +460,5 @@ td {
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-}
+} */
 
->>>>>>> 19352e3053acebec7534e30b6fc84e9b42749703
