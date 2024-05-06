@@ -431,3 +431,58 @@ td {
 }
 
 
+
+.dash_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash_box{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  border: 1px ;
+  margin: 0;
+  align-items: center;
+  min-width: 285px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+
+.otp {
+  border-radius: 20px;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  background-color: #f1a541;
+  border-color: #f1a541;
+}
+
+.pay{
+  border-radius: 20px;
+  padding: 5px;
+  width: 350px;
+  height: 50px;
+}
+
+.payment-wrapper {
+  max-width: 450px;
+  margin: auto;
+}
+
+.card-method {
+  gap: 25px;
+  justify-content: center;
+}
+
+.card-method input {
+  margin: 0px 10px;
+}
+.card-method i{
+  font-size: 35px;
+}
