@@ -21,37 +21,34 @@
         <div class="slider">
             <h2>Your Path to Safe Journeys</h2>
             <div class="owl-carousel">
-                <img src="https://www.srilankainsurance.com/assets/images/60th-anniversary-en.jpg" alt="" style="width: 100%">
+                <img src="https://www.srilankainsurance.com/assets/images/60th-anniversary-en.jpg" alt=""
+                    style="width: 100%">
                 <img src="https://www.srilankainsurance.com/assets/images/banner-4-en.jpg" alt="">
                 <img src="https://www.srilankainsurance.com/assets/images/home-protect-lite-banner-new.png" alt="">
             </div>
         </div>
-    </div>
+        <div class="flex flex-col">
+            <h2>Hello!</h2>
+            <h3> We're DrivePeak Insurance</h3>
 
-    <div class="flex flex-col">
-            <h2>Drive peak</h2>
-            <p>DrivePeak is your trusted partner in vehicle insurance management. Our cutting-edge platform harnesses the
-                latest technology to deliver seamless efficient, and personalized solutions tailored to your needs
-                With DrivePeak,you can navigate insurance processes effortlessly, ensuring peace of mind and financial
-                security on the road ahead.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dolor optio totam iusto et, libero atque ipsa 
-               eum, repellendus modi sapiente nesciunt enim! Quis cumque maxime dolor omnis numquam sint!</p>
+            <p>DrivePeak is your trusted partner in vehicle insurance management.</p>
+            <p>Our cutting-edge platform harnesses the latest technology to deliver
+            <p>seamless efficient, and personalized solutions tailored to your needs</p>
+            <p>With DrivePeak,you can navigate insurance processes effortlessly,</p>
+            <p>peace of mind and financial security the road ahead.</p>
         </div>
 
         <div class="flex flex-col">
-                
-                <div class="flex box">
-                    <div class="flex flex-col">
-                        <a href="">
-                            <img src="" alt="" class="img">
-                        </a>
-                        <div>
-                            <h3>Car Insurance</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet eaque dolorum tempore commodi officia quasi debitis repellendus obcaecati sunt quam ipsa iure, sequi, molestias corrupti similique ullam culpa. Tenetur, qui!</p>
-                        </div>
-                    </div>
+            <img src="img/index.jpeg" alt="" style="width: 550px; height: 300px; margin-bottom: 20px;">
+        </div>
+    </div>
 
-                    </div>
+    </div>
+
+
+
+
+
     <?php require_once('inc/footer.php') ?>
 
     <!--jquery-->
@@ -60,7 +57,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!--script-->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
                 loop: true,
                 margin: 10,
@@ -88,7 +85,7 @@
         });
     </script>
 
-   
+
 </body>
 
 </html>

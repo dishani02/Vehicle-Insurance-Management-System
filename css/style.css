@@ -380,6 +380,7 @@ td {
   padding: 30px 20px ;
   min-width: 200px;
   border-radius: 10px;
+  color: #1c2525;
 }
 
 .about-us .box{
@@ -428,3 +429,4 @@ td {
 .view-accident-report .images {
   gap: 10px;
 }
+
