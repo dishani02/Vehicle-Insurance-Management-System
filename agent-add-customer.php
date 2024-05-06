@@ -169,20 +169,20 @@
                         <div class="form-item flex flex-col">
                             <label for=""> First Name <span class="required">*</span></label>
                             <input type="text" name="first_name" placeholder="First name">
-                            <?php
-                                        if(isset($messages) && !empty($messages['first_name'])) {
-                                            echo '<div class="error required">'.$messages['first_name'].'</div>';
-                                        }
-                                    ?>
+                                <?php
+                                    if(isset($messages) && !empty($messages['first_name'])) {
+                                        echo '<div class="error required">'.$messages['first_name'].'</div>';
+                                    }
+                                ?>
                         </div>
 
                         <div class="form-item flex flex-col">
                             <label for=""> Last Name <span class="required">*</span></label>
                             <input type="text" name="last_name" placeholder="Last name">
-                            <?php
-                                        if(isset($messages) && !empty($messages['last_name'])) {
-                                            echo '<div class="error required">'.$messages['last_name'].'</div>';
-                                        }
+                                <?php
+                                    if(isset($messages) && !empty($messages['last_name'])) {
+                                        echo '<div class="error required">'.$messages['last_name'].'</div>';
+                                    }
                                 ?>
                         </div>
                     </div>
@@ -191,21 +191,21 @@
                         <div class="form-item flex flex-col">
                             <label for=""> NIC <span class="required">*</span></label>
                             <input type="number" name="nic" placeholder="NIC">
-                            <?php
-                                        if(isset($messages) && !empty($messages['nic'])) {
-                                            echo '<div class="error required">'.$messages['nic'].'</div>';
-                                        }
-                                    ?>
+                                <?php
+                                    if(isset($messages) && !empty($messages['nic'])) {
+                                        echo '<div class="error required">'.$messages['nic'].'</div>';
+                                    }
+                                ?>
                         </div>
 
                         <div class="form-item flex flex-col">
                             <label for="">Email <span class="required">*</span></label>
                             <input type="email" name="email" placeholder="email">
-                            <?php
-                                        if(isset($messages) && !empty($messages['email'])) {
-                                            echo '<div class="error required">'.$messages['email'].'</div>';
-                                        }
-                                    ?>
+                                <?php
+                                    if(isset($messages) && !empty($messages['email'])) {
+                                        echo '<div class="error required">'.$messages['email'].'</div>';
+                                    }
+                                ?>
                         </div>
                     </div>
 
@@ -213,11 +213,11 @@
                         <div class="form-item flex flex-col">
                             <label for="">Contact Number <span class="required">*</span></label>
                             <input type="number" name="contact_no" placeholder="contact number">
-                            <?php
-                                        if(isset($messages) && !empty($messages['contact_no'])) {
-                                            echo '<div class="error required">'.$messages['contact_no'].'</div>';
-                                        }
-                                    ?>
+                                <?php
+                                    if(isset($messages) && !empty($messages['contact_no'])) {
+                                        echo '<div class="error required">'.$messages['contact_no'].'</div>';
+                                    }
+                                ?>
                         </div>
                     </div>
 
@@ -225,11 +225,11 @@
                         <div class="form-item flex flex-col">
                             <label for=""> Address<span class="required">*</span></label>
                             <input type="text" name="home_no" placeholder="House Number">
-                            <?php
+                                <?php
                                     if(isset($messages) && !empty($messages['home_no'])) {
                                         echo '<div class="error required">'.$messages['home_no'].'</div>';
                                     }
-                                 ?>
+                                ?>
                         </div>
                     </div>
 
@@ -237,7 +237,7 @@
                         <div class="form-item flex flex-col">
                             <label for="">Street <span class="required">*</span></label>
                             <input type="text" name="street" placeholder="Street">
-                            <?php
+                                <?php
                                     if(isset($messages) && !empty($messages['street'])) {
                                         echo '<div class="error required">'.$messages['street'].'</div>';
                                     }
@@ -247,7 +247,7 @@
                         <div class="form-item flex flex-col">
                             <label for="">City <span class="required">*</span></label>
                             <input type="text" name="city" placeholder="City">
-                            <?php
+                                <?php
                                     if(isset($messages) && !empty($messages['city'])) {
                                         echo '<div class="error required">'.$messages['city'].'</div>';
                                     }
@@ -271,7 +271,7 @@
                                 <?php
                                     if(isset($messages) && !empty($messages['coverage_type'])) {
                                        echo '<div class="error required">'.$messages['coverage_type'].'</div>';
-                                        }
+                                    }
                                 ?>
                         </div>
 
@@ -281,7 +281,7 @@
                                 <?php
                                     if(isset($messages) && !empty($messages['model'])) {
                                         echo '<div class="error required">'.$messages['model'].'</div>';
-                                        }
+                                    }
                                 ?>
                         </div>
 
@@ -291,7 +291,7 @@
                                 <?php
                                     if(isset($messages) && !empty($messages['vehicle_id'])) {
                                         echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
-                                        }
+                                    }
                                 ?>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                                 <?php
                                     if(isset($messages) && !empty($messages['year'])) {
                                         echo '<div class="error required">'.$messages['year'].'</div>';
-                                        }
+                                    }
                                 ?>
                         </div>
 
@@ -314,19 +314,19 @@
                                 <?php
                                     if(isset($messages) && !empty($messages['chassis_no'])) {
                                         echo '<div class="error required">'.$messages['chassis_no'].'</div>';
-                                        }
+                                    }
                                 ?>
-                        
+                            
                         </div>
                     </div>
                 </div>
-      
-        <div class="flex" style="margin-top: 10px">
-            <button type="submit" name="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
-            <button type="reset" class="btn btn-primary">Reset</button>
+            
+                <div class="flex" style="margin-top: 10px">
+                    <button type="submit" name="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 
     <?php require_once('inc/footer.php') ?>

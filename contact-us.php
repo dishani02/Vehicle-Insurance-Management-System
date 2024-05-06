@@ -21,6 +21,7 @@
             <div class="contact-form">
                 <form action="" method="post">
                     <div class="flex flex-col">
+                        <h2>Quick Inquiry</h2>
                         <label for="">Full Name <span class="required">*</span></label>
                         <input type="text" name="" placeholder="Your Full Name">
                     </div>

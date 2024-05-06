@@ -165,6 +165,29 @@ CREAT TABLE claim intimation(
   FOREIGN KEY(chief_engineer_id)REFERENCES chief_engineer(chief_engineer_id)
 );
 
+/*Accidents table*/
+CREATE TABLE Accident(
+    accident_id INT NOT NULL AUTO_INCREMENT,
+    agent_id CHAR(5) NOT NULL,
+    informant_name VARCHAR(20) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    date DATE,
+    place VARCHAR(20) NOT NULL,
+    description VARCHAR(50) NOT NULL,
+    PRIMARY KEY(accident_id),
+    FOREIGN KEY(agent_id)REFERENCES Agent(agent_id)
+);
+
+/*Accidents images table*/
+CREATE TABLE Accident_image(
+    id INT NOT NULL AUTO_INCREMENT,
+    accident_id INT NOT NULL,
+    image VARCHAR(190),
+    PRIMARY KEY(accident_id),
+    FOREIGN KEY(accident_id)REFERENCES Accident(accident_id)
+);
+
+
 
 
 /* claim list */
