@@ -13,7 +13,7 @@
 
     $customer = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    //get customer contcat details
+    //get customer contact details
     $query_1 = "SELECT * FROM Customer_Contact_no WHERE customer_id = '$customerId' ";
 
     $result_1  = mysqli_query($connection, $query_1) ;
@@ -25,7 +25,7 @@
     while($row = mysqli_fetch_array($result_1)) {
         $contact_no_list .= "<tr>";
         $contact_no_list .= "<td>" . $row['contact_no'] . "</td>";
-        $contact_no_list .= "<td class='text-center'><button class='btn btn-danger'><i class='fa-solid fa-trash'></i></button></td>";
+        $contact_no_list .= "<td class='text-center'><button type='button' class='btn btn-danger delete-button' data-id='". $row['contact_no']."'><i class='fa-solid fa-trash'></i></button></td>";
         $contact_no_list .= "</tr>";
     }
 ?>
@@ -79,6 +79,27 @@
     }
 ?>
 
+<?php 
+
+    if(isset($_GET['action']) && $_GET['action'] == "delete") {
+        
+        $messages = array();
+
+        if(isset($_GET['id'])) {
+
+            $id = $_GET['id'];
+
+            $delete_query = "DELETE FROM customer_contact_no WHERE contact_no = $id";
+
+            if(mysqli_query($connection, $delete_query)) {
+                $_SESSION['success_message'] = "Custom Contact successfully delete!";
+                header("Location: my-user-profile.php");
+                exit();
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,6 +110,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
+     <!--sweet alert-->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -303,6 +326,29 @@
 
             document.getElementById("phoneNumberContainer").appendChild(newDiv);
         }
+    </script>
+
+    <script>
+        var deleteButtons = document.querySelectorAll('.delete-button');
+
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var id = this.getAttribute('data-id');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = 'my-user-profile.php?action=delete&id=' + id;
+                    }
+        });
+        });
+        });
     </script>
 </body>
 
