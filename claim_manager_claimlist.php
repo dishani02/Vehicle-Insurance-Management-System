@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -14,29 +11,26 @@
 
 <body>
     <?php require_once("inc/header.php")?>
-    <?php require_once("claim_manager_sidebar.php")?> 
-    <?php
-        // connect with databse
-        require_once("config.php");
 
-        //read data in database
-        $sql="SELECT first_name,nic FROM customer";
-        $result=$conn->query($sql);
-        if($result->num_rows>0){
-            //read data
-            while($row=$result->fetch_assoc()){
-                echo $row["first_name"]."-".$row["nic"]."<br>";
-            }
-        }
-        else{
-            echo"error";
-        }
+    <?php
+        // connect with database
+        require_once("config.php");
     ?>
+
+<div class="sidebar">
+        <nav>
+            <ul>
+                
+                <li><a href="claim_manager_claimlist.php">Customer list</a></li>
+                <li><a class ="active" href="claim_manager_claimlist.php">Claims</a></li>
+                <li><a href="claim_manager_paymentlist.php">Payments</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="date">
     
         <form action="">
-        <input class="input" type="text" placeholder="Search by Reg No...">
         <label class="label" for="starttime">Generate report from</label>
         <input class="date1" type="date" id="starttime" name="starttime">
         <label for="endtime">to<label for="starttime"></label>
@@ -45,59 +39,72 @@
         </form>
     </div>
 
+
+    <div class="tabcontainer">
+    
+    </div>
     <div class='table-container'>
         <table>
             <thead>
                 <tr>
-                    <th>Insured Name</th>
-                    <th>Policy No</th>
-                    <th>Reg No</th>
-                    <th>Coverage Type</th>
-                    <th>Contact No</th>
-                    <th>Status</th>
+                    <th>Claim ID</th>
+                    <th>Vehicle No</th>
+                    <th>Estimation(Rs)</th>
+                    <th>Approval Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
+                <?php
+                    $sql="SELECT * FROM claim" ;
+                    
+                    $result=mysqli_query($conn,$sql);
 
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
-
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
-
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
+                    if(mysqli_num_rows($result)>0){
+                        while($row= mysqli_fetch_assoc($result)){
+                            echo "<tr>";
+                            echo "<td>".$row["claim_id"]."</td>";
+                            echo "<td>".$row["vehicle_id"]."</td>";
+                            echo "<td>".$row["amount"]."</td>";
+                            echo "<td id='status".$row["claim_id"]."'>".$row["status"]."</td>"; // Add an id for status cell
+                            echo "<td>";
+                            echo "<button onclick='updateStatus(".$row["claim_id"].", \"approve\")'>Approve</button>";
+                            echo "<button onclick='updateStatus(".$row["claim_id"].", \"reject\")'>Reject</button>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                    }
+                
+                ?>
+                
 
             </tbody>
         </table>
+
     </div>
+
+    <script>
+        function updateStatus(claimId, newStatus) {
+            if (confirm("Are you sure you want to " + newStatus + " this claim?")) {
+                // Send AJAX request to update status
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            // Update status in the table
+                            document.getElementById("status" + claimId).innerText = newStatus;
+                        } else {
+                            console.error("Error updating status:", xhr.status);
+                        }
+                    }
+                };
+                xhr.open("POST", "update_status.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send("claim_id=" + claimId + "&status=" + newStatus);
+            }
+        }
+    </script>
     
 
 </body>
