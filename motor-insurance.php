@@ -141,13 +141,20 @@
             </div>
 
 
-            <div class="flex ">
+            <div class="flex flex-row m-10 ">
 
-                <div class="flex flex-col ">
+                <div class="flex flex-col content-wrapper ">
                     <h1>Insure Your Vehicle Now</h1>
                     <p>"Rev up your protection with Drive Peak! Tailored insurance plans for cars, bikes, and tuk-tuks,
                         designed to fit your unique needs. Register now for personalized coverage and peace of mind on
                         the road!"</p>
+
+
+                </div>
+
+                <div class="flex flex-col content-wrapper "> 
+
+                <h1>REGISTER NOW</h1>
 
                 </div>
 

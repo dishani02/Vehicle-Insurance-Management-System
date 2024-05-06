@@ -1,4 +1,21 @@
 
+<?php
+
+session_start();
+require 'config.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+if (!empty($_SESSION["id"])) {
+
+    $id = $_SESSION["id"];
+    $result = mysqli_query($conn, "SELECT * FROM inquiry WHERE customer_iD ='$id'");
+    $row = mysqli_fetch_assoc($result);
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -19,36 +36,30 @@
     <div class="container">
         <div class="contact-us flex">
             <div class="contact-form">
-                <form action="" method="post">
+                <form action="save-contact.php" method="post">
                     <div class="flex flex-col">
-                        <h2>Quick Inquiry</h2>
-                        <label for="">Full Name <span class="required">*</span></label>
-                        <input type="text" name="" placeholder="Your Full Name">
+                        <label for="">Name <span class="required">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Your Name">
                     </div>
 
                     <div class="flex flex-col">
                         <label for="">Contact <span class="required">*</span></label>
-                        <input type="number" name="" placeholder="Contact">
+                        <input type="number" name="contact" id="conatct_no" placeholder="Contact">
                     </div>
 
                     <div class="flex flex-col">
                         <label for="">E-mail <span class="required">*</span></label>
-                        <input type="email" name="" placeholder="E-mail">
+                        <input type="email" name="email" id="email" placeholder="E-mail">
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">Type Of Inquiry <span class="required">*</span></label>
-                        <div class="flex inquiry">
-                            <input type="radio" name="Inquiry" value="New Product Inquiry">New Product Inquiry
-                            <input type="radio" name="Inquiry" value="Information">Information
-                            <input type="radio" name="Inquiry" value="Complaint">Complaint
-                            <input type="radio" name="Inquiry" value="Other">Other
-                        </div>
+                        <label for="">Inquiry <span class="required">*</span></label>
+                        <textarea name="inquiry" id= "inquiry" cols="30" rows="5" placeholder="Please tell about your inquiry"></textarea>
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">Type your message <span class="required">*</span></label>
-                        <textarea name="" cols="30" rows="5" placeholder="Please tell about your inquiry"></textarea>
+                        <label for="">Date <span class="required">*</span></label>
+                        <textarea name="date" id="date" placeholder="Enter the date"></textarea>
                     </div>
 
                     <div class="flex flex-col" style="margin-top: 10px">
@@ -56,6 +67,8 @@
                     </div>
                 </form>
             </div>
+
+            
 
             <div class="info">
                 <div class="flex flex-col">

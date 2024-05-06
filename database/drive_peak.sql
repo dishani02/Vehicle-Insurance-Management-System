@@ -352,6 +352,13 @@ INSERT INTO Policy_Coverage VALUES (2,2);
 
 
 
+/*claim list */
+INSERT INTO claim intimation
+VALUES('9992','1','kumal','cae6743','bmw','car','071678256','me2373733','ashan',2024,'colombo','bhbsgdhjs','hbsdsn')
+
+
+
+
 -- /* Claim Table */
 -- CREATE TABLE Claim(
 --     manager_id  CHAR(5) NOT NULL,
