@@ -3,62 +3,80 @@
 <?php require_once('inc/connection.php') ?>
 
 <?php
-    if(!isset($_SESSION['name'])) {
-        header('Location: chief-engineer-login.php');
+    if(!isset($_SESSION['first_name']) && !isset($_SESSION['engineer_id'])) {
+        header('Location: chief_engineer_login.php');
+    }
+
+    //get agent id from session 
+    $chiefengineer = $_SESSION['engineer_id'];
+
+    //get agent details
+    $query = "SELECT * FROM chief_engineer WHERE engineer_id = '$engineer_id'";
+
+    $result = mysqli_query($connection, $query);
+
+    $chiefengineer = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+?>
+<?php
+    if(!isset($_SESSION['first_name'])) {
+        header('Location: chief_engineer_login.php');
     }
 ?>
 
-    <?php
-    if(isset($_POST['submit'])) {
- 
-     $messages = array();
- 
-     if(!isset($_POST['name']) || strlen(trim($_POST['name'])) < 1) {
-         $messages['name'] = " Name is required";
-     } 
- 
+<?php
+   if(isset($_POST['submit'])) {
+
+    $messages = array();
+
+    if(!isset($_POST['name']) || strlen(trim($_POST['name'])) < 1) {
+        $messages['name'] = " name is required";
+    } 
+    
+    if(!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
+        $messages['email'] = "Email is required";
+    } 
      
-     if(!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
-         $messages['email'] = "Email is required";
-     }  
-     
-     if(!isset($_POST['branch']) || strlen(trim($_POST['branch'])) < 1) {
-         $messages['branch'] = "Branch is required";
-     } 
-      
-     if(!isset($_POST['mobile']) || strlen(trim($_POST['mobile'])) < 1) {
-         $messages['mobile'] = "Mobile number is required";
-     } 
- 
-     
-     if (empty($messages)) {
-         //update user profile
-         $name = mysqli_real_escape_string($connection, $_POST['name']);
-         $email = mysqli_real_escape_string($connection, $_POST['email']);
-         $branch = mysqli_real_escape_string($connection, $_POST['branch']);
-         $mobile = mysqli_real_escape_string($connection, $_POST['mobile']);
-         
-         $query = "UPDATE CHIEF ENGINEER SET 
-         name = '$name', 
-         email = '$email',
-         branch = '$branch',
-         mobile = '$mobile',
-         WHERE chief_engineer_id = '$chief_engineerId'";
- 
-         $result = mysqli_query($connection, $query);
- 
-         if($result) {
-             $_SESSION['name'] = $name;
-             $_SESSION['success_message'] = "Profile successfully updated!";
-             header("Location: Chief Engineer-profile.php");
-             exit();
-         }  
-         else {
-             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
-         }
-     }
+
+    if(!isset($_POST['nic']) || strlen(trim($_POST['nic'])) < 1) {
+        $messages['nic'] = "nic is required";
+    } 
+
+    if(!isset($_POST['Address']) || strlen(trim($_POST['Address'])) < 1) {
+        $messages['Address'] = "Address is required";
+    } 
+
+    if (empty($messages)) {
+        //update user profile
+        $name = mysqli_real_escape_string($connection, $_POST['name']);
+        $email = mysqli_real_escape_string($connection, $_POST['email']);
+        $nic = mysqli_real_escape_string($connection, $_POST['nic']);
+        $address = mysqli_real_escape_string($connection, $_POST['Address']);
+   
+        $query = "UPDATE Csr SET 
+   
+        name = '$name',
+        email = '$email',
+        nic = '$nic',
+        address = '$address'
+        WHERE csr_id = '$csrId'";
+
+        $result = mysqli_query($connection, $query);
+
+        if($result) {
+            $_SESSION['first_name'] = $first_name;
+            $_SESSION['success_message'] = "Profile successfully updated!";
+            header("Location: csr-my-tickets.php");
+            exit();
+        }  
+        else {
+            echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
+        }
     }
- ?>
+   }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,46 +93,107 @@
     <?php require_once('inc/header.php') ?>
 
 
-        <div class="flex">
-            <div class="nav">
-                <?php require_once('inc/chief-engineer-sidebar.php') ?>
-            </div>
+    <div class="flex">
 
-            <div class="content">
-                <div class="flex flex-col text-right">
-                    <div class="form-item flex flex-col chief-engineer-profile">
-                        <h4 class="text-center">Contact Info</h4>
+        <?php require_once('inc/chief_engineer_sidebar.php') ?>
 
-                        <div>
-                            <label for="">NAME</span></label>
-                            <input type="text" name="" placeholder=" Name">
+        <div class="flex flex-col content-wrapper">
+
+            <ul class="bredcrumb">
+                <li>Dashboard</li>
+                <li><i class="fa-solid fa-chevron-right"></i></li>
+                <li><a href="chief_engineer_myprofile.php"> Profile</a></li>
+            </ul>
+
+            <?php
+                if(isset($_SESSION['success_message'])) {
+                    echo '<div class="flash-message"><i class="fa-solid fa-check"></i><p>' . $_SESSION['success_message'] . '</p></div>';
+                    unset($_SESSION['success_message']);
+                }
+            ?>
+
+            <form action="chief_engineer_myprofile.php" method="post">
+
+                <div class="flex flex-col">
+                    <h4 class="m-10"> Personal Details </h4>
+
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for=""> Name <span class="required">*</span></label>
+                            <input type="text" name="name" placeholder=" Name" value="<?php echo $csr['name'] ?>">
+                            <?php
+
+                                if(isset($messages) && !empty($messages['name'])) {
+                                    echo '<div class="error required">'.$messages['name'].'</div>';
+                                }
+                            ?>
                         </div>
 
-                        <label for=""> EMAIL</span></label>
-                        <input type="email" name="" placeholder=email>
-                        <div>
-                            <label for="">BRANCH</span></label>
-                            <input type="text" name="" placeholder="Branch Name">
+                        <div class="form-item flex flex-col">
+                            <label for="">email <span class="required">*</span></label>
+                            <input type="text" name="email" placeholder="email" 
+                                value="<?php echo $csr['email'] ?>">
+                            <?php
+                                if(isset($messages) && !empty($messages['email'])) {
+                                    echo '<div class="error required">'.$messages['email'].'</div>';
+                                }
+                            ?>
                         </div>
-                        <div>
-                            <label for="">MOBILE NUMBER</label>
-                            <input type="number" name="" placeholder="Contact number">
+
+                    </div>
+
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for=""> nic <span class="required">*</span></label>
+                            <input type="text" name="nic" placeholder="nic"
+                                 value="<?php echo $csr['nic'] ?>" readonly>
+                            <?php
+                                if(isset($messages) && !empty($messages['nic'])) {
+                                    echo '<div class="error required">'.$messages['nic'].'</div>';
+                                }
+                            ?>
                         </div>
-                       
+
+
+                    </div>
+
+                    <div class="flex flex-row form">
+                        <div class="form-item flex flex-col">
+                            <label for="">Address<span class="required">*</span></label>
+                            <input type="text" name="Address" placeholder="Address"
+                                value="<?php echo $csr['Address'] ?>">
+                            <?php
+                                if(isset($messages) && !empty($messages['Address'])) {
+                                    echo '<div class="error required">'.$messages['Address'].'</div>';
+                                }
+                            ?>
+
+                        </div>
+                    </div>
+
+                    <div class="flex" style="margin-top: 10px">
+                        <button type="submit" name="submit" class="btn btn-primary" style="margin-right: 10px;">Update
+                            Profile</button>
+
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-            </div>
+
+            </form>
+
         </div>
 
-        <?php require_once('inc/footer.php') ?>
 
+    </div>
 
+    </div>
 
-        
+    <?php require_once('inc/footer.php') ?>
+
 </body>
 
+
+
+
 </html>
+
+<?php mysqli_close($connection); ?>
