@@ -83,7 +83,7 @@
                     <h3>Hello, there,</h3>
                     <p>Please login to continue</p>
                 </div>
-                
+
                 <div class="flex flex-col">
                     <label for="">E-mail <span class="required">*</span></label>
                     <input type="email" name="email" placeholder="E-mail address" value="dishani@gmail.com">
