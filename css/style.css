@@ -381,6 +381,7 @@ td {
   padding: 30px 20px ;
   min-width: 200px;
   border-radius: 10px;
+  color: #1c2525;
 }
 
 .about-us .box{
@@ -430,6 +431,8 @@ td {
   gap: 10px;
 }
 
+<<<<<<< HEAD
+=======
 
 
 .dash_container{
@@ -486,3 +489,4 @@ td {
 .card-method i{
   font-size: 35px;
 }
+>>>>>>> c2538aa9806aabcbcde0691597aea5b7a89bfa2e

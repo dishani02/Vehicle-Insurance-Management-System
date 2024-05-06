@@ -173,7 +173,7 @@
                 }
             ?>
 
-            <h4 class="m-10">Claim Intimation Form</h4>
+            <h3 class="m-10">Claim Intimation Form</h3>
 
             <form action="agent-reports.php" method="post" enctype="multipart/form-data">
                 <div class="flex flex-col">
