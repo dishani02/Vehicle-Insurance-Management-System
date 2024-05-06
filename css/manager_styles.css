@@ -129,6 +129,20 @@ tr:hover{
     float: right;
 }
 
+.tab{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #17252A;
+  cursor: pointer;
+}
+
+.tab:hover{
+  background-color: #2B7A78;
+}
+
+.active{
+  background-color: #e92c2c;
+}
 .header {
   background-color: #01aebc;
   padding: 10px;

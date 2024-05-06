@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -19,15 +21,17 @@
     ?>
 
 <div class="sidebar">
+       
         <nav>
             <ul>
-              
-                <li><a href="claim_manager_claimlist.php">Customer list</a></li>
+               
+                <li><a class ="active" href="claim_manager_customerlist.php">Customer list</a></li>
                 <li><a  href="claim_manager_claimlist.php">Claims</a></li>
-                <li><a class ="active" href="claim_manager_paymentlist.php">Payments</a></li>
+                <li><a href="claim_manager_paymentlist.php">Payments</a></li>
             </ul>
-        </nav>
+        </nav>  
     </div>
+
     <div class="date">
     
         <form action="">
@@ -44,28 +48,27 @@
             <thead>
                 <tr>
                     <th>Insured Name</th>
-                    <th>Customer ID</th>
-                    <th>Amount(Rs)</th>
-                    <th>Payment Date</th>
+                    <th>NIC</th>
+                    <th>Contact No</th>
+                    
                 </tr>
             </thead>
 
             <tbody>
                 <?php
-                    $sql="SELECT payment.customer_id,customer.first_name,payment.payment_date,payment.amount
-                    FROM payment
-                    JOIN customer
-                    ON customer.customer_id=payment.customer_id" ;
+                    $sql="SELECT customer.first_name,customer.nic,customer_contact_no.contact_no
+                    FROM customer
+                    JOIN customer_contact_no
+                    ON customer.customer_id=customer_contact_no.customer_id" ;
                     
                     $result=mysqli_query($conn,$sql);
 
                     if(mysqli_num_rows($result)>0){
                         while($row= mysqli_fetch_assoc($result)){
                             echo "<tr>";
-                            echo "<td>".$row["customer_id"]."</td>";
                             echo "<td>".$row["first_name"]."</td>";
-                            echo "<td>".$row["amount"]."</td>";
-                            echo "<td>".$row["payment_date"]."</td>";
+                            echo "<td>".$row["nic"]."</td>";
+                            echo "<td>".$row["contact_no"]."</td>";
                             echo "</tr>";
                         }
                     }
