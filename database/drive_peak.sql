@@ -145,6 +145,41 @@ CREATE TABLE Policy(
     FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
 
+/* Chief engineer Claim intimation form */
+CREAT TABLE claim intimation(
+
+  claim_intimation_id CHAR(10)NOT NULL,
+  engineer_id CHAR(5)NOT NULL,
+  insured_name VARCHAR(25)NOT NULL,
+  vehicle_no CHAR(8)NOT NULL,
+  vehicle_model CHAR(10)NOT NULL,
+  vehicle_category CHAR(10)NOT NULL,
+  phone_number INT(10)NOT NULL,
+  chassi_number CHAR(15)NOT NULL,
+  driver_name VARCHAR(25)NOT NULL,
+  date DATE ,
+  place VARCHAR(30)NOT NULL,
+  description VARCHAR(50)NOT NULL,
+  vehicle_condition VARCHAR(50)NOT NULL,
+  PRIMARY KEY(claim_intimation_id),
+  FOREIGN KEY(chief_engineer_id)REFERENCES chief_engineer(chief_engineer_id)
+);
+
+
+
+/* claim list */
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- /* Vehicle Table */
 
