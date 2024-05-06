@@ -453,3 +453,36 @@ td {
   border-radius: 10px;
 }
 
+
+.otp {
+  border-radius: 20px;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  background-color: #f1a541;
+  border-color: #f1a541;
+}
+
+.pay{
+  border-radius: 20px;
+  padding: 5px;
+  width: 350px;
+  height: 50px;
+}
+
+.payment-wrapper {
+  max-width: 450px;
+  margin: auto;
+}
+
+.card-method {
+  gap: 25px;
+  justify-content: center;
+}
+
+.card-method input {
+  margin: 0px 10px;
+}
+.card-method i{
+  font-size: 35px;
+}
