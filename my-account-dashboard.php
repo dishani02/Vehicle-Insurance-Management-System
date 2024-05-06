@@ -25,9 +25,8 @@
     <?php require_once('inc/header.php') ?>
 
     <div class="flex">
-        <div class="nav">
-            <?php require_once('inc/customer-dash.php') ?>
-        </div>
+            
+        <?php require_once('inc/customer-dash.php') ?>
 
 
         <div class="flex flex-col content-wrapper">
