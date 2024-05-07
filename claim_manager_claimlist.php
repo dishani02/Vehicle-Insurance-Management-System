@@ -11,17 +11,18 @@
 
 <body>
     <?php require_once("inc/header.php")?>
-
+    
     <?php
-        // connect with database
+        
         require_once("config.php");
     ?>
+
 
 <div class="sidebar">
         <nav>
             <ul>
                 
-                <li><a href="claim_manager_claimlist.php">Customer list</a></li>
+                <li><a href="claim_manager_customerlist.php">Customer list</a></li>
                 <li><a class ="active" href="claim_manager_claimlist.php">Claims</a></li>
                 <li><a href="claim_manager_paymentlist.php">Payments</a></li>
             </ul>
@@ -31,11 +32,9 @@
     <div class="date">
     
         <form action="">
-        <label class="label" for="starttime">Generate report from</label>
-        <input class="date1" type="date" id="starttime" name="starttime">
-        <label for="endtime">to<label for="starttime"></label>
-        <input class="date2" type="date" id="endtime" name="endttime">
-        <input class="submit" type="submit" id="generate" value="Generate">
+
+        <label class="label" for="submit">Generate a report:</label>
+        <input class="submit" type="submit" id="submit" value="Generate">
         </form>
     </div>
 
@@ -67,7 +66,7 @@
                             echo "<td>".$row["claim_id"]."</td>";
                             echo "<td>".$row["vehicle_id"]."</td>";
                             echo "<td>".$row["amount"]."</td>";
-                            echo "<td id='status".$row["claim_id"]."'>".$row["status"]."</td>"; // Add an id for status cell
+                            echo "<td id='status".$row["claim_id"]."'>".$row["status"]."</td>"; 
                             echo "<td>";
                             echo "<button onclick='updateStatus(".$row["claim_id"].", \"approve\")'>Approve</button>";
                             echo "<button onclick='updateStatus(".$row["claim_id"].", \"reject\")'>Reject</button>";
@@ -84,7 +83,7 @@
 
     </div>
 
-    <script>
+    <script> 
         function updateStatus(claimId, newStatus) {
             if (confirm("Are you sure you want to " + newStatus + " this claim?")) {
                 // Send AJAX request to update status
