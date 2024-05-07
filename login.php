@@ -83,7 +83,7 @@
                 
                 <div class="flex flex-col">
                     <label for="">E-mail <span class="required">*</span></label>
-                    <input type="email" name="email" placeholder="E-mail address" value="synadekyf@mailinator.com">
+                    <input type="email" name="email" placeholder="E-mail address" value="vishal@gmail.com">
                     <?php
                     if(isset($errors) && !empty($errors['email'])) {
                         echo '<div class="error required">'.$errors['email'].'</div>';

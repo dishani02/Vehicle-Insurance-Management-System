@@ -18,11 +18,6 @@
     $agent = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 ?>
-<?php
-    if(!isset($_SESSION['first_name'])) {
-        header('Location: agent-login.php');
-    }
-?>
 
 <?php
    if(isset($_POST['submit'])) {
@@ -82,7 +77,7 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $_SESSION['success_message'] = "Profile successfully updated!";
-            header("Location: agent-reports.php");
+            header("Location: agent-user-profile.php");
             exit();
         }  
         else {

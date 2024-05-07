@@ -102,7 +102,7 @@
 
                         $customerId = $customer['customer_id'];
 
-                        $query_2 = "INSERT INTO Vehicle VALUES ('$customerId', '$vehicle_id',  1, '$coverage_type', '$model', '$chassis_no', '$year')";
+                        $query_2 = "INSERT INTO Vehicle VALUES ('$customerId', '$vehicle_id', '$model', '$chassis_no', '$year')";
                         $query_3 = "INSERT INTO Customer_Contact_no VALUES ('$contact_no','$customerId')";
                         
                         mysqli_query($connection,  $query_2);
@@ -299,7 +299,7 @@
                     <div class="flex flex-row form">
                         <div class="form-item flex flex-col">
                             <label for=""> Year <span class="required">*</span></label>
-                            <input type="number" min="1900" max="2099" step="1" value="2024" name="year"
+                            <input type="text" min="1900" max="2099" step="1" value="2024" name="year"
                                 placeholder="Year">
                                 <?php
                                     if(isset($messages) && !empty($messages['year'])) {

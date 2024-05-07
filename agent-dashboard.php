@@ -38,7 +38,7 @@
             <div class="content">
                 <div class="flex flex-row m-10">
                     <div>
-                        <img src="img/agents.jpeg" alt="agent" width="800" height="500">
+                        <img src="img/agents.jpeg" alt="agent" width="800" height="500" >
                     </div>
 
                     <div class="flex flex-col content-wrapper">

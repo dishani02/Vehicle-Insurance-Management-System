@@ -30,6 +30,8 @@
                 <a href="register.php">Register</a>
                 <a href="agent-login.php">Agent Login</a>
                 <a href="csr-login.php">CSR Login</a>
+                <a href="chief-engineer-login.php">Engineer Login</a>
+                <a href="claim-manager-login.php">Manager Login</a>
             </div>
         </div>
 
