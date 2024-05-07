@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <!-- include header -->
     <?php require_once("inc/header.php")?>
 
     <?php
@@ -21,7 +20,6 @@
         require_once("config.php");
     ?>
 
-<!-- side navigation bar -->
 <div class="sidebar">
        
         <nav>
@@ -37,8 +35,11 @@
     <div class="date">
     
         <form action="">
-        <label class="label" for="submit">Generate a report:</label>
-        <input class="submit" type="submit" id="submit" value="Generate">
+        <label class="label" for="starttime">Generate report from</label>
+        <input class="date1" type="date" id="starttime" name="starttime">
+        <label for="endtime">to<label for="starttime"></label>
+        <input class="date2" type="date" id="endtime" name="endttime">
+        <input class="submit" type="submit" id="generate" value="Generate">
         </form>
     </div>
 

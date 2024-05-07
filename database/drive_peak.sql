@@ -60,11 +60,7 @@ CREATE TABLE Agent_contact_no(
 );
 /*TODO:*/
 
-/* Claim manager Table */
-/* Claim manager Countacr us Table */
-/* Cheef engineer Table */
-/* Cheef engineer  Countacr us Table */
-/* Manager_Cheef engineer Table */
+
 
 /* CRS Table */
 CREATE TABLE Csr(
@@ -104,7 +100,7 @@ CREATE TABLE Customer(
 /* Customer Countacr us Table */
 CREATE TABLE Customer_Contact_no(
     contact_no VARCHAR(15) NOT NULL,
-    customer_id INT NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(contact_no, customer_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id)
 );
@@ -165,39 +161,67 @@ CREAT TABLE claim intimation(
   FOREIGN KEY(chief_engineer_id)REFERENCES chief_engineer(chief_engineer_id)
 );
 
+/*Accidents table*/
+CREATE TABLE Accident(
+    accident_id INT NOT NULL AUTO_INCREMENT,
+    agent_id CHAR(5) NOT NULL,
+    informant_name VARCHAR(20) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    date DATE,
+    place VARCHAR(20) NOT NULL,
+    description VARCHAR(50) NOT NULL,
+    PRIMARY KEY(accident_id),
+    FOREIGN KEY(agent_id)REFERENCES Agent(agent_id)
+);
+
+/*Accidents images table*/
+CREATE TABLE Accident_image(
+    id INT NOT NULL AUTO_INCREMENT,
+    accident_id INT NOT NULL,
+    image VARCHAR(190),
+    PRIMARY KEY(accident_id),
+    FOREIGN KEY(accident_id)REFERENCES Accident(accident_id)
+);
 
 
-/* claim list */
 
 
+/* Claim Table */
+CREATE TABLE Claim(
+    manager_id  CHAR(5) NOT NULL,
+    vehicle_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT
+    claim_id CHAR(5) NOT NULL,
+    amount FLOAT(),
+    issued_date DATE ,
+    status VARCHAR(25),
+    PRIMARY KEY(claim_id),
+    FOREIGN KEY(manager_id) REFERENCES Admin(manager_id),
+    FOREIGN KEY(vehicle_id) REFERENCES Admin(vehicle_id),
+    FOREIGN KEY(customer_id) REFERENCES Admin(customer_id)
+);
 
 
+/* Vehicle Table */
 
-
-
-
-
-
-
-
-
--- /* Vehicle Table */
-
--- CREATE TABLE Vehicle(
---     customer_id CHAR(5) NOT NULL,
---     vehicle_id CHAR(5) NOT NULL,
---     model VARCHAR(25),
---     chassis_no VARCHAR(190),
---     year DATE,
---     PRIMARY KEY(vehicle_id),
---     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
+CREATE TABLE Vehicle(
+    customer_id INT NOT NULL AUTO_INCREMENT,
+    agent_id
+    vehicle_id CHAR(5) NOT NULL,
+    model VARCHAR(25),
+    chassis_no VARCHAR(190),
+    year DATE,
+    PRIMARY KEY(vehicle_id),
+    FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
  
--- );
+);
+
+
 /* Payment Table add vehicle id and status  */
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
     admin_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
     vehicle_id CHAR(5) NOT NULL,
     amount INT(10),
     payment_date DATE,
@@ -209,16 +233,6 @@ CREATE TABLE Payment(
     FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
 
-
--- INSERT INTO Payment VALUES (001,1,1,1GTF2,'25000',2020-09-45,'online',"successful");
--- INSERT INTO Payment VALUES (002,1,3,1111,'40000',2020-03-45,'online',"successful");
--- INSERT INTO Payment VALUES (003,1,1,342,'25000',2021-08-45,'online',"successful");
--- INSERT INTO Payment VALUES (004,1,2,9999,'40000',2023-03-45,'online',"successful");
--- INSERT INTO Payment VALUES (005,1,1,447,'25000',2025-05-45,'online',"successful");
--- INSERT INTO Payment VALUES (006,1,1,ABD23'40000',2023-03-45,'online',"successful");
-
-
-
 /*Claim Table need to create csr table*/
 CREATE TABLE Report(
     admin_id CHAR(5) NOT NULL,
@@ -228,6 +242,21 @@ CREATE TABLE Report(
     PRIMARY KEY(report_id),
     FOREIGN KEY(admin_id) REFERENCES Admin(admin_id)
 );
+
+
+CREATE TABLE Renew_policy(
+     renew_id INT NOT NULL AUTO_INCREMENT ,
+     vehicle_id CHAR(5) NOT NULL,
+     contact_no VARCHAR(25) NOT NULL,
+     duration  VARCHAR(25) NOT NULL,
+     insurance_category  VARCHAR(50) NOT NULL,
+     coverage_type VARCHAR(25) NOT NULL,
+     installment_type VARCHAR(25) NOT NULL,
+     PRIMARY KEY(accident_id),
+     FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
+
+);
+
 
 -- insert data
 
@@ -296,12 +325,11 @@ INSERT INTO Csr_contact_no VALUES (05,0757862543);
  
 -- /*inquiry table */
 
--- INSERT INTO Inquiry VALUES (2,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
--- INSERT INTO Inquiry VALUES (3,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
--- INSERT INTO Inquiry VALUES (4,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");
--- INSERT INTO Inquiry VALUES (5,04,0004,"Can i access my insurance policy documents online and how can i request copies if needed?","2019.12.23");
--- INSERT INTO Inquiry VALUES (6,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
- 
+INSERT INTO Inquiry VALUES (2,01,0001,"When is my insurance policy up for renewal ,will there be any changes ?","2018.04.25");
+INSERT INTO Inquiry VALUES (3,02,0002,"How do i file a claim for an accident to my vehicle? and what documents do i need to provide when filing? ","2018.08.02");
+INSERT INTO Inquiry VALUES (4,03,0003,"How much will my insurance premium be? Are there any discounts available for my vehicle insurance?","2019.09.18");
+INSERT INTO Inquiry VALUES (5,04,0004,"Can i access my insurance policy documents online and how can i request copies if needed?","2019.12.23");
+INSERT INTO Inquiry VALUES (6,05,0005,"what are the specific types of damages or incidents are covered by my policy?","2020.02.05");
  
 
 /*Policy details*/
@@ -314,47 +342,32 @@ INSERT INTO Policy VALUES (123,5,'2008-11-11','2009-11-11');
 INSERT INTO Policy VALUES (123,6,'2008-11-11','2009-11-11');
 
 
-/* coverage Table */
+/* payment Table */
 
-INSERT INTO Coverage VALUES (1,"Comprehensive");
-INSERT INTO Coverage VALUES (2,"Third Party");
-
-
-
-/* policy_covarge Table */
-
-INSERT INTO Policy_Coverage VALUES (1,1);
-INSERT INTO Policy_Coverage VALUES (2,2);
+INSERT INTO Payment VALUES (001,1,1,1GTF2,'25000',2020-09-45,'online',"successful");
+INSERT INTO Payment VALUES (002,1,3,1111,'40000',2020-03-45,'online',"successful");
+INSERT INTO Payment VALUES (003,1,1,342,'25000',2021-08-45,'online',"successful");
+INSERT INTO Payment VALUES (004,1,2,9999,'40000',2023-03-45,'online',"successful");
+INSERT INTO Payment VALUES (005,1,1,447,'25000',2025-05-45,'online',"successful");
+INSERT INTO Payment VALUES (006,1,1,ABD23'40000',2023-03-45,'online',"successful");
 
 
 
-
-/*claim list */
+/*claim intiMATION */
 INSERT INTO claim intimation
 VALUES('9992','1','kumal','cae6743','bmw','car','071678256','me2373733','ashan',2024,'colombo','bhbsgdhjs','hbsdsn')
 
 
+/*claim list */
+INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
+INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
+INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
 
 
--- /* Claim Table */
--- CREATE TABLE Claim(
---     manager_id  CHAR(5) NOT NULL,
---     vehicle_id CHAR(5) NOT NULL,
---     customer_id CHAR(5) NOT NULL,
---     claim_id CHAR(5) NOT NULL,
---     amount FLOAT(),
---     issued_date DATE ,
---     status VARCHAR(25),
---     PRIMARY KEY(claim_id),
---     FOREIGN KEY(manager_id) REFERENCES Admin(manager_id),
---     FOREIGN KEY(vehicle_id) REFERENCES Admin(vehicle_id),
---     FOREIGN KEY(customer_id) REFERENCES Admin(customer_id)
--- );
+INSERT INTO vehicle VALUES (1,'GTA456',1,'thiedprty','toyota',5655656,2016);
 
 
--- INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
--- INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
--- INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
+INSERT INTO Policy VALUES (123,2,'2009-11-11','20010-11-11');
 
 
 
@@ -376,22 +389,7 @@ VALUES('9992','1','kumal','cae6743','bmw','car','071678256','me2373733','ashan',
 
 
 
--- new tables
 
 
 
 
-
-
--- CREATE TABLE Renew_policy(
---      renew_id INT NOT NULL AUTO_INCREMENT ,
---      vehicle_id CHAR(5) NOT NULL,
---      contact_no VARCHAR(25) NOT NULL,
---      duration  VARCHAR(25) NOT NULL,
---      insurance_category  VARCHAR(50) NOT NULL,
---      coverage_type VARCHAR(25) NOT NULL,
---      installment_type VARCHAR(25) NOT NULL,
---      PRIMARY KEY(accident_id),
---      FOREIGN KEY(vehicle_id) REFERENCES Vehicle(vehicle_id)
-
--- )

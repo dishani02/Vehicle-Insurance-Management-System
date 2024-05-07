@@ -22,7 +22,7 @@
         <nav>
             <ul>
               
-                <li><a href="claim_manager_customerlist.php">Customer list</a></li>
+                <li><a href="claim_manager_claimlist.php">Customer list</a></li>
                 <li><a  href="claim_manager_claimlist.php">Claims</a></li>
                 <li><a class ="active" href="claim_manager_paymentlist.php">Payments</a></li>
             </ul>
@@ -30,18 +30,21 @@
     </div>
     <div class="date">
     
-    <form action="">
-        <label class="label" for="submit">Generate a report:</label>
-        <input class="submit" type="submit" id="submit" value="Generate">
-        </form> 
+        <form action="">
+        <label class="label" for="starttime">Generate report from</label>
+        <input class="date1" type="date" id="starttime" name="starttime">
+        <label for="endtime">to<label for="starttime"></label>
+        <input class="date2" type="date" id="endtime" name="endttime">
+        <input class="submit" type="submit" id="generate" value="Generate">
+        </form>
     </div>
 
     <div class='table-container'>
         <table>
             <thead>
                 <tr>
-                    <th>Customer ID</th>
                     <th>Insured Name</th>
+                    <th>Customer ID</th>
                     <th>Amount(Rs)</th>
                     <th>Payment Date</th>
                 </tr>

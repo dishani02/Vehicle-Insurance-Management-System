@@ -17,16 +17,18 @@
     <link rel="stylesheet" href="css/style.css">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/72fb3712df.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <?php require_once('inc/header.php') ?>
 
+
     <div class="flex">
 
         <?php require_once('inc/agent-sidebar.php') ?>
 
-       <div class="flex flex-col content-wrapper">
+        <div class="flex flex-col content-wrapper">
             <ul class="bredcrumb">
                 <li>Dashboard</li>
                 <li><i class="fa-solid fa-chevron-right"></i></li>
@@ -34,50 +36,33 @@
             </ul>
 
             <div class="content">
-                content here
-                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                <div class="flex flex-row m-10">
+                    <div>
+                        <img src="img/agents.jpeg" alt="agent" width="800" height="500" >
+                    </div>
+
+                    <div class="flex flex-col content-wrapper">
+                        <h2>DRIVE PEAK AGENTS </h2>
+                        <ul>
+                            <li>DrivePeak agents ensure quick and hassle-free claims processing for our customers.</li>
+                            <li>DrivePeak agents ensure quick and hassle-free claims processing for our customers.</li>
+                            <li>DrivePeak agents are accessible and responsive, ready to assist customers whenever they
+                                need help.</li>
+                            <li>We are dedicated to delivering excellence in every interaction and transaction.</li>
+                        </ul>
+
+                        <div class="content-wrapper">
+                            <div class="content-wrapper">
+                                <h3>"Your solution's guardian angel"</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-       </div>
+        </div>
     </div>
 
     <?php require_once('inc/footer.php') ?>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script>
-
-
-    <script>
-        var xValues = ["2020", "2021", "2022", "2023", "2024"];
-        var yValues = [35, 49, 44, 24, 55];
-        var barColors = ["pink", "purple", "blue", "orange", "red"];
-
-       
-
-        const myChart = new Chart("myChart", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Chart.js Bar Chart'
-                    }
-                }
-            },
-        });
-   </script>
-
-   
 </body>
 
 </html>

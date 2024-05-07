@@ -10,7 +10,7 @@
 
 
     //get  customer's vehicle details
-    $query = "SELECT * FROM claim_intimation WHERE engineer_id = '$engineer_id'";
+    $query = "SELECT * FROM  claim_intimation WHERE engineer_id = '$engineer_id' ";
    
 
     $result  = mysqli_query($connection, $query) ;
@@ -19,9 +19,8 @@
     $claim_list = '';
 
     while($row = mysqli_fetch_array($result)) {
+
         $claim_list .= "<tr>";
-        
-    
         $claim_list .= "<td>" . $row['claim_intimation_id'] . "</td>";
         $claim_list .= "<td>" . $row['insured_name'] . "</td>";
         $claim_list .= "<td>" . $row['vehicle_no'] . "</td>";
@@ -30,10 +29,10 @@
         $claim_list .= "<td>" . $row['phone_number'] . "</td>";
         $claim_list .= "<td>" . $row['chassi_number'] . "</td>";
         $claim_list .= "<td>" . $row['driver_name'] . "</td>";
-        $claim_list .= "<td>" . $row['date'] . "</td>";
+        $claim_list .= "<td>" . $row['date DATE ,'] . "</td>";
         $claim_list .= "<td>" . $row['place'] . "</td>";
         $claim_list .= "<td>" . $row['description'] . "</td>";
-        $claim_list .= "<td>" . $row['vehicle_cindition'] . "</td>";
+        $claim_list .= "<td>" . $row['vehicle_condition'] . "</td>";
         $claim_list .= "</tr>";
     }
 
@@ -67,7 +66,7 @@
 
                 <ul class="bredcrumb">
                     <li><i class="fa-solid fa-chevron-right"></i></li>
-                    <li><a href="chief-engineer-claimlist.php">Claim List</a></li>
+                    <li><a href="chief-engineer-claim_list.php">Claim List</a></li>
                 </ul>
 
                 <?php

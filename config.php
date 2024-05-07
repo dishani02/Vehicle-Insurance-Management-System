@@ -1,4 +1,3 @@
-<!-- connection configuration -->
 <?php
   $servername="localhost";
   $username="root";

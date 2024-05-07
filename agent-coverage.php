@@ -68,22 +68,18 @@
                     </div>
 
                     <div class="form-item flex flex-col text-center flex-border">
+                        <h3><?php echo $customer_count; ?></h3>
                         <i class="fa-solid fa-eye"></i>
                         <p>Total Accidents</p>
                     </div>
 
                     <div class="form-item flex flex-col text-center flex-border">
+                        <h3><?php echo $customer_count; ?></h3>
                         <i class="fa-solid fa-calendar-days"></i>
                         <p>Expire</p>
                     </div>
-
-                    <div class="flex flex-col text-center">
-                        <div class="form-item flex flex-col text-center flex-border">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <p>Expire Soon</p>
-                        </div>
-                    </div>
                 </div>
+            </div>
 
 
                 <div class="content">

@@ -15,7 +15,7 @@
     <div class="sidebar">
         <nav>
             <ul>
-                <li><a href="">Dashboard</a></li>
+               
                 <li><a class ="active"href="">Customer list</a></li>
                 <li><a href="claim_manager_claimlist.php">Claims</a></li>
                 <li><a href="">Payments</a></li>

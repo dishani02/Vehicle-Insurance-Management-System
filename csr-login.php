@@ -24,6 +24,7 @@
           
             $email = mysqli_real_escape_string($connection, $_POST['email']);
             $password = mysqli_real_escape_string($connection, $_POST['password']);
+            
            
 
             $query = "SELECT * FROM csr WHERE email = '{$email}' AND password = '{$password}'";
