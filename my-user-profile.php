@@ -21,7 +21,7 @@
     $contact_no_list = '';
 
     
-
+    
     while($row = mysqli_fetch_array($result_1)) {
         $contact_no_list .= "<tr>";
         $contact_no_list .= "<td>" . $row['contact_no'] . "</td>";
@@ -30,11 +30,45 @@
     }
 ?>
 
-<?php
 
-    if(isset($_POST['submit'])) {
+
+<?php
+      if(isset($_POST['submit'])) {
 
         $messages = array();
+    
+        if(!isset($_POST['first_name']) || strlen(trim($_POST['first_name'])) < 1) {
+            $messages['first_name'] = "First name is required";
+        } 
+    
+        if(!isset($_POST['last_name']) || strlen(trim($_POST['last_name'])) < 1) {
+            $messages['last_name'] = "Last name is required";
+        } 
+        
+        if(!isset($_POST['nic']) || strlen(trim($_POST['nic'])) < 1) {
+            $messages['nic'] = "NIC is required";
+        }  
+        
+        if(!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
+            $messages['email'] = "Email is required";
+        } 
+         
+        if(!isset($_POST['home_no']) || strlen(trim($_POST['home_no'])) < 1) {
+            $messages['home_no'] = "Home number is required";
+        } 
+    
+        if(!isset($_POST['street']) || strlen(trim($_POST['street'])) < 1) {
+            $messages['street'] = "Street is required";
+        } 
+    
+        if(!isset($_POST['city']) || strlen(trim($_POST['city'])) < 1) {
+            $messages['city'] = "City is required";
+        } 
+
+    
+
+    
+
 
         //update user profile
         $first_name = $_POST['first_name'];
@@ -58,6 +92,8 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $messages['common'] = "Profile successfully updated!";
+        } else{
+            echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
         }
 
         //create contact number
@@ -151,12 +187,22 @@
                                 <label for=""> First Name <span class="required">*</span></label>
                                 <input type="text" name="first_name" placeholder="Full Name"
                                     value="<?php echo $customer['first_name'] ?>">
+                                    <?php
+                                    if(isset($messages) && !empty($messages['first_name'])) {
+                                    echo '<div class="error required">'.$messages['first_name'].'</div>';
+                                    }
+                                ?>
                             </div>
 
                             <div class="form-item flex flex-col">
                                 <label for=""> Last Name <span class="required">*</span></label>
                                 <input type="text" name="last_name" placeholder="Full Name"
                                     value="<?php echo $customer['last_name'] ?>">
+                                    <?php
+                                    if(isset($messages) && !empty($messages['last_name'])) {
+                                        echo '<div class="error required">'.$messages['last_name'].'</div>';
+                                    }
+                                ?>
                             </div>
                         </div>
 
@@ -165,12 +211,18 @@
                                 <label for=""> NIC <span class="required">*</span></label>
                                 <input type="text" name="nic" placeholder="NIC" value="<?php echo $customer['nic'] ?>"
                                     disabled>
+                                   
                             </div>
 
                             <div class="form-item flex flex-col">
                                 <label for="">Email <span class="required">*</span></label>
                                 <input type="email" name="email" placeholder="email"
                                     value="<?php echo $customer['email'] ?>">
+                                    <?php
+                                    if(isset($messages) && !empty($messages['email'])) {
+                                        echo '<div class="error required">'.$messages['email'].'</div>';
+                                    }
+                                ?>
                             </div>
                         </div>
 
@@ -178,13 +230,30 @@
                         <div class="flex flex-row form">
                             <div class="form-item flex flex-col">
                                 <label for=""> Address<span class="required">*</span></label>
-                                <input type="text" name="home_no" placeholder="contact number"
+                                <input type="text" name="home_no" placeholder="home_no"
                                     value="<?php echo $customer['home_no'] ?>">
-                                <input type="text" name="street" placeholder="contact number"
+                                    <?php
+                                    if(isset($messages) && !empty($messages['home_no'])) {
+                                         echo '<div class="error required">'.$messages['home_no'].'</div>';
+                                    }
+                                ?>
+                                <input type="text" name="street" placeholder="street"
                                     value="<?php echo $customer['street'] ?>">
+                                    <?php
+                                    if(isset($messages) && !empty($messages['street'])) {
+                                        echo '<div class="error required">'.$messages['street'].'</div>';
+                                    }
+                                ?>
+
                                     <div class="flex flex-row form"></div>
-                                    <input type="text" name="city" placeholder="contact number"
+                                    <input type="text" name="city" placeholder="city"
                                     value="<?php echo $customer['city'] ?>">
+                                    <?php
+                                    if(isset($messages) && !empty($messages['city'])) {
+                                        echo '<div class="error required">'.$messages['city'].'</div>';
+                                    }
+                                ?>
+
                             </div>
                         </div>
 

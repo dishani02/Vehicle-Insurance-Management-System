@@ -60,11 +60,7 @@ CREATE TABLE Agent_contact_no(
 );
 /*TODO:*/
 
-/* Claim manager Table */
-/* Claim manager Countacr us Table */
-/* Cheef engineer Table */
-/* Cheef engineer  Countacr us Table */
-/* Manager_Cheef engineer Table */
+
 
 /* CRS Table */
 CREATE TABLE Csr(
@@ -104,7 +100,7 @@ CREATE TABLE Customer(
 /* Customer Countacr us Table */
 CREATE TABLE Customer_Contact_no(
     contact_no VARCHAR(15) NOT NULL,
-    customer_id INT NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(contact_no, customer_id),
     FOREIGN KEY(customer_id) REFERENCES Customer(customer_id)
 );
@@ -194,7 +190,7 @@ CREATE TABLE Accident_image(
 CREATE TABLE Claim(
     manager_id  CHAR(5) NOT NULL,
     vehicle_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT
     claim_id CHAR(5) NOT NULL,
     amount FLOAT(),
     issued_date DATE ,
@@ -209,7 +205,8 @@ CREATE TABLE Claim(
 /* Vehicle Table */
 
 CREATE TABLE Vehicle(
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
+    agent_id
     vehicle_id CHAR(5) NOT NULL,
     model VARCHAR(25),
     chassis_no VARCHAR(190),
@@ -224,7 +221,7 @@ CREATE TABLE Vehicle(
 CREATE TABLE Payment(
     payment_id CHAR(5) NOT NULL,
     admin_id CHAR(5) NOT NULL,
-    customer_id CHAR(5) NOT NULL,
+    customer_id INT NOT NULL AUTO_INCREMENT,
     vehicle_id CHAR(5) NOT NULL,
     amount INT(10),
     payment_date DATE,
@@ -365,6 +362,13 @@ VALUES('9992','1','kumal','cae6743','bmw','car','071678256','me2373733','ashan',
 INSERT INTO Claim VALUES (1,"1GTF2",1,1021,67000,"2023-09-09","Approved");
 INSERT INTO Claim VALUES (1, "342",1,1031, 15000,"2023-09-09","Approved");
 INSERT INTO Claim VALUES (1,"447",1,1041,12000,"2023-09-09","Rejected");
+
+
+INSERT INTO vehicle VALUES (1,'GTA456',1,'thiedprty','toyota',5655656,2016);
+
+
+INSERT INTO Policy VALUES (123,2,'2009-11-11','20010-11-11');
+
 
 
 
