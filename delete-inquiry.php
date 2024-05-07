@@ -10,12 +10,15 @@ if (!isset($_SESSION['csr_id'])) {
     exit();
 }
 
-// Check if inquiry ID is provided
-if (!isset($_GET['inquiry_id'])) {
+if (!isset($_GET['id'])) {
     // Respond with an error message if inquiry ID is missing
     echo json_encode(['success' => false, 'message' => 'Inquiry ID is missing']);
     exit();
 }
+
+// Get inquiry ID from URL parameter
+$inquiryId = $_GET['id'];
+
 
 // Get inquiry ID from URL parameter
 $inquiryId = $_GET['inquiry_id'];
