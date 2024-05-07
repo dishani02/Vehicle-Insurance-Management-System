@@ -66,11 +66,20 @@
         } 
 
     
-
+        
+    // if (empty($messages)) {
+    //     //update user profile
+    //     $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
+    //     $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
+    //     $nic = mysqli_real_escape_string($connection, $_POST['nic']);
+    //     $email = mysqli_real_escape_string($connection, $_POST['email']);
+    //     $home_no = mysqli_real_escape_string($connection, $_POST['home_no']);
+    //     $street = mysqli_real_escape_string($connection, $_POST['street']);
+    //     $city = mysqli_real_escape_string($connection, $_POST['city']);
     
 
 
-        //update user profile
+    //  update user profile
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $email = $_POST['email'];
@@ -89,12 +98,21 @@
 
         $result = mysqli_query($connection, $query);
 
+        // if($result) {
+        //     $_SESSION['first_name'] = $first_name;
+        //     $messages['common'] = "Profile successfully updated!";
+        // } 
+
         if($result) {
             $_SESSION['first_name'] = $first_name;
-            $messages['common'] = "Profile successfully updated!";
-        } else{
+            $_SESSION['success_message'] = "Profile successfully updated!";
+            header("Location: my-user-profile.php");
+            exit();
+        }  
+        else {
             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
         }
+    }
 
         //create contact number
         if(isset($_POST['contact_numbers'])) {
@@ -112,7 +130,7 @@
                 }
             }
         }
-    }
+    
 ?>
 
 <?php 
@@ -166,15 +184,24 @@
                     <li><a href="my-user-profile.php">User Profile</a></li>
                 </ul>
 
+                
                 <?php
-                if(isset($messages) && !empty($messages['common'])) {
-                    echo '<div class="flash-message">
-                            <i class="fa-solid fa-check"></i>
-                            <p>'.$messages['common'].'</p>
-                        </div>';
-                    }
+                // if(isset($messages) && !empty($messages['common'])) {
+                //     echo '<div class="flash-message">
+                //             <i class="fa-solid fa-check"></i>
+                //             <p>'.$messages['common'].'</p>
+                //         </div>';
+                //     }
                 ?>
                 
+                <?php
+                if(isset($_SESSION['success_message'])) {
+                    echo '<div class="flash-message"><i class="fa-solid fa-check"></i><p>' . $_SESSION['success_message'] . '</p></div>';
+                    unset($_SESSION['success_message']);
+                }
+            ?>
+
+
 
                 <form action="my-user-profile.php" method="post">
 
@@ -211,14 +238,14 @@
                                 <label for=""> NIC <span class="required">*</span></label>
                                 <input type="text" name="nic" placeholder="NIC" value="<?php echo $customer['nic'] ?>"
                                     disabled>
-                                   
+                                  
                             </div>
 
                             <div class="form-item flex flex-col">
                                 <label for="">Email <span class="required">*</span></label>
                                 <input type="email" name="email" placeholder="email"
                                     value="<?php echo $customer['email'] ?>">
-                                    <?php
+                                     <?php
                                     if(isset($messages) && !empty($messages['email'])) {
                                         echo '<div class="error required">'.$messages['email'].'</div>';
                                     }
@@ -237,13 +264,14 @@
                                          echo '<div class="error required">'.$messages['home_no'].'</div>';
                                     }
                                 ?>
+
                                 <input type="text" name="street" placeholder="street"
                                     value="<?php echo $customer['street'] ?>">
-                                    <?php
+                                     <?php
                                     if(isset($messages) && !empty($messages['street'])) {
                                         echo '<div class="error required">'.$messages['street'].'</div>';
                                     }
-                                ?>
+                                     ?>
 
                                     <div class="flex flex-row form"></div>
                                     <input type="text" name="city" placeholder="city"
@@ -257,58 +285,6 @@
                             </div>
                         </div>
 
-                        
-
-
-                           
-                        
-
-                        <!-- <div>
-                            <h5>Policy Details </h5>
-                            <div class="flex flex-col">
-                                <label for="">Policy ID <span class="required">*</span></label>
-                                <input type="text" name="" placeholder="Policy ID">
-
-
-
-                            </div>
-
-                            <div class="flex flex-col">
-                                <p>Coverage Type</p>
-                                <select name="Coverage Type" id="">
-                                    <option value="">Select Coverage Type</option>
-                                    <option value="Third Party">Third Party</option>
-                                    <option value="Comprehensive">Comprehensive</option>
-                                </select>
-                            </div>
-
-                            <div class="flex flex-col">
-                                <label for="">Duration <span class="required">*</span></label>
-                                <input type="number" name="" placeholder="Your Policy Duration">
-                            </div>
-
-                            <div class="flex flex-col">
-                                <label for="">Registration Date <span class="required">*</span></label>
-                                <input type="date" name="" placeholder="Registration Date">
-                            </div>
-
-
-                            <div class="flex flex-col">
-                                <label for="">Expire Date <span class="required">*</span></label>
-                                <input type="date" name="" placeholder="Expire Date">
-                            </div>
-
-
-                            <div class="flex flex-col">
-                                <label for="">Vehicle Book <span class="required">*</span></label>
-                                <input type="File" name="" placeholder="Add a file">
-                            </div>
-
-                            <div class="flex flex-col">
-                                <label for="">Licence <span class="required">*</span></label>
-                                <input type="File" name="" placeholder="Add a licience">
-                            </div>
-                        </div> -->
                     </div>
 
                     <!--contact numbers-->
