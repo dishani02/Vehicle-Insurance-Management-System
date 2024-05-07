@@ -44,7 +44,7 @@ if (!empty($_SESSION["id"])) {
 
                     <div class="flex flex-col">
                         <label for="">Contact <span class="required">*</span></label>
-                        <input type="number" name="contact" id="conatct_no" placeholder="Contact">
+                        <input type="number" name="contact" id="contact_no" placeholder="Contact">
                     </div>
 
                     <div class="flex flex-col">
@@ -58,8 +58,8 @@ if (!empty($_SESSION["id"])) {
                     </div>
 
                     <div class="flex flex-col">
-                        <label for="">Date <span class="required">*</span></label>
-                        <textarea name="date" id="date" placeholder="Enter the date"></textarea>
+                        <label for="Date">Select a date: <span class="required">*</span></label>
+                        <input type="date" name="date" id="date">
                     </div>
 
                     <div class="flex flex-col" style="margin-top: 10px">

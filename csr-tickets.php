@@ -172,11 +172,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            // Optionally, update the UI to reflect the deletion
-                            // For example, remove the deleted row from the table
+                            
+                            //  remove the deleted row from the table
                             location.reload(); // Reload the page to reflect changes
                         } else {
-                            // Handle the case where deletion was not successful
+                            // where deletion was not successful
                             alert('Failed to delete inquiry');
                         }
                     })
