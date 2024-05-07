@@ -3,8 +3,8 @@
 <?php require_once('inc/connection.php') ?>
 
 <?php
-    if(!isset($_SESSION['first_name']) && !isset($_SESSION['agent_id'])) {
-        header('Location: agent-login.php');
+    if(!isset($_SESSION['first_name']) && !isset($_SESSION['engineer_id'])) {
+        header('Location: chief_engineer_login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -24,13 +24,13 @@
 
     <div class="flex">
 
-        <?php require_once('inc/agent-sidebar.php') ?>
+        <?php require_once('inc/chief-engineer-sidebar.php') ?>
 
        <div class="flex flex-col content-wrapper">
             <ul class="bredcrumb">
                 <li>Dashboard</li>
                 <li><i class="fa-solid fa-chevron-right"></i></li>
-                <li><a href="agent-add-customer.php">Agent Dashboard</a></li>
+                <li><a href="chief_engineer_dashboard.php">Chief engineer Dashboard</a></li>
             </ul>
 
             <div class="content">

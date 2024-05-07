@@ -12,7 +12,14 @@
     <?php require_once('inc/header.php') ?>
 
     <div class="container">
-        register ui here
+        <fieldset>
+            <legend><b>Customer Register Form</b></legend>
+
+            <form method="post" action="insert_customer.php">
+                First Name:<input type="text" name="cfirst">
+                Last Name:<input type="text" name="cfirst">
+            </form>
+        </fieldset>
     </div>
 
     <?php require_once('inc/footer.php') ?>

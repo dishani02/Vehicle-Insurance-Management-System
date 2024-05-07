@@ -6,11 +6,11 @@
 <?php
 
     //get customer id from session 
-   $engineerid = $_SESSION['engineer_id'];
+   $engineer_id = $_SESSION['engineer_id'];
 
 
     //get  customer's vehicle details
-    $query = "SELECT * FROM  claim_intimation WHERE engineer_id = '$engineer_id' ";
+    $query = "SELECT * FROM claim_intimation WHERE engineer_id = '$engineer_id'";
    
 
     $result  = mysqli_query($connection, $query) ;
@@ -30,10 +30,10 @@
         $claim_list .= "<td>" . $row['phone_number'] . "</td>";
         $claim_list .= "<td>" . $row['chassi_number'] . "</td>";
         $claim_list .= "<td>" . $row['driver_name'] . "</td>";
-        $claim_list .= "<td>" . $row['date DATE ,'] . "</td>";
+        $claim_list .= "<td>" . $row['date'] . "</td>";
         $claim_list .= "<td>" . $row['place'] . "</td>";
         $claim_list .= "<td>" . $row['description'] . "</td>";
-        $claim_list .= "<td>" . $row['vehicle_condition'] . "</td>";
+        $claim_list .= "<td>" . $row['vehicle_cindition'] . "</td>";
         $claim_list .= "</tr>";
     }
 

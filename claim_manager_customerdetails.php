@@ -14,74 +14,52 @@
     <?php require_once("claim_manager_sidebar.php")?>
 
 
-    
+    <div>
+        <h3>Policy Holder Details</h3>
 
-    <div class="date">
-        
-        <form action="">
-        <input class="input" type="text" placeholder="Search by Reg No...">
-        <label class="label" for="starttime">Generate report from</label>
-        <input class="date1" type="date" id="starttime" name="starttime">
-        <label for="endtime">to<label for="starttime"></label>
-        <input class="date2" type="date" id="endtime" name="endttime">
-        <input class="submit" type="submit" id="generate" value="Generate">
-        </form>
-    </div>
-
-    <div class='table-container'>
         <table>
-            <thead>
-                <tr>
-                    <th>Insured Name</th>
-                    <th>Policy No</th>
-                    <th>Reg No</th>
-                    <th>Coverage Type</th>
-                    <th>Contact No</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
-
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
-
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
-
-                <tr>
-                    <td>Insuared Name</td>
-                    <td>Policy No</td>
-                    <td>Reg No</td>
-                    <td>Coverage Type</td>
-                    <td>Contact No</td>
-                    <td>Contact No</td>
-                </tr>
-
-            </tbody>
+            <tr>
+                <td>Insured:</td>
+                <td>Email:</td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>contact:</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>DOB:</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Insured:</td>
+                <td>Email:</td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>contact:</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>DOB:</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Insured:</td>
+                <td>Email:</td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>contact:</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>DOB:</td>
+            </tr>
         </table>
     </div>
-    
 
 </body>
 </html>
