@@ -13,13 +13,49 @@
 </head>
 
 <body>
+    <!-- include header -->
     <?php require_once("inc/header.php")?>
 
     <?php
         // connect with databse
         require_once("config.php");
+
+             // Function to fetch data from the database
+             function fetchData($conn) {
+                $data = array();
+                $sql = "SELECT * FROM customer";
+                $result = mysqli_query($conn, $sql);
+                if(mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        $data[] = $row;
+                    }
+                }
+                return $data;
+            }
+    
+            // Function to write report to file
+            function writeReport($data) {
+                $reportContent = '';
+                foreach($data as $row) {
+                    $reportContent .= $row['first_name'] . "\t" . $row['customer_id'] . "\t" . $row['nic'] . "\n";
+                }
+                if (file_put_contents('report-customer-list.txt', $reportContent) !== false) {
+                    //echo "Report generated successfully!";
+                } else {
+                    echo "Error writing to report file!";
+                }
+            }
+            
+    
+            // Generate report if form submitted
+            if(isset($_POST['generate'])) {
+                $data = fetchData($conn);
+                writeReport($data);
+                //echo "Report generated successfully!";
+            }
     ?>
 
+<!-- side navigation bar -->
 <div class="sidebar">
        
         <nav>
@@ -34,12 +70,9 @@
 
     <div class="date">
     
-        <form action="">
-        <label class="label" for="starttime">Generate report from</label>
-        <input class="date1" type="date" id="starttime" name="starttime">
-        <label for="endtime">to<label for="starttime"></label>
-        <input class="date2" type="date" id="endtime" name="endttime">
-        <input class="submit" type="submit" id="generate" value="Generate">
+        <form method="post" action="claim_manager_customerlist.php">
+        <label class="label" for="submit">Generate a report:</label>
+        <input class="submit" type="submit" id="generate" name="generate" value="Generate">
         </form>
     </div>
 

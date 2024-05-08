@@ -16,13 +16,47 @@
     <?php
         // connect with databse
         require_once("config.php");
+
+         // Function to fetch data from the database
+         function fetchData($conn) {
+            $data = array();
+            $sql = "SELECT * FROM payment";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+                    $data[] = $row;
+                }
+            }
+            return $data;
+        }
+
+        // Function to write report to file
+        function writeReport($data) {
+            $reportContent = '';
+            foreach($data as $row) {
+                $reportContent .= $row['customer_id'] . "\t" . $row['amount'] . "\t" . $row['payment_date'] . "\n";
+            }
+            if (file_put_contents('report-payment-list.txt', $reportContent) !== false) {
+                //echo "Report generated successfully!";
+            } else {
+                echo "Error writing to report file!";
+            }
+        }
+        
+
+        // Generate report if form submitted
+        if(isset($_POST['generate'])) {
+            $data = fetchData($conn);
+            writeReport($data);
+            //echo "Report generated successfully!";
+        }
     ?>
 
 <div class="sidebar">
         <nav>
             <ul>
               
-                <li><a href="claim_manager_claimlist.php">Customer list</a></li>
+                <li><a href="claim_manager_customerlist.php">Customer list</a></li>
                 <li><a  href="claim_manager_claimlist.php">Claims</a></li>
                 <li><a class ="active" href="claim_manager_paymentlist.php">Payments</a></li>
             </ul>
@@ -30,21 +64,18 @@
     </div>
     <div class="date">
     
-        <form action="">
-        <label class="label" for="starttime">Generate report from</label>
-        <input class="date1" type="date" id="starttime" name="starttime">
-        <label for="endtime">to<label for="starttime"></label>
-        <input class="date2" type="date" id="endtime" name="endttime">
-        <input class="submit" type="submit" id="generate" value="Generate">
-        </form>
+    <form method="post" action="claim_manager_paymentlist.php">
+        <label class="label" for="submit">Generate a report:</label>
+        <input class="submit" type="submit" id="submit" name="generate" value="Generate">
+        </form> 
     </div>
 
     <div class='table-container'>
         <table>
             <thead>
                 <tr>
-                    <th>Insured Name</th>
                     <th>Customer ID</th>
+                    <th>Insured Name</th>
                     <th>Amount(Rs)</th>
                     <th>Payment Date</th>
                 </tr>
