@@ -37,6 +37,18 @@ if (!empty($_SESSION["id"])) {
         <div class="contact-us flex">
             <div class="contact-form">
                 <form action="save-contact.php" method="post">
+                <div class="flex flex-col">
+                        <label for="">customer id <span class="required">*</span></label>
+                        <input type="text" name="customerid" id="customerid" placeholder="customer id">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="">csr id <span class="required">*</span></label>
+                        <input type="text" name="csrid" id="csrid" placeholder="csr id">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="">inquiry id <span class="required">*</span></label>
+                        <input type="text" name="inquiryid" id="inquiryid" placeholder="inquiry id">
+                    </div>
                     <div class="flex flex-col">
                         <label for="">Name <span class="required">*</span></label>
                         <input type="text" name="name" id="name" placeholder="Your Name">
