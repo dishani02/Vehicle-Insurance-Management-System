@@ -14,7 +14,7 @@ if (!isset($_SESSION['csr_id'])) {
 // Retrieve CSR ID from session
 $csrId = $_SESSION['csr_id'];
 
-// Retrieve customer's vehicle details
+
 $query = "SELECT * FROM inquiry WHERE csr_id = '$csrId'";
 $result = mysqli_query($connection, $query);
 

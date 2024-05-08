@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once('inc/connection.php');
@@ -18,10 +17,6 @@ if (!isset($_GET['id'])) {
 
 // Get inquiry ID from URL parameter
 $inquiryId = $_GET['id'];
-
-
-// Get inquiry ID from URL parameter
-$inquiryId = $_GET['inquiry_id'];
 
 // Prepare delete query with prepared statement
 $query = "DELETE FROM inquiry WHERE inquiry_id = ?";
