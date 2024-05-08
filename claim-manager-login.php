@@ -39,7 +39,7 @@
                     $_SESSION['manager_id'] = $user['manager_id'];
                     $_SESSION['first_name'] = $user['first_name'];
                     
-                    header('Location: claim-manager-dashboard.php'); 
+                    header('Location: claim_manager_claimlist.php'); 
                 }
                 else{
                     $errors['common'] = 'Invalid email / password';
