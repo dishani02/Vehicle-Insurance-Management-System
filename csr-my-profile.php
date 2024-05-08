@@ -67,7 +67,7 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $_SESSION['success_message'] = "Profile successfully updated!";
-            header("Location: agent-reports.php");
+            header("Location: csr-login.php");
             exit();
         }  
         else {
