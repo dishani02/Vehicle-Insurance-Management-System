@@ -18,11 +18,6 @@
     $agent = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 ?>
-<?php
-    if(!isset($_SESSION['first_name'])) {
-        header('Location: agent-login.php');
-    }
-?>
 
 <?php
    if(isset($_POST['submit'])) {
@@ -82,7 +77,7 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $_SESSION['success_message'] = "Profile successfully updated!";
-            header("Location: agent-reports.php");
+            header("Location: agent-user-profile.php");
             exit();
         }  
         else {
@@ -139,11 +134,10 @@
                             <input type="text" name="first_name" placeholder="First Name"
                                 value="<?php echo $agent['first_name'] ?>">
                             <?php
-
-                                if(isset($messages) && !empty($messages['first_name'])) {
+                                    if(isset($messages) && !empty($messages['first_name'])) {
                                     echo '<div class="error required">'.$messages['first_name'].'</div>';
-                                }
-                            ?>
+                                    }
+                                ?>
                         </div>
 
                         <div class="form-item flex flex-col">
@@ -151,10 +145,10 @@
                             <input type="text" name="last_name" placeholder="Last Name"
                                 value="<?php echo $agent['last_name'] ?>">
                             <?php
-                                if(isset($messages) && !empty($messages['last_name'])) {
-                                    echo '<div class="error required">'.$messages['last_name'].'</div>';
-                                }
-                            ?>
+                                    if(isset($messages) && !empty($messages['last_name'])) {
+                                        echo '<div class="error required">'.$messages['last_name'].'</div>';
+                                    }
+                                ?>
                         </div>
 
                     </div>
@@ -162,22 +156,23 @@
                     <div class="flex flex-row form">
                         <div class="form-item flex flex-col">
                             <label for=""> NIC <span class="required">*</span></label>
-                            <input type="text" name="nic" placeholder="NIC" value="<?php echo $agent['nic'] ?>" readonly>
+                            <input type="text" name="nic" placeholder="NIC" value="<?php echo $agent['nic'] ?>"
+                                readonly>
                             <?php
-                                if(isset($messages) && !empty($messages['nic'])) {
+                                    if(isset($messages) && !empty($messages['nic'])) {
                                     echo '<div class="error required">'.$messages['nic'].'</div>';
-                                }
-                            ?>
+                                    }
+                                ?>
                         </div>
 
                         <div class="form-item flex flex-col">
                             <label for="">Email <span class="required">*</span></label>
                             <input type="email" name="email" placeholder="Email" value="<?php echo $agent['email'] ?>">
                             <?php
-                                if(isset($messages) && !empty($messages['email'])) {
-                                    echo '<div class="error required">'.$messages['email'].'</div>';
-                                }
-                            ?>
+                                    if(isset($messages) && !empty($messages['email'])) {
+                                        echo '<div class="error required">'.$messages['email'].'</div>';
+                                    }
+                                ?>
                         </div>
                     </div>
 
@@ -187,23 +182,24 @@
                             <input type="text" name="home_no" placeholder="Home Number"
                                 value="<?php echo $agent['home_no'] ?>">
                             <?php
-                                if(isset($messages) && !empty($messages['home_no'])) {
-                                    echo '<div class="error required">'.$messages['home_no'].'</div>';
-                                }
-                            ?>
-                            <input type="text" name="street" placeholder="Street" value="<?php echo $agent['street'] ?>">
+                                    if(isset($messages) && !empty($messages['home_no'])) {
+                                         echo '<div class="error required">'.$messages['home_no'].'</div>';
+                                    }
+                                ?>
+                            <input type="text" name="street" placeholder="Street"
+                                value="<?php echo $agent['street'] ?>">
                             <?php
-                                if(isset($messages) && !empty($messages['street'])) {
-                                    echo '<div class="error required">'.$messages['street'].'</div>';
-                                }
-                            ?>
+                                    if(isset($messages) && !empty($messages['street'])) {
+                                        echo '<div class="error required">'.$messages['street'].'</div>';
+                                    }
+                                ?>
                             <div class="flex flex-row form"></div>
                             <input type="text" name="city" placeholder="City" value="<?php echo $agent['city'] ?>">
                             <?php
-                                if(isset($messages) && !empty($messages['city'])) {
-                                    echo '<div class="error required">'.$messages['city'].'</div>';
-                                }
-                            ?>
+                                    if(isset($messages) && !empty($messages['city'])) {
+                                        echo '<div class="error required">'.$messages['city'].'</div>';
+                                    }
+                                ?>
                         </div>
                     </div>
 
@@ -213,60 +209,13 @@
 
                     </div>
                 </div>
-
             </form>
-            
         </div>
-
-       
     </div>
-    
-    </div>
+</div>
 
     <?php require_once('inc/footer.php') ?>
 
-</body>
-
-
-
-<!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-</div>
-</div> -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
-
-
-<script>
-    var xValues = ["2020", "2021", "2022", "2023", "2024"];
-    var yValues = [35, 49, 44, 24, 55];
-    var barColors = ["pink", "purple", "blue", "orange", "red"];
-
-
-
-    const myChart = new Chart("myChart", {
-        type: "pie",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Chart.js Bar Chart'
-                }
-            }
-        },
-    });
-</script>
 </body>
 
 </html>

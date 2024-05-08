@@ -234,7 +234,7 @@
                     <div>
                         <div class="flex" style="margin-top: 10px">
                             <button type="submit" name="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
-                            <button type="reset" class="btn btn-primary"><a href="my-policies.php">Reset</a></button>
+                            <button type="reset" class="btn btn-primary"><a href="">Reset</a></button>
                         </div>
                 </form>
 

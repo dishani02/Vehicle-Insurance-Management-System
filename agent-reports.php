@@ -67,11 +67,6 @@
             $messages['place'] = "Place is required";
         } 
 
-        
-        // if(!isset($_FILES['images[]'])) {
-        //     $messages['images'] = "Accident images are required";
-        // }
-        
 
         if (empty($messages)) {
             $informant_name =  mysqli_real_escape_string($connection, $_POST['informant_name']);
@@ -173,7 +168,7 @@
                 }
             ?>
 
-            <h4 class="m-10">Claim Intimation Form</h4>
+            <h3 class="m-10">Claim Intimation Form</h3>
 
             <form action="agent-reports.php" method="post" enctype="multipart/form-data">
                 <div class="flex flex-col">
@@ -182,10 +177,10 @@
                             <label for=""> Name of the informant <span class="required">*</span></label>
                             <input type="text" name="informant_name" placeholder="Name of the informant">
                             <?php
-                                    if(isset($messages) && !empty($messages['informant_name'])) {
-                                        echo '<div class="error required">'.$messages['informant_name'].'</div>';
-                                    }
-                                ?>
+                                if(isset($messages) && !empty($messages['informant_name'])) {
+                                    echo '<div class="error required">'.$messages['informant_name'].'</div>';
+                                }
+                             ?>
                         </div>
 
                         <div class="form-item flex flex-col">
@@ -195,10 +190,10 @@
                                 <?php echo $vehicle_list; ?>
                             </select>
                             <?php
-                                    if(isset($messages) && !empty($messages['vehicle_id'])) {
-                                        echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
-                                    }
-                                ?>
+                                if(isset($messages) && !empty($messages['vehicle_id'])) {
+                                     echo '<div class="error required">'.$messages['vehicle_id'].'</div>';
+                                }
+                            ?>
                         </div>
 
                     </div>
@@ -208,19 +203,19 @@
                             <label for=""> Date of the Accident<span class="required">*</span></label>
                             <input type="date" name="date" placeholder="Date of the Accident">
                             <?php
-                                    if(isset($messages) && !empty($messages['date'])) {
-                                        echo '<div class="error required">'.$messages['date'].'</div>';
-                                    }
-                                ?>
+                                if(isset($messages) && !empty($messages['date'])) {
+                                    echo '<div class="error required">'.$messages['date'].'</div>';
+                                }
+                             ?>
                         </div>
 
                         <div class="form-item flex flex-col">
                             <label for=""> Place of the Accident<span class="required">*</span></label>
                             <input type="text" name="place" placeholder="Place of the Accident">
                             <?php
-                                    if(isset($messages) && !empty($messages['place'])) {
-                                        echo '<div class="error required">'.$messages['place'].'</div>';
-                                    }
+                                if(isset($messages) && !empty($messages['place'])) {
+                                     echo '<div class="error required">'.$messages['place'].'</div>';
+                                 }
                             ?>
                         </div>
                     </div>
@@ -231,10 +226,10 @@
                             <textarea type="text" name="description" placeholder="Description of the accident"
                                 rows="5"></textarea>
                             <?php
-                                    if(isset($messages) && !empty($messages['description'])) {
-                                        echo '<div class="error required">'.$messages['description'].'</div>';
-                                    }
-                                ?>
+                                if(isset($messages) && !empty($messages['description'])) {
+                                    echo '<div class="error required">'.$messages['description'].'</div>';
+                                }
+                             ?>
                         </div>
                     </div>
 
@@ -243,10 +238,10 @@
                             <label for=""> Add images<span class="required">*</span></label>
                             <input type="file" name="images[]" placeholder="Add images" multiple>
                             <?php
-                                    if(isset($messages) && !empty($messages['images'])) {
-                                        echo '<div class="error required">'.$messages['images'].'</div>';
-                                    }
-                                ?>
+                                if(isset($messages) && !empty($messages['images'])) {
+                                    echo '<div class="error required">'.$messages['images'].'</div>';
+                                 }
+                            ?>
                         </div>
                     </div>
 

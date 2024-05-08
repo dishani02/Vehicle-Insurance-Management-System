@@ -1,11 +1,11 @@
-<?php session_start(); ?>
+ <?php session_start(); ?>
 
 <?php require_once('inc/connection.php') ?>
 
 <?php
-    if(!isset($_SESSION['first_name']) && !isset($_SESSION['csr_id'])) {
-        header('Location: csr-login.php');
-    }
+    // if(!isset($_SESSION['first_name']) && !isset($_SESSION['csr_id'])) {
+    //     header('Location: csr-login.php');
+    // }
 
     //get agent id from session 
     $csrId = $_SESSION['csr_id'];
@@ -18,11 +18,12 @@
     $csr = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 ?>
-<?php
+ <?php
     if(!isset($_SESSION['first_name'])) {
         header('Location: csr-login.php');
+        exit();
     }
-?>
+?> 
 
 <?php
    if(isset($_POST['submit'])) {
@@ -66,12 +67,15 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $_SESSION['success_message'] = "Profile successfully updated!";
-            header("Location: csr-my-tickets.php");
+            header("Location: agent-reports.php");
             exit();
         }  
         else {
             echo "Error: " .  $query . "<br>" . mysqli_error($connection);  
         }
+        
+
+        
     }
    }
 ?>
@@ -120,7 +124,8 @@
                     <div class="flex flex-row form">
                         <div class="form-item flex flex-col">
                             <label for=""> Name <span class="required">*</span></label>
-                            <input type="text" name="name" placeholder=" Name" value="<?php echo $csr['name'] ?>">
+                            <input type="text" name="name" placeholder=" Name"
+                             value="<?php echo $csr['name'] ?>">
                             <?php
 
                                 if(isset($messages) && !empty($messages['name'])) {
@@ -196,4 +201,4 @@
 
 </html>
 
-<?php mysqli_close($connection); ?>
+<?php mysqli_close($connection); ?> 
