@@ -20,9 +20,6 @@
             <i class="fa-solid fa-chevron-right"></i>
         </a>
 
-        <a href="chief-engineer-claimchart.php" class="menu-item">
-            <h3>Claim Chart</h3>
-            <i class="fa-solid fa-chevron-right"></i>
-        </a>
+        
     </nav>
 </div>

@@ -31,8 +31,7 @@
         <div class="flex flex-col content-wrapper">
             <ul class="bredcrumb">
                 <li>Dashboard</li>
-                <li><i class="fa-solid fa-chevron-right"></i></li>
-                <li><a href="agent-add-customer.php">Agent Dashboard</a></li>
+               
             </ul>
 
             <div class="content">

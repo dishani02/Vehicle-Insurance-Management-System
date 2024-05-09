@@ -91,7 +91,7 @@
 <body>
     <?php require_once('inc/header.php') ?>
 
-    <div class="container">
+   
         <div class="flex">
             <div class="nav">
                 <?php require_once('inc/customer-dash.php') ?>
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-    </div>
+  
 
     <?php require_once('inc/footer.php') ?>
 </body>

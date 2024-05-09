@@ -2,6 +2,12 @@
 
 <?php require_once('inc/connection.php'); ?>
 
+<?php
+    if(!isset($_SESSION['first_name']) && !isset($_SESSION['agent_id'])) {
+        header('Location: claim-manager-login.php');
+    }
+?>
+
 
 <?php
 
@@ -29,7 +35,7 @@
         $claim_list .= "<td>" . $row['phone_number'] . "</td>";
         $claim_list .= "<td>" . $row['chassi_number'] . "</td>";
         $claim_list .= "<td>" . $row['driver_name'] . "</td>";
-        $claim_list .= "<td>" . $row['date DATE ,'] . "</td>";
+        $claim_list .= "<td>" . $row['date'] . "</td>";
         $claim_list .= "<td>" . $row['place'] . "</td>";
         $claim_list .= "<td>" . $row['description'] . "</td>";
         $claim_list .= "<td>" . $row['vehicle_condition'] . "</td>";

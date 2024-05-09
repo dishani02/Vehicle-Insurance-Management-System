@@ -10,7 +10,7 @@
             <i class="fa-solid fa-chevron-right"></i>
         </a>
 
-        <a href="my-vehicles.php" class="menu-item">
+        <a href="my-vehicles.php" class="menu-item block">
             <h3>My vehicles</h3>
             <i class="fa-solid fa-chevron-right"></i>
         </a>
