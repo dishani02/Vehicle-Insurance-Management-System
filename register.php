@@ -17,6 +17,7 @@
 
             <form method="post" action="insert_customer.php">
               
+    
                 First Name:<input class="input1" type="text" name="cfirst">
                 Last Name:<input type="text" name="clast"></br>
                 NIC:<input type="text" name="nic"></br></br>

@@ -68,6 +68,7 @@
             $_SESSION['first_name'] = $first_name;
             $_SESSION['success_message'] = "Profile successfully updated!";
             header("Location: crs-my-profile.php");
+            header("Location: csr-login.php");
             exit();
         }  
         else {

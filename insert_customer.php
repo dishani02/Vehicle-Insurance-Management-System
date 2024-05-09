@@ -16,9 +16,11 @@ $pass = $_POST["pass"];
 // Prepare and execute first INSERT statement
 $sql = "INSERT INTO register_user (first_name, last_name, nic,homeNo, street,town,email,password, contact) 
         VALUES ('$cfirst', '$clast', '$nic','$no','$street','$town', '$email', '$pass', '$contact')";
+$sql = "INSERT INTO register_user (first_name, last_name, nic, homeNo, street,town,email, password, contact) 
+        VALUES ('$cfirst', '$clast', '$nic', '$no', '$street', '$town','$email', '$pass','$contact')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "First query executed successfully. ";
+    //echo "First query executed successfully. ";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

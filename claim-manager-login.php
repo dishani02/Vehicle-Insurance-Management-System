@@ -37,7 +37,7 @@
                     $user = mysqli_fetch_assoc($result);
 
                     $_SESSION['manager_id'] = $user['manager_id'];
-                    $_SESSION['first_name'] = $user['name'];
+                    $_SESSION['first_name'] = $user['first_name'];
                     
                     header('Location: claim_manager_claimlist.php'); 
                 }
