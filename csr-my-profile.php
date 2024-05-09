@@ -67,7 +67,7 @@
         if($result) {
             $_SESSION['first_name'] = $first_name;
             $_SESSION['success_message'] = "Profile successfully updated!";
-            header("Location: agent-reports.php");
+            header("Location: crs-my-profile.php");
             exit();
         }  
         else {
@@ -166,10 +166,10 @@
                         <div class="form-item flex flex-col">
                             <label for="">Address<span class="required">*</span></label>
                             <input type="text" name="Address" placeholder="Address"
-                                value="<?php echo $csr['Address'] ?>">
+                                value="<?php echo $csr['address'] ?>">
                             <?php
-                                if(isset($messages) && !empty($messages['Address'])) {
-                                    echo '<div class="error required">'.$messages['Address'].'</div>';
+                                if(isset($messages) && !empty($messages['address'])) {
+                                    echo '<div class="error required">'.$messages['address'].'</div>';
                                 }
                             ?>
 

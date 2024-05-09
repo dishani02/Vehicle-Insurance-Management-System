@@ -16,7 +16,7 @@
             <legend><b>Customer Register Form</b></legend>
 
             <form method="post" action="insert_customer.php">
-                ID:<input  type="text" name="id">
+              
                 First Name:<input class="input1" type="text" name="cfirst">
                 Last Name:<input type="text" name="clast"></br>
                 NIC:<input type="text" name="nic"></br></br>

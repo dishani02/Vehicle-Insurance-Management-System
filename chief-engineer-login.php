@@ -24,7 +24,7 @@
 
             $email = mysqli_real_escape_string($connection, $_POST['email']);
             $password = mysqli_real_escape_string($connection, $_POST['password']);
-            $hashed_password = sha1($password);
+          
 
             $query = "SELECT * FROM chief_engineer WHERE email = '{$email}' AND password = '{$password}'";
 

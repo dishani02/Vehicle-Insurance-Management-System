@@ -83,8 +83,8 @@
             $year = mysqli_real_escape_string($connection, $_POST['year']);
             $model = mysqli_real_escape_string($connection, $_POST['model']);
 
-            $query = "INSERT INTO Customer (first_name,last_name,admin_id,agent_id,nic,email,password,home_no,street,city) 
-            VALUES ('$first_name', '$last_name',1,'$agent_id', ' $nic',  '$email', '$hash_password',' $home_no' ,'$street','$city')";
+            $query = "INSERT INTO Customer (first_name,last_name,admin_id,agent_id,nic,email,home_no,street,city,password) 
+            VALUES ('$first_name', '$last_name',1,'$agent_id', ' $nic',  '$email',' $home_no' ,'$street','$city', '$hash_password')";
             
             $result = mysqli_query($connection,  $query);
       
